@@ -17,6 +17,9 @@
 // }
 #streaming-wrap {
     width: vw(1690px);
+    @include tablet {
+        width: 100%;
+    }
 
     .video-visual {
         position: relative;
@@ -24,6 +27,11 @@
         height: vw(400px);
         overflow: hidden;
         margin: 0 0 vw(60px) 0;
+        @include tablet {
+            width: 100%;
+            height: 160px;
+            margin: 0 0 40px 0;
+        }
         .bg-opacity {
             position: absolute;
             left: 0;
@@ -56,11 +64,17 @@
             @include display_center();
             height: 100%;
             letter-spacing: vw(-1px);
+            @include tablet {
+                font-size: 30px !important;
+            }
 
             span {
                 @include font-80px-300;
                 margin-left: vw(18px);
                 letter-spacing: vw(1px);
+                @include tablet {
+                    font-size: 30px !important;
+                }
             }
         }
     }
@@ -70,6 +84,10 @@
     width: vw(1410px) !important;
     margin: auto;
     padding: 0 0 vw(80px) 0;
+    @include tablet {
+        width: 100%;
+        padding: 0 0 40px 0;
+    }
     h3 {
         @include font-30px-600;
         margin-bottom: vw(20px);
@@ -82,51 +100,91 @@
         }
     }
     .latest-wrap {
-        width: 100%;
         @include display_between;
         li {
             position: relative;
-            &:hover .play-btn {
-                opacity: 1;
-            }
-            .play-btn {
-                position: absolute;
-                top: vw(125px);
-                left: 50%;
-                transform: translate(-50%, -50%);
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                cursor: pointer;
-                background: none;
 
-                img {
-                    width: vw(50px);
-                    height: vw(50px);
-                    margin-bottom: 0;
-                    background: none;
-                }
-            }
-            img {
+            .video-wrap {
+                position: relative;
                 width: vw(444px);
                 height: vw(250px);
-                background: #000;
                 border-radius: 10px;
+                overflow: hidden;
                 margin-bottom: vw(20px);
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.4);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 1;
+                    pointer-events: none;
+                }
+
+                &:hover::after {
+                    opacity: 1;
+                }
+
+                .play-btn {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 2; // 오버레이 위
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    cursor: pointer;
+                    background: none;
+
+                    img {
+                        width: vw(50px);
+                        height: vw(50px);
+                    }
+                }
+
+                &:hover .play-btn {
+                    opacity: 1;
+                }
             }
             h4 {
                 @include font-18px-600;
                 margin-bottom: vw(6px);
                 line-height: 1;
+                width: vw(444px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
+
             strong {
                 @include font-18px-400;
                 margin-bottom: vw(6px);
                 color: $g777;
+                width: vw(444px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 display: block;
             }
+
             p {
+                width: vw(444px);
                 @include font-18px-400;
                 color: $g777;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     }
@@ -370,7 +428,7 @@
 }
 .mv-visual-wrap {
     @include display_between;
-    align-items: center;
+    // align-items: center;
     margin-bottom: vw(40px);
     .video {
         width: vw(710px);
@@ -416,7 +474,7 @@
             width: 100%;
             display: block;
             @include font-40px-600;
-            line-height: 1.5;
+            line-height: 1;
             margin-bottom: vw(10px);
         }
         em {
@@ -458,7 +516,6 @@
                 width: 100%;
                 height: 100%;
                 display: block;
-                background: #000;
             }
 
             &::after {
@@ -504,13 +561,17 @@
             @include font-18px-600;
             margin-bottom: vw(6px);
             line-height: 1;
+            width: vw(444px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         strong {
             @include font-18px-400;
             margin-bottom: vw(6px);
             color: $g777;
-            width: vw(168);
+            width: vw(444px);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -518,8 +579,12 @@
         }
 
         p {
+            width: vw(444px);
             @include font-18px-400;
             color: $g777;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }

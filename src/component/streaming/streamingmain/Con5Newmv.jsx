@@ -4,21 +4,21 @@ const Con5Newmv = () => {
     const videos = [
         {
             id: 'video1',
-            src: '/videos/famous.mp4',
+            src: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/videos/famous.mp4',
             title: 'FAMOUS',
             artist: 'ALLDAY PROJECT',
             date: '2025.6.16',
         },
         {
             id: 'video2',
-            src: '/videos/epikhigh.mp4',
+            src: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/videos/epikhigh.mp4',
             title: '미슐랭 Cypher',
             artist: '에픽하이(Epik High)',
             date: '2024.10.18',
         },
         {
             id: 'video3',
-            src: '/videos/neverendingstory.mp4',
+            src: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/videos/neverendingstory.mp4',
             title: 'Never Ending Story',
             artist: '아이유(IU)',
             date: '2025.5.27',

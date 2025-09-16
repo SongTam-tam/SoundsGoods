@@ -14,7 +14,7 @@ const LatestMusicItem = ({ item, isSelected }) => {
                 <img src={item.image} alt="" />
             </td>
             <td className="col-title-td">
-                {item.title}
+                <strong>{item.title}</strong>
                 <p>{item.album}</p>
             </td>
             <td className="col-artist-td">
