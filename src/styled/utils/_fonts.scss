@@ -67,6 +67,12 @@
     letter-spacing: vw(0);
     color: $fc;
 }
+@mixin font-32px-800 {
+    font-size: clamp(28px, vw(32), 36px);
+    font-weight: 800;
+    letter-spacing: vw(0);
+    color: $fff;
+}
 @mixin font-18px-500 {
     font-size: clamp(16px, vw(18), 20px);
     font-weight: 500;

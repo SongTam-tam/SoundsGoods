@@ -46,7 +46,7 @@ const Con5Newmv = () => {
     };
 
     return (
-        <div className="con-inner">
+        <div className="con5 inner">
             <h3>새로 나온 MUSIC VIDEO</h3>
             <div className="mv-visual-wrap">
                 <div className="video">

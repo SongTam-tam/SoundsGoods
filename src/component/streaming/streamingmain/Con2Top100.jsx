@@ -53,7 +53,7 @@ const Con2Top100 = () => {
     }, []);
 
     return (
-        <div className="con-inner">
+        <div className="con2 inner">
             <h3>
                 인기 차트 TOP 50
                 <Link to="top100">

@@ -146,7 +146,7 @@ const Con1Latest = () => {
     const displayVideos = isMobile ? videos.slice(0, 2) : videos;
 
     return (
-        <div className="con-inner">
+        <div className="con1 inner">
             <h3>지금 뜨고 있는 VIDEO</h3>
             <ul className="latest-wrap">
                 {displayVideos.map((v) => (
