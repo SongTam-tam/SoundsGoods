@@ -19,6 +19,7 @@
     width: vw(1690px);
     @include tablet {
         width: 100%;
+        padding-top: vw(20, 393);
     }
 
     .video-visual {
@@ -28,9 +29,9 @@
         overflow: hidden;
         margin: 0 0 vw(60px) 0;
         @include tablet {
-            width: 100%;
+            width: 100% !important;
             height: 160px;
-            margin: 0 0 40px 0;
+            margin: 0 0 vw(20, 393) 0;
         }
         .bg-opacity {
             position: absolute;
@@ -66,6 +67,7 @@
             letter-spacing: vw(-1px);
             @include tablet {
                 font-size: 30px !important;
+                letter-spacing: 0;
             }
 
             span {
@@ -74,6 +76,7 @@
                 letter-spacing: vw(1px);
                 @include tablet {
                     font-size: 30px !important;
+                    letter-spacing: 0;
                 }
             }
         }
@@ -85,37 +88,66 @@
     margin: auto;
     padding: 0 0 vw(80px) 0;
     @include tablet {
-        width: 100%;
-        padding: 0 0 40px 0;
+        width: 100% !important;
+        margin: auto;
+        padding: 0 vw(18px, 393) 40px vw(18px, 393) !important;
+        box-sizing: border-box;
     }
     h3 {
         @include font-30px-600;
         margin-bottom: vw(20px);
+        @include tablet {
+            @include m-font-20px-600;
+            margin-bottom: vw(20, 393);
+        }
         img {
             width: vw(40px);
             height: vw(40px);
             margin-left: vw(14px);
             object-fit: cover;
             vertical-align: top;
+            @include tablet {
+                display: none;
+            }
         }
     }
     .latest-wrap {
+        width: 100%;
         @include display_between;
+        @include tablet {
+            display: flex;
+            gap: vw(10, 393) !important;
+        }
+
         li {
             position: relative;
+            &:nth-child(3) {
+                @include tablet {
+                    display: none;
+                }
+            }
+            @include tablet {
+                width: vw(173.5, 393) !important;
+            }
 
             .video-wrap {
                 position: relative;
-                width: vw(444px);
-                height: vw(250px);
+                width: vw(444);
+                height: vw(250);
                 border-radius: 10px;
                 overflow: hidden;
-                margin-bottom: vw(20px);
+                margin-bottom: vw(20);
+                @include tablet {
+                    width: vw(173.5, 393) !important;
+                    height: vw(97, 393) !important;
+                    margin-bottom: vw(14, 393);
+                }
 
                 video {
                     width: 100%;
                     height: 100%;
                     display: block;
+                    object-fit: cover;
                 }
 
                 &::after {
@@ -150,6 +182,10 @@
                     img {
                         width: vw(50px);
                         height: vw(50px);
+                        @include tablet {
+                            width: vw(30, 393);
+                            height: vw(30, 393);
+                        }
                     }
                 }
 
@@ -165,6 +201,11 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                @include tablet {
+                    font-size: vw(16, 393);
+                    line-height: 1;
+                    margin-bottom: vw(6, 393);
+                }
             }
 
             strong {
@@ -176,6 +217,11 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: block;
+                @include tablet {
+                    font-size: vw(14, 393);
+                    line-height: 1;
+                    margin-bottom: vw(6, 393);
+                }
             }
 
             p {
@@ -185,21 +231,91 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                @include tablet {
+                    font-size: vw(14, 393);
+                }
             }
         }
     }
+    .swiper-slide {
+        display: flex; // 슬라이드 안에서 강제로 block처럼 맞추기
+        justify-content: center;
+        align-items: center;
+        .img-wrap {
+            position: relative;
+            border-radius: vw(10, 393);
+            overflow: hidden;
+            width: vw(100, 393) !important;
+            height: vw(100, 393) !important;
+            margin-bottom: vw(14, 393);
 
+            .play-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                background: none;
+                cursor: pointer;
+                img {
+                    width: vw(30, 393);
+                    height: vw(30, 393);
+                }
+            }
+        }
+        h4 {
+            font-size: vw(14, 393);
+            margin-bottom: vw(4, 393);
+            line-height: 1;
+            text-align: left;
+        }
+
+        strong {
+            font-size: vw(12, 393);
+            margin-bottom: vw(4, 393);
+            line-height: 1;
+            color: $g777;
+            width: vw(100, 393);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            text-align: left;
+        }
+
+        p {
+            @include font-18px-400;
+            font-size: vw(12, 393);
+            line-height: 1;
+            color: $g777;
+            width: vw(100, 393);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            text-align: left;
+        }
+    }
     .top100-wrap {
         width: 100%;
         @include display_between;
         li {
-            position: relative;
             cursor: pointer;
+
             .img-wrap {
                 position: relative;
+                display: inline-block; // 최신화된 버전 반영
                 width: vw(168px);
                 height: vw(168px);
                 margin-bottom: vw(20px);
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    display: block;
+                }
 
                 // 오버레이
                 &::after {
@@ -210,43 +326,42 @@
                     width: 100%;
                     height: 100%;
                     background: rgba(0, 0, 0, 0.4);
-                    border-radius: 10px; // 이미지 모서리와 동일하게
+                    border-radius: 10px;
                     opacity: 0;
                     transition: opacity 0.3s ease;
-                    z-index: 1; // 버튼보다 낮게
-                    pointer-events: none;
+                    z-index: 1;
+                    pointer-events: none; // 첫 번째 코드에서 유지
                 }
 
                 &:hover::after {
                     opacity: 1;
                 }
-            }
 
-            .play-btn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                transition: opacity 0.3s ease;
-                opacity: 0;
-                cursor: pointer;
-                z-index: 2; // 오버레이 위에
-                img {
-                    width: vw(50px);
-                    height: vw(50px);
-                    margin-bottom: 0;
+                .play-btn {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 2;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    background: none;
+                    cursor: pointer;
+
+                    img {
+                        width: vw(50px);
+                        height: vw(50px);
+                        margin-bottom: 0;
+                        @include tablet {
+                            width: vw(30, 393);
+                            height: vw(30, 393);
+                        }
+                    }
                 }
-            }
 
-            &:hover .play-btn {
-                opacity: 1;
-            }
-
-            img {
-                width: vw(168px);
-                height: vw(168px);
-                border-radius: 10px;
-                display: block;
+                &:hover .play-btn {
+                    opacity: 1;
+                }
             }
 
             h4 {
@@ -271,57 +386,8 @@
                 color: $g777;
             }
         }
-        li {
-            position: relative;
-            .img-wrap {
-                position: relative;
-                display: inline-block;
-                width: vw(168px);
-                height: vw(168px);
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 10px;
-                    display: block;
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.4);
-                    border-radius: 10px;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                    z-index: 1;
-                }
-
-                &:hover::after {
-                    opacity: 1;
-                }
-
-                .play-btn {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 2;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                    background: none;
-                }
-
-                &:hover .play-btn {
-                    opacity: 1;
-                    background: none;
-                }
-            }
-        }
     }
+
     .artist-wrap {
         @include display_ju;
         gap: 60px;
