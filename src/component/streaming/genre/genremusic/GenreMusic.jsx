@@ -3,9 +3,13 @@ import GenreMusicList from './GenreMusicList';
 import './style.scss';
 
 const GenreMusic = ({ data }) => {
+    const [selectedAll, setSelectedAll] = useState(false);
     const [sortType, setSortType] = useState('최신순');
     const [sortedList, setSortedList] = useState([...(data.music || [])]);
     const [sortOpen, setSortOpen] = useState(false);
+    const handleSelectAll = () => {
+        setSelectedAll((prev) => !prev);
+    };
     const toggleSort = () => setSortOpen(!sortOpen);
 
     useEffect(() => {
@@ -27,7 +31,9 @@ const GenreMusic = ({ data }) => {
             <h2>{data.genre} 카테고리의 모든 음악</h2>
             <div className="genre-music-top">
                 <div className="genre-music-btn">
-                    <button>전체 선택</button>
+                    <button onClick={handleSelectAll}>
+                        {selectedAll ? '전체 해제' : '전체 선택'}
+                    </button>
                     <button>전체 재생</button>
                 </div>
                 <div className="genre-music-sort">
@@ -55,7 +61,7 @@ const GenreMusic = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <GenreMusicList data={sortedList} />
+            <GenreMusicList data={sortedList} selectedAll={selectedAll} />
         </section>
     );
 };

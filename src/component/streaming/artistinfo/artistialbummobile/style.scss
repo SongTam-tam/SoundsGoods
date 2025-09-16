@@ -1,0 +1,54 @@
+@use '../../../../styled/utils/' as *;
+
+#artist-i-album {
+    margin-bottom: vw(75);
+    h2 {
+        @include font-30px-600();
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        margin-bottom: vw(20);
+        img {
+            width: vw(40px);
+            height: vw(40px);
+            margin-left: vw(14px);
+            object-fit: cover;
+            vertical-align: top;
+        }
+    }
+    .artist-i-cover {
+        display: flex;
+        flex-direction: row;
+        gap: vw(35);
+        .artist-i-album-item {
+            width: vw(160);
+            img {
+                border-radius: vw(20);
+                width: vw(160);
+            }
+            .album-item-text {
+                padding-left: vw(14);
+                padding-right: vw(14);
+                padding-top: vw(10);
+                line-height: 1.5;
+                h3 {
+                    @include font-18px-600;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                h4 {
+                    @include font-18px-400;
+                    color: $grey777;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                p {
+                    @include font-16px-400;
+                    color: $grey777;
+                }
+            }
+        }
+    }
+}

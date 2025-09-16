@@ -69,8 +69,9 @@
 @include tablet {
     #artist-goods {
         h2 {
-            @include m-font-18px-600();
+            @include m-font-20px-600();
             color: $m_color2;
+            margin-bottom: vw(20, 393);
             img {
                 width: vw(24, 393);
                 height: vw(24, 393);

@@ -19,6 +19,7 @@
     .rec-artist-list {
         @include display_between();
         .rec-artist-item {
+            width: vw(120);
             text-align: center;
             cursor: pointer;
             img {
@@ -30,9 +31,11 @@
                 @include font-16px-700();
                 margin-bottom: vw(5);
                 line-height: 1;
+                word-break: keep-all;
             }
             h4 {
                 @include font-14px-400();
+                word-break: keep-all;
             }
         }
     }

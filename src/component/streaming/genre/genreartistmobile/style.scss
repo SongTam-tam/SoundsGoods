@@ -3,7 +3,7 @@
 #genre-artist-mobile {
     margin-bottom: vw(40, 393);
     h2 {
-        @include m-font-18px-600();
+        @include m-font-20px-600();
         margin-bottom: vw(20, 393);
     }
     .genre-artist-list-mobile {
@@ -15,6 +15,7 @@
             padding-right: vw(20, 393);
             .swiper-slide {
                 .genre-artist-item-mobile {
+                    width: vw(60, 393);
                     text-align: center;
                     cursor: pointer;
                     img {
@@ -24,6 +25,7 @@
                     }
                     h3 {
                         @include m-font-14px-400();
+                        word-break: keep-all;
                     }
                 }
             }

@@ -5,23 +5,28 @@ export default [
         singer: [
             {
                 artist: 'BLACKPINK',
-                artistimg: '/public/images/streaming/artist.png',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/blackpink.png',
             },
             {
                 artist: 'ALLDAY PROJECT',
-                artistimg: 'images/artist/alldayproject.png',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/alldayproject.png',
             },
             {
                 artist: 'aespa',
-                artistimg: 'images/artist/aespa.png',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/aespa.png',
             },
             {
                 artist: 'IVE (아이브)',
-                artistimg: 'images/artist/ive.png',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/ive.png',
             },
             {
                 artist: '아일릿(ILLIT)',
-                artistimg: 'images/artist/illit.png',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/illit.png',
             },
         ],
         music: [
@@ -1293,7 +1298,8 @@ export default [
             },
             {
                 artist: '임영웅',
-                artistimg: 'images/artist/im.png',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/im.png',
             },
             {
                 artist: '손태진',

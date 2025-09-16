@@ -1,5 +1,6 @@
 // Top100MusicItem.jsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import './style.scss';
 
 const Top100MusicItem = ({ item, rank, isSelected }) => {
     const [minute, setMinute] = useState(0);
@@ -15,7 +16,7 @@ const Top100MusicItem = ({ item, rank, isSelected }) => {
                 <img src={item.image} alt="" />
             </td>
             <td className="col-title-td">
-                {item.title}
+                <strong>{item.title}</strong>
                 <p>{item.album}</p>
             </td>
             <td className="col-artist-td">

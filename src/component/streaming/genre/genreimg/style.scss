@@ -50,5 +50,15 @@
             transform: translateY(0%);
             bottom: vw(15, 393);
         }
+        &.default-text {
+            width: 100%;
+            &.default-text h2 {
+                @include m-font-30px-600;
+                color: $fff;
+                top: auto;
+                transform: translateY(0%);
+                bottom: vw(15, 393);
+            }
+        }
     }
 }
