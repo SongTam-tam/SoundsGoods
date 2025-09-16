@@ -90,7 +90,7 @@
         margin-bottom: vw(40, 393);
         .artist-category-top {
             h2 {
-                @include m-font-18px-600();
+                @include m-font-20px-600();
                 margin-bottom: vw(20, 393);
             }
         }
@@ -100,16 +100,17 @@
             .sort-down {
                 font-size: 12px !important;
                 min-width: 68px !important;
-                padding: 5px 10px 5px 16px !important;
+                padding: 7px 10px 7px 16px !important;
                 background-position: right center !important;
                 background-size: 16px auto !important;
+                border-radius: 50px !important;
             }
             .sorting {
                 ul {
                     width: 75px !important;
                     min-width: 68px !important;
-                    border-radius: 12px !important;
-                    padding: 0px 10px 0px 16px !important;
+                    border-radius: 15px !important;
+                    padding: 2px 10px 2px 16px !important;
                     li {
                         font-size: 12px !important;
                         &.sorting-title {

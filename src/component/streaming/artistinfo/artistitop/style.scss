@@ -10,3 +10,16 @@
         width: vw(806);
     }
 }
+
+@include tablet {
+    #artist-i-top {
+        margin-bottom: vw(40, 393);
+        display: block;
+        .artist-i-top-left {
+            width: 100%;
+        }
+        .artist-i-top-right {
+            width: 100%;
+        }
+    }
+}

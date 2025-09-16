@@ -1,11 +1,10 @@
 import './style.scss';
 
-const RecArtistItemMobile = () => {
+const RecArtistItemMobile = ({ item }) => {
     return (
         <div className="rec-artist-item-mobile">
-            <img src="/images/streaming/artist.png" alt="" />
-            <h3>블랙핑크</h3>
-            <h4>댄스/팝</h4>
+            <img src={item.imageS} alt="" />
+            <h3>{item.artist}</h3>
         </div>
     );
 };

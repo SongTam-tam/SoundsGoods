@@ -1,5 +1,7 @@
 @use '../../../../styled/utils' as *;
 #top100-music {
+    width: vw(1410);
+    margin: auto;
     h2 {
         @include font-34px-600();
         margin-bottom: vw(50);
@@ -9,13 +11,18 @@
         justify-content: space-between;
         margin-bottom: vw(25);
         .top100-music-btn {
+            display: flex;
             button {
-                @include font-16px-500();
+                font-family: 'Pretendard', sans-serif;
+                width: vw(100px);
+                height: vw(36px);
+                @include font-16px-400();
+                line-height: 1;
                 color: $grey555;
                 border: vw(1) solid $grey555;
                 border-radius: vw(50);
-                padding: vw(8) vw(24);
                 margin-right: vw(10);
+                padding: 0;
             }
         }
         .top100-music-sort {
@@ -25,11 +32,12 @@
             white-space: nowrap;
             .sort-down {
                 cursor: pointer;
-                @include font-16px-600();
-                color: $grey777;
+                @include font-16px-500();
+                color: $m_color1;
                 width: vw(96);
-                border: vw(1) solid $greyc0;
-                border-radius: vw(50);
+                height: vw(36px);
+                border: vw(1) solid $m_color1;
+                border-radius: vw(18);
                 padding: vw(7) vw(20);
                 box-sizing: border-box;
                 text-align: left;
@@ -48,18 +56,18 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    border: vw(1) solid $greyc0;
-                    border-radius: vw(10);
-                    padding: vw(1) vw(10) vw(1) vw(20);
+                    border: vw(1) solid $m_color1;
                     box-sizing: border-box;
+                    border-radius: vw(18);
+                    padding: vw(1) vw(10) vw(1) vw(20);
                     li {
                         cursor: pointer;
                         @include font-16px-400();
-                        color: $grey777;
+                        color: $m_color1;
                         line-height: 2;
                         &.sorting-title {
                             @include font-16px-600();
-                            color: $grey777;
+                            color: $m_color1;
                             line-height: 2;
                             background: url('/images/streaming/bg_up.png') no-repeat right center;
                             background-size: vw(24) auto;
@@ -124,6 +132,9 @@
             &:hover {
                 background: rgba(220, 220, 220, 0.4);
             }
+            &.selected {
+                background-color: rgba(220, 220, 220, 0.4);
+            }
             td {
                 padding: vw(14) 0;
                 vertical-align: middle;
@@ -140,10 +151,38 @@
                 }
             }
             .col-title-td {
+                strong {
+                    padding-right: vw(40px);
+                    box-sizing: border-box;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; /* 2줄까지만 표시 */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
                 p {
                     @include font-14px-400();
                     color: $grey777;
                     line-height: 1.8;
+                    padding-right: vw(60px);
+                    box-sizing: border-box;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; /* 2줄까지만 표시 */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            .col-artist-td {
+                p {
+                    align-items: center;
+                    word-break: keep-all;
+                    padding-right: vw(40px);
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2; /* 2줄까지만 표시 */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
             .col-play-td,

@@ -1,19 +1,10 @@
 import './style.scss';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const GenreCategoryMobile = () => {
-    const genres = [
-        { name: 'DANCE', img: '/images/streaming/genre_dance_s.jpg' },
-        { name: 'JAZZ', img: '/images/streaming/genre_jazz_s.jpg' },
-        { name: 'ROCK', img: '/images/streaming/genre_rock_s.jpg' },
-        { name: 'BALLAD', img: '/images/streaming/genre_ballad_s.jpg' },
-        { name: 'POP', img: '/images/streaming/genre_pop_s.jpg' },
-        { name: 'HIPHOP', img: '/images/streaming/genre_hiphop_s.jpg' },
-        { name: 'OST', img: '/images/streaming/genre_ost_s.jpg' },
-        { name: 'INDIE', img: '/images/streaming/genre_indie_s.jpg' },
-    ];
+const GenreCategoryMobile = ({ allGenres, selectedGenre, onSelect }) => {
+    const navigate = useNavigate();
     return (
         <section id="genre-category-mobile">
             <h2>
@@ -23,14 +14,29 @@ const GenreCategoryMobile = () => {
                 </Link>
             </h2>
             <div className="genre-category-list-mobile">
-                <Swiper className="mySwiper" spaceBetween={16} slidesPerView={2.5}>
-                    {genres.map((genre) => (
-                        <SwiperSlide key={genre.name}>
-                            <div className="genre-sub-img-mobile">
-                                <img src={genre.img} alt={genre.name} />
-                                <span>{genre.name}</span>
+                <Swiper
+                    className="mySwiper"
+                    spaceBetween={16}
+                    slidesPerView={2.5}
+                >
+                    {allGenres?.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <div
+                                className="genre-sub-img-mobile"
+                                onClick={() => {
+                                    onSelect(item);
+                                    navigate(`/streaming/genre/${item.genre}`, {
+                                        state: item,
+                                    });
+                                }}
+                            >
+                                <img
+                                    src={`/images/streaming/genre_${item.genre.toLowerCase()}_s.jpg`}
+                                    alt={item.genre}
+                                />
+                                <span>{item.genre}</span>
                             </div>
-                            <p>{genre.name}</p>
+                            <p>{item.genre}</p>
                         </SwiperSlide>
                     ))}
                 </Swiper>

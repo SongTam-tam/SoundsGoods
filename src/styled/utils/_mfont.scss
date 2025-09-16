@@ -1,6 +1,44 @@
 @use './unit' as *;
 @use './color' as *;
 
+@mixin m-font-32px-800 {
+    font-size: clamp(30px, vw(32, 393), 314px);
+    font-weight: 800;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-12px-400 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-12px-500 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-12px-600 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-12px-700 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-12px-800 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 800;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
 @mixin m-font-18px-700 {
     font-size: clamp(16px, vw(18, 393), 20px);
     font-weight: 700;
@@ -16,13 +54,6 @@
 
 @mixin m-font-14px-700 {
     font-size: clamp(12px, vw(14, 393), 16px);
-    font-weight: 700;
-    letter-spacing: vw(0);
-    color: $fc;
-}
-
-@mixin m-font-12px-700 {
-    font-size: clamp(10px, vw(12, 393), 14px);
     font-weight: 700;
     letter-spacing: vw(0);
     color: $fc;
@@ -49,13 +80,6 @@
 }
 @mixin m-font-14px-400 {
     font-size: clamp(12px, vw(14, 393), 16px);
-    font-weight: 400;
-    letter-spacing: vw(0);
-    color: $fc;
-}
-
-@mixin m-font-12px-400 {
-    font-size: clamp(10px, vw(12, 393), 14px);
     font-weight: 400;
     letter-spacing: vw(0);
     color: $fc;
@@ -91,12 +115,6 @@
     letter-spacing: vw(0);
     color: $fc;
 }
-@mixin m-font-12px-500 {
-    font-size: clamp(10px, vw(12, 393), 14px);
-    font-weight: 500;
-    letter-spacing: vw(0);
-    color: $fc;
-}
 @mixin m-font-10px-500 {
     font-size: clamp(8px, vw(10, 393), 12px);
     font-weight: 500;
@@ -128,12 +146,7 @@
     letter-spacing: vw(0);
     color: $fc;
 }
-@mixin m-font-12px-600 {
-    font-size: clamp(10px, vw(12, 393), 14px);
-    font-weight: 600;
-    letter-spacing: vw(0);
-    color: $fc;
-}
+
 @mixin m-font-10px-600 {
     font-size: clamp(8px, vw(10, 393), 12px);
     font-weight: 600;

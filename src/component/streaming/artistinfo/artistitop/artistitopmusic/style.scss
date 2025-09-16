@@ -47,3 +47,12 @@
         }
     }
 }
+
+@include tablet {
+    #artist-i-top-music {
+        h2 {
+            @include m-font-18px-600();
+            margin-bottom: vw(30);
+        }
+    }
+}

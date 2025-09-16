@@ -67,3 +67,71 @@
         }
     }
 }
+
+@include tablet {
+    #artist-i-goods {
+        h2 {
+            @include m-font-16px-600();
+            color: $m_color2;
+            margin-bottom: vw(20, 393);
+            img {
+                width: vw(24, 393);
+                height: vw(24, 393);
+                margin-left: vw(10, 393);
+            }
+        }
+        .artist-i-goods-list {
+            .artist-i-goods-item {
+                width: vw(110, 393);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+                padding-bottom: vw(2, 393);
+                .artist-i-goods-img {
+                    position: relative;
+                    width: vw(110, 393);
+                    height: vw(143, 393);
+                    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+                    @include display_center();
+                    margin-bottom: vw(8, 393);
+                    img {
+                        width: vw(110, 393);
+                        height: vw(110, 393);
+                        border-radius: 0;
+                    }
+                    p {
+                        position: absolute;
+                        top: auto;
+                        left: auto;
+                        bottom: vw(6, 393);
+                        right: vw(6, 393);
+                        background-color: transparent;
+                        opacity: 1;
+                        border-radius: 0;
+                        padding: 0;
+                        width: vw(20, 393);
+                        height: vw(20, 393);
+                        display: block;
+                        img {
+                            width: vw(20, 393);
+                            height: vw(20, 393);
+                        }
+                    }
+                }
+                .artist-i-goods-text {
+                    h3 {
+                        @include m-font-12px-500();
+                        white-space: normal !important;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        margin-bottom: vw(5, 393);
+                    }
+                    h4 {
+                        @include m-font-12px-500();
+                    }
+                }
+            }
+        }
+    }
+}

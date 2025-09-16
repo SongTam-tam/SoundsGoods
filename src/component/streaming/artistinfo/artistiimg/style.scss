@@ -40,11 +40,11 @@
             left: vw(24, 393);
             bottom: vw(20, 393);
             h2 {
-                // @include m-font-12px-700();
+                @include m-font-12px-800();
                 color: $fff;
             }
             h3 {
-                // @include m-font-32px-700();
+                @include m-font-32px-800();
                 color: $fff;
                 font-family: 'Bricolage Grotesque', 'pretendard';
             }

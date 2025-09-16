@@ -17,10 +17,15 @@ const GenreCategory = ({ allGenres, selectedGenre, onSelect }) => {
                             className="genre-sub-img"
                             onClick={() => {
                                 onSelect(item);
-                                navigate(`/streaming/genre/${item.genre}`, { state: item });
+                                navigate(`/streaming/genre/${item.genre}`, {
+                                    state: item,
+                                });
                             }}
                         >
-                            <img src={item.genreimg} alt={item.genre} />
+                            <img
+                                src={`/images/streaming/genre_${item.genre.toLowerCase()}_s.jpg`}
+                                alt={item.genre}
+                            />
                             <span>{item.genre}</span>
                         </div>
                         <p>{item.genre}</p>

@@ -15,7 +15,11 @@ const ArtistWrap = ({ data }) => {
     return (
         <section id="artist-wrap">
             <div className="inner">
-                {width > 1024 ? <RecArtist data={data} /> : <RecArtistMobile />}
+                {width > 1024 ? (
+                    <RecArtist data={data} />
+                ) : (
+                    <RecArtistMobile data={data} />
+                )}
                 <ArtistCategory />
                 <ArtistGoods />
             </div>
