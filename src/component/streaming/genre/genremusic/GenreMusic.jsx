@@ -2,10 +2,16 @@ import { useEffect, useState } from 'react';
 import GenreMusicList from './GenreMusicList';
 import './style.scss';
 
+// "YYYY-MM" → Date 객체로 변환하는 헬퍼 함수
+function parseRelease(str) {
+    const [year, month] = str.split('-').map(Number);
+    return new Date(year, month - 1, 1); // 월은 0부터 시작
+}
+
 const GenreMusic = ({ data }) => {
     const [selectedAll, setSelectedAll] = useState(false);
     const [sortType, setSortType] = useState('최신순');
-    const [sortedList, setSortedList] = useState([...(data.music || [])]);
+    const [sortedList, setSortedList] = useState([]);
     const [sortOpen, setSortOpen] = useState(false);
     const handleSelectAll = () => {
         setSelectedAll((prev) => !prev);
@@ -13,18 +19,18 @@ const GenreMusic = ({ data }) => {
     const toggleSort = () => setSortOpen(!sortOpen);
 
     useEffect(() => {
-        let newList = [...(data.music || [])];
+        if (!data?.music) return;
 
+        let newList = [...data.music];
         if (sortType === '최신순') {
-            newList.sort((a, b) => new Date(b.release) - new Date(a.release));
+            newList.sort((a, b) => parseRelease(b.release) - parseRelease(a.release));
         } else if (sortType === '인기순') {
             newList.sort(() => Math.random() - 0.5);
         } else if (sortType === '이름순') {
             newList.sort((a, b) => a.title.localeCompare(b.title));
         }
-
         setSortedList(newList);
-    }, [sortType, data.music]);
+    }, [sortType, data]);
 
     return (
         <section id="genre-music">

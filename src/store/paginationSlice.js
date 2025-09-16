@@ -8,15 +8,25 @@ const usePaginationStore = create((set, get) => ({
 
     setData: (data) =>
         set(() => {
-            const sortedData = [...data].sort((a, b) => a.id - b.id);
-            const totalCount = sortedData.length;
+            // const sortedData = [...data].sort((a, b) => a.id - b.id);
+            const totalCount = data.length;
             const perPage = get().perPage;
             return {
-                pageData: sortedData,
+                pageData: data,
                 totalPages: Math.ceil(totalCount / perPage),
                 currentPage: 1,
             };
         }),
+    // set(() => {
+    //     const sortedData = [...data].sort((a, b) => a.id - b.id);
+    //     const totalCount = sortedData.length;
+    //     const perPage = get().perPage;
+    //     return {
+    //         pageData: sortedData,
+    //         totalPages: Math.ceil(totalCount / perPage),
+    //         currentPage: 1,
+    //     };
+    // }),
 
     setCurrentPage: (num) =>
         set((state) => {
