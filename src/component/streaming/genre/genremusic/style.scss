@@ -44,14 +44,17 @@
                 padding-right: vw(0);
             }
             .sorting {
-                //display: none;
+                &.on {
+                    display: block;
+                }
                 ul {
-                    //background-color: $fff;
+                    background-color: $fff;
                     width: 100%;
                     min-width: 76px;
                     position: absolute;
                     top: 0;
                     left: 0;
+                    z-index: 10;
                     border: vw(1) solid $m_color1;
                     border-radius: 18px;
                     padding: 1px 10px 1px 20px;

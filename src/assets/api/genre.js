@@ -24,7 +24,7 @@ export default [
                     'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/ive.png',
             },
             {
-                artist: '아일릿(ILLIT)',
+                artist: '아일릿 (ILLIT)',
                 artistimg:
                     'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/illit.png',
             },

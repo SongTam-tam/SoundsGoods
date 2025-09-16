@@ -40,7 +40,7 @@ const GenreMusicList = ({ data, selectedAll }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {currentData.map((item, index) => (
+                    {currentData.map((item) => (
                         <GenreMusicItem key={item.id} item={item} isSelected={selectedAll} />
                     ))}
                 </tbody>

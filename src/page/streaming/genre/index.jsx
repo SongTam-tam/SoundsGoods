@@ -11,7 +11,6 @@ const Genre = () => {
     const navigate = useNavigate();
     const [selectedGenre, setSelectedGenre] = useState(null);
 
-    // ✅ 대문자 들어오면 소문자로 리다이렉트
     useEffect(() => {
         if (title && title !== title.toLowerCase()) {
             navigate(`/streaming/genre/${title.toLowerCase()}`, { replace: true });
