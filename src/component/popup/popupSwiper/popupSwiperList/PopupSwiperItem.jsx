@@ -3,33 +3,39 @@ import './style.scss';
 
 const teamMembers = [
     {
-        name: 'Emily Kim',
-        role: 'Founder',
+        name: '로제(ROSÉ)',
+        role: '25.09.01 ~ 25.12.31',
+        ff: '말레이시아, 쿠알라룸푸르',
         img: '/images/main/main_con6_01.jpg',
     },
     {
-        name: 'Michael Steward',
-        role: 'Creative Director',
+        name: 'Futurea canvas 2025',
+        role: '25.09.25 ~ 25.09.06',
+        ff: '서울 강남구 가로수길',
         img: '/images/main/main_con6_02.jpg',
     },
     {
-        name: 'Emma Rodriguez',
-        role: 'Lead Developer',
+        name: 'ADA POP-UP STORE – Ado',
+        role: '25.08.21 ~ 25.09.03',
+        ff: '서울 중구 명동길 60',
         img: '/images/main/main_con_03.jpg',
     },
+
     {
-        name: 'Julia Gimmel',
-        role: 'UX Designer',
+        name: 'AHOF – “WHO WE ARE”',
+        role: '2025. 9. 1 ~ 2025. 9. 10',
+        ff: '영등포 타임스퀘어',
+        img: 'https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    },
+    {
+        name: '2025 레코드 팝업스토어',
+        role: '25.09.15 ~ 25.12.30',
+        ff: '인천 개항장 인근',
         img: '/images/main/main_con6_04.jpg',
     },
-    // {
-    //     name: 'Lisa Anderson',
-    //     role: 'Marketing Manager',
-    //     img: 'https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-    // },
 ];
 
-const MagazinItem = () => {
+const PopupSwiperItem = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const touchStartX = useRef(0);
@@ -77,11 +83,17 @@ const MagazinItem = () => {
                         if (offset === 0) className = 'card center';
                         else if (offset === 1) className = 'card right-1';
                         else if (offset === 2) className = 'card right-2';
-                        else if (offset === 3) className = 'card right-3';
+                        else if (offset === teamMembers.length - 1) className = 'card left-1';
+                        else if (offset === teamMembers.length - 2) className = 'card left-2';
 
                         return (
                             <div key={i} className={className} onClick={() => updateCarousel(i)}>
                                 <img src={member.img} alt={member.name} />
+                                <div className="textBox">
+                                    <strong>{member.name}</strong>
+                                    <span>{member.role}</span>
+                                    <em>{member.ff}</em>
+                                </div>
                             </div>
                         );
                     })}
@@ -91,4 +103,4 @@ const MagazinItem = () => {
     );
 };
 
-export default MagazinItem;
+export default PopupSwiperItem;

@@ -39,6 +39,7 @@
         .wish_list_text {
             @include display_ju();
             flex-direction: column;
+            width: vw(500);
             > strong {
                 @include font-20px-600();
             }
@@ -109,7 +110,7 @@
             justify-content: space-between;
             width: vw(244);
             height: vw(100);
-            margin-left: vw(136);
+            margin-left: vw(260);
             .ppp {
                 button {
                     width: vw(188);

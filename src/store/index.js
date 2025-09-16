@@ -276,6 +276,9 @@ export const useGoodsStore = create((set, get) => {
         goodsMain2: localStorage.getItem('goodsMain2')
             ? JSON.parse(localStorage.getItem('goodsMain2'))
             : [],
+        goodspush: localStorage.getItem('goodspush')
+            ? JSON.parse(localStorage.getItem('goodspush'))
+            : [],
 
         wish: localStorage.getItem('wish') ? JSON.parse(localStorage.getItem('wish')) : [],
 
@@ -302,7 +305,37 @@ export const useGoodsStore = create((set, get) => {
             localStorage.setItem('goodsMain2', JSON.stringify(limitData2));
             const limitData3 = [...goods].sort(() => Math.random() - 0.5).slice(0, 6);
             localStorage.setItem('iveGoods', JSON.stringify(limitData3));
-            set({ goodsMain: limitData, goodsMain2: limitData2, iveGoods: limitData3 });
+            const limitData4 = [...goods].sort(() => Math.random() - 0.5).slice(0, 2);
+            localStorage.setItem('goodspush', JSON.stringify(limitData4));
+            set({
+                goodsMain: limitData,
+                goodsMain2: limitData2,
+                iveGoods: limitData3,
+                goodspush: limitData4,
+            });
+        },
+        wishPush: (x) => {
+            const { goods, wish } = get();
+            const id = x.id;
+
+            // goods에서 아이템 찾기
+            const item = goods.find((item) => item.id === id);
+
+            if (!item) {
+                console.error('Item not found in goods');
+                return;
+            }
+
+            // 이미 wish에 있는지 확인
+            const alreadyInWish = wish.some((wishItem) => wishItem.id === id);
+            if (alreadyInWish) {
+                console.log('Item already in wish list');
+                return;
+            }
+
+            const add = [...wish, item];
+            localStorage.setItem('wish', JSON.stringify(add));
+            set({ wish: add });
         },
 
         cartPush: (x, quantity = 1) => {
@@ -366,6 +399,16 @@ export const useGoodsStore = create((set, get) => {
             const del = cart.filter((item) => item.id !== x);
             localStorage.setItem('cart', JSON.stringify(del));
             set({ cart: del });
+        },
+        delWish: (x) => {
+            const { wish, goodsMain } = get();
+            const del = wish.filter((item) => item.id !== x);
+            const delItem = goodsMain.map((item) =>
+                item.id === x ? { ...item, like: false } : item
+            );
+            localStorage.setItem('wish', JSON.stringify(del));
+            localStorage.setItem('goodsMain', JSON.stringify(delItem));
+            set({ wish: del, goodsMain: delItem });
         },
         upCountGoods: (x) => {
             const { goods } = get();
@@ -485,5 +528,102 @@ export const useGoodsStore = create((set, get) => {
 
                 return { goods: newGoods, goodsMain2: newGoodsMain2 };
             }),
+        isLikeWithWish: (id) => {
+            const { goods, wish } = get();
+
+            const item = goods.find((item) => item.id === id);
+
+            if (!item) {
+                console.error('Item not found');
+                return;
+            }
+
+            const newLikeState = !item.like;
+
+            // 모든 상태 업데이트를 한 번에 처리
+            set((state) => {
+                // goods 업데이트
+                const newGoods = state.goods.map((item) =>
+                    item.id === id ? { ...item, like: newLikeState } : item
+                );
+
+                const newGoodsMain = state.goodsMain.map((item) =>
+                    item.id === id
+                        ? {
+                              ...item,
+                              like: newLikeState,
+                              count: newLikeState
+                                  ? (item.count || 0) + 1
+                                  : Math.max(0, (item.count || 0) - 1),
+                          }
+                        : item
+                );
+
+                // wish 업데이트
+                let newWish = [...state.wish];
+                if (newLikeState) {
+                    // 추가
+                    const alreadyInWish = newWish.some((wishItem) => wishItem.id === id);
+                    if (!alreadyInWish) {
+                        newWish = [...newWish, { ...item, like: newLikeState }];
+                    }
+                } else {
+                    // 제거
+                    newWish = newWish.filter((wishItem) => wishItem.id !== id);
+                }
+
+                // localStorage 저장
+                localStorage.setItem('goods', JSON.stringify(newGoods));
+                localStorage.setItem('goodsMain', JSON.stringify(newGoodsMain));
+                localStorage.setItem('wish', JSON.stringify(newWish));
+
+                return {
+                    goods: newGoods,
+                    goodsMain: newGoodsMain,
+                    wish: newWish,
+                };
+            });
+        },
+        isLike2WithWish: (id) => {
+            const { goods, wish } = get();
+
+            const item = goods.find((item) => item.id === id);
+
+            if (!item) {
+                console.error('Item not found');
+                return;
+            }
+
+            set((state) => {
+                const newGoods = state.goods.map((item) =>
+                    item.id === id ? { ...item, like: !item.like } : item
+                );
+
+                const newGoodsMain2 = state.goodsMain2.map((item) =>
+                    item.id === id
+                        ? {
+                              ...item,
+                              like: !item.like,
+                              count: !item.like ? item.count + 1 : item.count - 1,
+                          }
+                        : item
+                );
+
+                localStorage.setItem('goods', JSON.stringify(newGoods));
+                localStorage.setItem('goodsMain2', JSON.stringify(newGoodsMain2));
+
+                return { goods: newGoods, goodsMain2: newGoodsMain2 };
+            });
+
+            if (!item.like) {
+                const alreadyInWish = wish.some((wishItem) => wishItem.id === id);
+
+                if (!alreadyInWish) {
+                    const add = [...wish, item];
+                    localStorage.setItem('wish', JSON.stringify(add));
+                    set({ wish: add });
+                }
+            }
+        },
     };
 });

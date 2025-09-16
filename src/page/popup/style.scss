@@ -1,0 +1,11 @@
+@use '../../styled/utils' as *;
+
+#popup {
+    padding-top: vw(64);
+    .inner {
+        width: vw(1410);
+        position: relative;
+        box-sizing: border-box;
+        margin-left: vw(350);
+    }
+}

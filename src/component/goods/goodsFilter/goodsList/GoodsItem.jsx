@@ -3,6 +3,7 @@ import { GoPlus } from 'react-icons/go';
 import { LuMinus } from 'react-icons/lu';
 import { useGoodsStore } from '../../../../store';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 const GoodsItem = ({ goods }) => {
     const {
         id,
@@ -25,6 +26,10 @@ const GoodsItem = ({ goods }) => {
     } = goods;
     const { cartPush, downCountGoods, upCountGoods } = useGoodsStore();
     const nav = useNavigate();
+    const notify = (x) => {
+        cartPush(x);
+        toast('장바구니의 담기 성공');
+    };
     const onNext = () => {
         nav(`/goods/${id}`);
     };
@@ -72,7 +77,7 @@ const GoodsItem = ({ goods }) => {
                 </button>
             </div>
             <div className="goods_btns">
-                <div className="btn1" onClick={() => cartPush(goods)}>
+                <div className="btn1" onClick={() => notify(goods)}>
                     <button>
                         <img src="images/icons/white_next.png" alt="" />
                     </button>

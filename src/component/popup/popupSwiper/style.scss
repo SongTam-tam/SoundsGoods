@@ -1,0 +1,11 @@
+@use '../../../styled/utils' as *;
+
+.popup_swiper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 vw(30);
+    h2 {
+        @include font-30px-600();
+        margin-bottom: vw(30);
+    }
+}

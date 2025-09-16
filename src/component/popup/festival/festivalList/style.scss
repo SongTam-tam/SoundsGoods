@@ -1,0 +1,50 @@
+@use '../../../../styled/utils' as *;
+
+.festival_list {
+    display: flex;
+    width: 100%;
+    height: vw(460);
+    flex-wrap: wrap;
+    li {
+        width: vw(300);
+        position: relative;
+        height: vw(140);
+        @include display_al();
+        justify-content: space-between;
+        .pic {
+            width: vw(140);
+            height: vw(140);
+            background-color: aliceblue;
+            img {
+                width: vw(140);
+            }
+        }
+        .text_con {
+            @include display_ju();
+            flex-direction: column;
+            width: vw(140);
+            gap: vw(8);
+            strong {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include font-18px-700();
+            }
+            span {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include font-14px-500();
+            }
+            em {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include font-14px-500();
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@use '../../../styled/utils' as *;
+
+.limit_popup {
+    width: 100%;
+    margin-bottom: vw(60);
+    h2 {
+        @include font-24px-600();
+        margin-bottom: vw(40);
+        text-align: center;
+    }
+}

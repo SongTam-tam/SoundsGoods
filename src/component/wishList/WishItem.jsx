@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { IoIosClose } from 'react-icons/io';
+import { useGoodsStore } from '../../store';
+import { toast } from 'react-toastify';
 const WishItem = ({ item }) => {
     const {
         id,
@@ -20,6 +22,7 @@ const WishItem = ({ item }) => {
         bookmark,
         count,
     } = item;
+
     return (
         <li className="li">
             <p className="heart_icons">

@@ -89,6 +89,7 @@ export default [
         id: 3,
         title: '팝업 스토어',
         isOn: false,
+        path: '/popup',
         onContent: [
             {
                 id: 1,

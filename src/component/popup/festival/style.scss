@@ -1,0 +1,78 @@
+@use '../../../styled/utils' as *;
+
+.festival {
+    width: 100%;
+    padding-top: vw(10);
+    padding-bottom: vw(20);
+    border-bottom: 1px solid #000;
+    margin-top: vw(20);
+    @include display_al();
+    margin-bottom: vw(60);
+    .festival_left {
+        width: vw(654);
+        height: vw(546);
+        @include display_al();
+        justify-content: space-between;
+        .pic {
+            width: vw(330);
+            height: vw(460);
+            background-color: $m_color1;
+        }
+        .festival_text {
+            width: vw(304);
+            height: vw(546);
+            @include display_ju();
+            flex-direction: column;
+            strong {
+                @include font-30px-700();
+                white-space: pre-line;
+                line-height: 160%;
+                display: block;
+                margin-bottom: vw(16);
+            }
+            .con {
+                @include display_al();
+                gap: vw(20);
+                .festival_ul {
+                    @include display_al();
+                    gap: vw(10);
+                    margin-bottom: vw(20);
+                    li {
+                        @include font-14px-500();
+                        position: relative;
+                        &:first-child {
+                            &::after {
+                                background-color: #000;
+                                content: '';
+                                @include p_center_top();
+                                right: vw(-6);
+                                width: vw(1);
+                                height: vw(15);
+                            }
+                        }
+                    }
+                }
+                span {
+                    @include font-14px-500();
+                }
+            }
+        }
+    }
+    /////// .festival_left
+    /////////////////////////////////////////////////////
+    .festival_right {
+        width: vw(620);
+        height: vw(546);
+        .title_box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: vw(55);
+            h2 {
+                @include font-24px-600();
+            }
+            span {
+                @include font-16px-600();
+            }
+        }
+    }
+}

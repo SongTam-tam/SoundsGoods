@@ -5,6 +5,7 @@ import WishList from '../../component/wishList/WishList';
 import { useGoodsStore } from '../../store';
 const Cart = () => {
     const cart = useGoodsStore((state) => state.cart);
+    const wish = useGoodsStore((state) => state.wish);
     return (
         <div id="cart">
             <div className="inner">

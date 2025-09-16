@@ -8,11 +8,26 @@
         width: vw(230);
         height: vw(300);
         position: relative;
+        cursor: pointer;
+        &:hover {
+            .bottom_text {
+                border-bottom: 2px solid #000;
+            }
+            .goods_pic {
+                .like_count {
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
         .goods_pic {
             width: vw(230);
             height: vw(300);
+            overflow: hidden;
+            @include display_center();
             img {
-                width: vw(230);
+                width: vw(300);
             }
 
             .like_count {
@@ -34,6 +49,9 @@
                     color: $dc;
                     font-size: vw(16);
                 }
+                span {
+                    display: none;
+                }
             }
         }
         .bottom_text {
@@ -44,7 +62,8 @@
             @include display_center();
             flex-direction: column;
             border-radius: vw(10px) vw(10px) 0 0;
-            background: rgba(0, 0, 0, 0.1);
+
+            border-bottom: 0.5px solid #000;
             strong {
                 width: vw(190);
                 display: block;

@@ -13,7 +13,10 @@ import {
     Goods,
     GoodsDetail,
     Cart,
+    Popup,
 } from './page';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/ReactToastify.css';
 import Layout from './common/Layout';
 import './styled/reset.scss';
 import Mymusic_Access from './component/mymusic/access/Mymusic_Access';
@@ -22,6 +25,7 @@ import Search from './page/search';
 const App = () => {
     return (
         <>
+            <ToastContainer />
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Layout />}>
@@ -32,6 +36,7 @@ const App = () => {
                         <Route path="mymusic/access" element={<Mymusic_Access />} />
                         <Route path="magazine" element={<Magazine />} />
                         <Route path="cart" element={<Cart />} />
+                        <Route path="popup" element={<Popup />} />
 
                         <Route path="goods">
                             <Route index element={<Goods />} />
