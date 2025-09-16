@@ -1,0 +1,11 @@
+@use '../../styled/utils' as *;
+
+#goods {
+    position: relative;
+    width: 100vw;
+    .inner {
+        width: vw(1410);
+        margin-left: vw(350);
+        padding: vw(40) 0;
+    }
+}

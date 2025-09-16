@@ -1,0 +1,24 @@
+@mixin display_center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin display_al() {
+    display: flex;
+    align-items: center;
+}
+@mixin display_ju() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin display_between() {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin display-flexwrap() {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

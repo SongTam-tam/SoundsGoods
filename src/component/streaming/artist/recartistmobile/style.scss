@@ -1,0 +1,45 @@
+@use '../../../../styled/utils/' as *;
+
+#rec-artist-mobile {
+    margin-bottom: vw(40, 393);
+    h2 {
+        @include m-font-18px-600();
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        margin-bottom: vw(20, 393);
+        img {
+            width: vw(24, 393);
+            height: vw(24, 393);
+            margin-left: vw(10, 393);
+            object-fit: cover;
+            vertical-align: top;
+        }
+    }
+    .rec-artist-list-mobile {
+        width: 100%;
+        margin-right: vw(-20, 393);
+        padding-left: vw(10, 393);
+        .mySwiper {
+            width: 100%;
+            padding-right: vw(20, 393);
+            .swiper-slide {
+                .rec-artist-item-mobile {
+                    cursor: pointer;
+                    text-align: center;
+                    img {
+                        width: vw(60, 393);
+                        height: vw(60, 393);
+                        margin-bottom: vw(10, 393);
+                    }
+                    h3 {
+                        @include m-font-14px-400();
+                    }
+                    h4 {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

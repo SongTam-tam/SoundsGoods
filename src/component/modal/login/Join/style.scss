@@ -1,0 +1,125 @@
+@use '../../../../styled/utils' as *;
+.join {
+    align-items: center;
+    text-align: center;
+    border: vw(1px) solid #000;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: vw(380px);
+    height: vw(630px);
+    border-radius: vw(20px);
+    background: white;
+    .close {
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: vw(26px);
+        cursor: pointer;
+    }
+    h1 {
+        font-size: vw(26px);
+        margin: vw(42px) 0 vw(40px) 0;
+        font-weight: 700;
+    }
+    .joinInput {
+        margin: vw(20px) 0;
+        p {
+            color: #000;
+            margin: vw(10px) 0;
+
+            input {
+                font-size: vw(12px);
+                font-weight: 600;
+                width: vw(280px);
+                height: vw(2px);
+                padding: vw(20px) vw(12px);
+                border: vw(1px) solid rgb(119, 119, 119, 0.46);
+                border-radius: vw(10px);
+
+                &::placeholder {
+                    color: rgb(119, 119, 119, 0.46);
+                }
+            }
+        }
+        .joinPhone {
+            margin: vw(20px) 0;
+            display: flex;
+            justify-content: center;
+            .joinPhoneNum {
+                width: vw(310);
+                height: vw(30);
+                display: flex;
+                padding-left: vw(10);
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+                h2 {
+                    color: #777;
+                    margin-right: vw(16.2);
+                    font-size: vw(14);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    width: vw(49);
+                }
+                strong {
+                    margin-right: vw(17.7);
+                    font-weight: 400;
+                    color: #777777;
+                }
+                h4 {
+                    color: #777777;
+                }
+                input {
+                    display: flex;
+                    width: vw(40);
+                    height: vw(22);
+                    margin: 0 9.2px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: vw(10);
+                    border-radius: vw(4);
+                    border: vw(1) solid #777777;
+                    padding: vw(4) vw(10);
+                    &::placeholder {
+                        color: #777777;
+
+                        text-align: center;
+                        font-size: vw(14);
+                    }
+                }
+            }
+        }
+    }
+
+    .agree {
+        width: vw(280px);
+        height: vw(32px);
+        border-bottom: vw(1) solid #777777;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        margin: auto;
+        padding: vw(5px) 0;
+    }
+    .agreeDitaile {
+        text-align: start;
+        margin: auto;
+        font-size: vw(12px);
+        padding: vw(5px) vw(60px);
+    }
+    .btn2 {
+        margin: vw(20px) 0;
+        .on {
+            box-sizing: border-box;
+            background-color: #697de3;
+            border-radius: vw(50px);
+            color: #fff;
+            width: vw(260px);
+            height: vw(40px);
+            font-size: vw(16px);
+            font-weight: 800;
+        }
+    }
+}

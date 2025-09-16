@@ -1,0 +1,141 @@
+@use '../../../../styled/utils' as *;
+
+.goods_list_expected {
+    @include display_center();
+    gap: vw(40);
+    li {
+        // cursor: pointer;
+        width: vw(230);
+        height: vw(300);
+        position: relative;
+        .goods_pic {
+            width: vw(230);
+            height: vw(300);
+            img {
+                width: vw(230);
+            }
+            .bottom_text {
+                @include p_center_left();
+                gap: vw(10);
+                bottom: 0;
+                width: vw(230);
+                height: vw(60);
+                @include display_center();
+                flex-direction: column;
+                border-radius: vw(10px) vw(10px) 0 0;
+                background: rgba(0, 0, 0, 0.1);
+                strong {
+                    width: vw(190);
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include font-16px-700();
+                }
+                span {
+                    width: vw(190);
+                    display: block;
+                    text-align: left;
+                    @include font-14px-700();
+                }
+            }
+            .release_text {
+                border-radius: vw(500px);
+                background: rgba(0, 0, 0, 0.6);
+                @include display_center();
+                gap: vw(8);
+                padding: vw(4) vw(10);
+                color: $fff;
+                i {
+                    width: vw(20);
+                    height: vw(20);
+                    @include display_center();
+                    color: $dc;
+                    font-size: vw(16);
+                }
+                position: absolute;
+                top: vw(10);
+                left: vw(8);
+            }
+            .like_count {
+                cursor: pointer;
+                border-radius: vw(500px);
+                background: rgba(0, 0, 0, 0.6);
+                @include display_center();
+                gap: vw(8);
+                padding: vw(4) vw(10);
+                color: $fff;
+                position: absolute;
+                z-index: 10;
+                top: vw(10);
+                right: vw(8);
+                i {
+                    width: vw(20);
+                    height: vw(20);
+                    @include display_center();
+                    color: $dc;
+                    font-size: vw(16);
+                }
+            }
+        }
+    }
+}
+@include tablet {
+    .goods_list_expected {
+        @include display_center();
+        width: vw(353, 393);
+        height: vw(203, 393);
+        gap: vw(11, 393);
+        flex-shrink: 0;
+        overflow: hidden;
+        margin-bottom: vw(40, 393);
+        .lililili {
+            width: vw(110, 393);
+            height: vw(203, 393);
+            overflow: visible;
+            position: relative;
+            .goods_pic {
+                width: vw(110, 393);
+                height: vw(143, 393);
+                img {
+                    width: vw(110, 393);
+                }
+
+                .like_count_mobile {
+                    position: absolute;
+                    left: vw(84, 393);
+                    top: vw(117, 393);
+                    width: vw(20, 393);
+                    height: vw(30, 393);
+                    cursor: pointer;
+                    z-index: 10;
+                    i {
+                        font-size: vw(18, 393);
+                    }
+                }
+            }
+            .bottom_text_mobile {
+                strong {
+                    width: vw(102, 393);
+                    display: block;
+                    display: -webkit-box;
+                    word-wrap: break-word;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    @include font-16px-700();
+                    font-size: vw(12, 393);
+                    margin-bottom: vw(8, 393);
+                }
+                span {
+                    width: vw(190);
+                    display: block;
+                    text-align: left;
+                    @include font-14px-700();
+                    font-size: vw(14, 393);
+                }
+            }
+        }
+    }
+}

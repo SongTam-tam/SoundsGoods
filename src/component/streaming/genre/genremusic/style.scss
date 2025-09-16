@@ -1,0 +1,220 @@
+@use '../../../../styled/utils/' as *;
+
+#genre-music {
+    h2 {
+        @include font-34px-600();
+        margin-bottom: vw(50);
+    }
+    .genre-music-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: vw(25);
+        .genre-music-btn {
+            button {
+                @include font-16px-500();
+                color: $grey555;
+                border: vw(1) solid $grey555;
+                border-radius: vw(50);
+                padding: 5px 20px 7px;
+                margin-right: vw(10);
+                letter-spacing: vw(-1);
+            }
+        }
+        .genre-music-sort {
+            position: relative;
+            width: vw(96);
+            min-width: 76px;
+            white-space: nowrap;
+            .sort-down {
+                cursor: pointer;
+                @include font-16px-500();
+                color: $m_color1;
+                width: 100%;
+                min-width: 76px;
+                border: vw(1) solid $m_color1;
+                border-radius: vw(50);
+                padding: 7px 20px;
+                box-sizing: border-box;
+                text-align: left;
+                background: url('/images/streaming/bg_down.png') no-repeat;
+                background-position: calc(100% - 13px) center;
+                background-size: vw(24) auto;
+                background-origin: content-box;
+                padding-right: vw(0);
+            }
+            .sorting {
+                //display: none;
+                ul {
+                    //background-color: $fff;
+                    width: 100%;
+                    min-width: 76px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border: vw(1) solid $m_color1;
+                    border-radius: 18px;
+                    padding: 1px 10px 1px 20px;
+                    box-sizing: border-box;
+                    li {
+                        cursor: pointer;
+                        @include font-16px-400();
+                        color: $m_color1;
+                        line-height: 2;
+                        &.sorting-title {
+                            @include font-16px-500();
+                            color: $m_color1;
+                            line-height: 2;
+                            background: url('/images/streaming/bg_up.png') no-repeat;
+                            background-position: right vw(3) center;
+                            background-size: vw(24) auto;
+                            background-origin: content-box;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    table {
+        width: vw(1410);
+        col {
+            &.col-album {
+                width: 6%;
+            }
+            &.col-title {
+                width: 28%;
+            }
+            &.col-artist {
+                width: 16%;
+            }
+            &.col-time {
+                width: 16%;
+            }
+            &.col-release {
+                width: auto;
+            }
+            &.col-play {
+                width: 4%;
+            }
+            &.col-like {
+                width: 4%;
+            }
+            &.col-fav {
+                width: 4%;
+            }
+        }
+        thead {
+            border-bottom: 1px solid #d9d9d9;
+            tr {
+                &:hover {
+                    background: none;
+                }
+                th {
+                    padding: 12px 0;
+                    @include font-14px-400();
+                    color: $grey777;
+                    text-align: left;
+                }
+                .th-icon {
+                    text-align: center;
+                }
+            }
+        }
+        tr {
+            border-bottom: 1px solid #d9d9d9;
+            &:hover {
+                background: rgba(220, 220, 220, 0.4);
+            }
+            td {
+                padding: vw(14) 0;
+                vertical-align: middle;
+            }
+            .col-album-td {
+                img {
+                    width: vw(60);
+                    border-radius: vw(10);
+                    display: block;
+                }
+            }
+            .col-title-td {
+                p {
+                    @include font-14px-400();
+                    color: $grey777;
+                    line-height: 1.8;
+                }
+            }
+            .col-play-td,
+            .col-like-td,
+            .col-fav-td {
+                text-align: center;
+            }
+            .icon {
+                img {
+                    width: vw(24);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    #genre-music {
+        h2 {
+            @include m-font-18px-600();
+            margin-bottom: vw(20, 393);
+        }
+        table {
+            width: 100%;
+            col {
+                &.col-album {
+                }
+                &.col-title {
+                }
+                &.col-play {
+                }
+                &.col-like {
+                }
+                &.col-fav {
+                }
+            }
+            thead {
+                tr {
+                    th {
+                        &:nth-child(3) {
+                            display: none;
+                        }
+                        &:nth-child(4) {
+                            display: none;
+                        }
+                        &:nth-child(5) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            tr {
+                .col-album-td {
+                    img {
+                        width: vw(60, 393);
+                        border-radius: vw(10, 393);
+                    }
+                }
+                .col-artist-td {
+                    display: none;
+                }
+                .col-time-td {
+                    display: none;
+                }
+                .col-release-td {
+                    display: none;
+                }
+                .icon {
+                    img {
+                        width: auto;
+                        height: vw(22, 393);
+                    }
+                }
+            }
+        }
+    }
+}

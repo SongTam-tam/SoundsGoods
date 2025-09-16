@@ -1,0 +1,159 @@
+@use '../../styled/utils' as *;
+#header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: vw(136);
+    background: #fff;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1000;
+    &.active {
+        height: vw(456px);
+    }
+    .inner {
+        height: vw(88);
+        width: 78.125vw;
+        margin: auto;
+        @include p_center_left();
+        top: vw(48);
+        .logo {
+            background-color: $m_color1;
+            width: 7.812vw;
+            height: vw(40);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .header_top_menu {
+        width: vw(1600);
+        height: vw(48);
+        @include p_center_left();
+        @include display_al();
+        justify-content: end;
+
+        ul {
+            margin-right: vw(60);
+            @include display_al();
+            gap: vw(40);
+            li {
+                @include display_center();
+                @include font_14px_400();
+                height: vw(40);
+
+                cursor: pointer;
+            }
+        }
+    }
+}
+.header_content {
+    width: 100vw;
+    height: vw(320);
+    position: absolute;
+    left: 0;
+    top: vw(136px);
+    background-color: rgba(255, 255, 255, 1);
+    h2 {
+        width: 67.7083vw;
+        @include display_al();
+        @include p_center_left();
+        gap: vw(20px);
+        top: vw(40);
+        strong {
+            @include font-14px-700();
+            font-size: vw(32px);
+        }
+        p {
+            @include font-14px-700();
+            font-size: vw(20px);
+        }
+    }
+    .swiper_next {
+        position: absolute;
+        top: vw(174);
+        right: vw(210px);
+    }
+    .swiper_prev {
+        position: absolute;
+        top: vw(174px);
+        left: vw(210px);
+    }
+    .swiper {
+        @include p_center_left();
+        top: vw(118);
+        width: 67.7083vw;
+        height: vw(162px);
+        .swiper_content {
+            position: relative;
+            img {
+                width: vw(400);
+                z-index: -2;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .bg {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: -1;
+            }
+            text-align: left;
+            box-sizing: border-box;
+            padding-left: vw(20px);
+            @include display_ju();
+            flex-direction: column;
+            width: 100%;
+            height: vw(162px);
+            color: $fff;
+        }
+        .swiper-button-next {
+            display: none;
+            &::after {
+                content: none;
+            }
+        }
+        .swiper-button-prev {
+            display: none;
+            &::after {
+                content: none;
+            }
+        }
+    }
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    // background-color: $m_color2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+//////////////////////// 굿즈
+.header_content2 {
+    width: 100vw;
+    height: vw(320px);
+    position: absolute;
+    left: 0;
+    top: vw(136px);
+    background-color: rgba(255, 255, 255, 1);
+
+    .headergoods {
+        display: flex;
+        width: 1400px;
+        justify-content: space-between;
+    }
+}

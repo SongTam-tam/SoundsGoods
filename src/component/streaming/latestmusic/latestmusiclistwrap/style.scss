@@ -1,0 +1,177 @@
+@use '../../../../styled/utils/' as *;
+#latest-music {
+    width: vw(1410);
+    margin: auto;
+    h2 {
+        @include font-34px-600();
+        margin-bottom: vw(50);
+    }
+    .latest-music-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: vw(25);
+        .latest-music-btn {
+            display: flex;
+            button {
+                width: vw(100px);
+                height: vw(36px);
+                @include display_center;
+                @include font-16px-500();
+                line-height: 1;
+                color: $grey555;
+                border: vw(1) solid $grey555;
+                border-radius: vw(50);
+                margin-right: vw(10);
+            }
+        }
+        .latest-music-sort {
+            position: relative;
+            width: vw(96);
+            min-width: 68px;
+            white-space: nowrap;
+            .sort-down {
+                cursor: pointer;
+                @include font-16px-500();
+                color: $m_color1;
+                width: vw(96);
+                border: vw(1) solid $m_color1;
+                border-radius: vw(50);
+                padding: vw(7) vw(20);
+                box-sizing: border-box;
+                text-align: left;
+                background: url('/images/streaming/bg_down.png') no-repeat right vw(10) center;
+                background-size: vw(24) auto;
+                background-origin: content-box;
+                padding-right: vw(0);
+            }
+            .sorting {
+                display: none;
+                ul {
+                    background-color: $fff;
+                    width: vw(96);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border: vw(1) solid $m_color1;
+                    border-radius: vw(18);
+                    padding: vw(1) vw(10) vw(1) vw(20);
+                    box-sizing: border-box;
+                    li {
+                        cursor: pointer;
+                        @include font-16px-400();
+                        color: $m_color1;
+                        line-height: 2;
+                        &.sorting-title {
+                            @include font-16px-500();
+                            color: $m_color1;
+                            line-height: 2;
+                            background: url('/images/streaming/bg_up.png') no-repeat right center;
+                            background-size: vw(24) auto;
+                            background-origin: content-box;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    table {
+        width: vw(1410);
+        col {
+            &.col-album {
+                width: 6%;
+            }
+            &.col-title {
+                width: 28%;
+            }
+            &.col-artist {
+                width: 16%;
+            }
+            &.col-time {
+                width: 16%;
+            }
+            &.col-release {
+                width: auto;
+            }
+            &.col-play {
+                width: 4%;
+            }
+            &.col-like {
+                width: 4%;
+            }
+            &.col-fav {
+                width: 4%;
+            }
+        }
+        thead {
+            border-bottom: 1px solid #d9d9d9;
+            tr {
+                &:hover {
+                    background: none;
+                }
+
+                th {
+                    padding: 12px 0;
+                    @include font-14px-400();
+                    color: $grey777;
+                    text-align: left;
+                }
+                .th-icon {
+                    text-align: center;
+                }
+            }
+        }
+        tr {
+            border-bottom: 1px solid #d9d9d9;
+            &:hover {
+                background: rgba(220, 220, 220, 0.4);
+            }
+            &.selected {
+                background-color: rgba(220, 220, 220, 0.4);
+            }
+            td {
+                padding: vw(14) 0;
+                vertical-align: middle;
+            }
+            .col-album-td {
+                img {
+                    width: vw(60);
+                    border-radius: vw(10);
+                    display: block;
+                }
+            }
+            .col-title-td {
+                p {
+                    @include font-14px-400();
+                    color: $grey777;
+                    line-height: 1.8;
+                }
+            }
+            .col-artist-td {
+                box-sizing: border-box;
+                p {
+                    display: flex;
+                    align-items: center;
+                    word-break: keep-all;
+                    height: vw(60px);
+                    padding-right: vw(40px);
+                    -webkit-line-clamp: 2; /* 2줄까지만 표시 */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            .col-play-td,
+            .col-like-td,
+            .col-fav-td {
+                text-align: center;
+            }
+            .icon {
+                img {
+                    width: vw(24);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

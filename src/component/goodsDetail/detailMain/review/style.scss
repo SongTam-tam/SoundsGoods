@@ -1,0 +1,129 @@
+@use '../../../../styled/utils' as *;
+
+.review_box {
+    width: vw(600);
+    height: vw(779);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    box-sizing: border-box;
+    padding: vw(20) vw(62) vw(19) vw(30);
+
+    .review_one {
+        @include display_al();
+        gap: vw(20);
+        margin-bottom: vw(25);
+        span {
+            @include font-18px-400();
+            display: block;
+            position: relative;
+            &:hover {
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: #000;
+                    @include p_center_left();
+                    bottom: vw(-5);
+                }
+            }
+        }
+    }
+    //  .review_one
+    /////////////////////////////////////////
+    .con {
+        display: flex;
+        margin-bottom: vw(60);
+        flex-direction: column;
+        .album {
+            @include font-14px-400();
+            color: #777;
+            margin-bottom: vw(12);
+        }
+        //    .album
+        /////////////////////////////////////////
+        .profile {
+            @include display_al();
+            gap: vw(14);
+            margin-bottom: vw(10);
+
+            img {
+                width: vw(40);
+            }
+            .name_star {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                strong {
+                    @include font-16px-500();
+                    display: block;
+                    width: vw(127);
+                    height: vw(26);
+                    line-height: vw(26px);
+                }
+                .star {
+                    @include display_al();
+                    li {
+                        i {
+                            @include display_center();
+
+                            color: $m_color2;
+                            font-size: vw(12);
+                        }
+                        &:nth-child(5) {
+                            i {
+                                color: #d9d9d9;
+                            }
+                        }
+                        &:nth-child(6) {
+                            @include font-8px-400();
+                            margin-left: vw(5);
+                            color: #777;
+                        }
+                    }
+                    //   li
+                    /////////////////////////////////////////
+                }
+                //   .star
+                /////////////////////////////////////////
+            }
+            //     .name_star
+            /////////////////////////////////////////
+        }
+        //    .profile
+        /////////////////////////////////////////
+        .good_review {
+            @include font-18px-400();
+            margin-bottom: vw(12);
+        }
+        //  .good_review
+        /////////////////////////////////////////
+        .review_text {
+            @include font-16px-400();
+            white-space: pre-line;
+            margin-bottom: vw(12);
+        }
+        //    .review_text
+        /////////////////////////////////////////
+        .help_text {
+            @include font-12px-400();
+            @include display_al();
+            gap: vw(9);
+            button {
+                width: vw(63);
+                height: vw(23);
+                @include font-12px-400();
+                white-space: nowrap;
+                border: 0.5px solid var(--main1, #6680ff);
+                @include display_center();
+                color: $m_color1;
+                &:last-child {
+                    width: vw(77);
+                }
+            }
+        }
+        //     .help_text
+        /////////////////////////////////////////
+    }
+}

@@ -1,0 +1,219 @@
+@use './unit' as *;
+@use './color' as *;
+
+@mixin m-font-18px-700 {
+    font-size: clamp(16px, vw(18, 393), 20px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-16px-700 {
+    font-size: clamp(14px, vw(16, 393), 18px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-14px-700 {
+    font-size: clamp(12px, vw(14, 393), 16px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-12px-700 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-10px-700 {
+    font-size: clamp(8px, vw(10, 393), 12px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-18px-400 {
+    // font-size: vw(18px);
+    font-size: clamp(16px, vw(18, 393), 20px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-16px-400 {
+    font-size: clamp(14px, vw(16, 393), 18px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-14px-400 {
+    font-size: clamp(12px, vw(14, 393), 16px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-12px-400 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-10px-400 {
+    font-size: clamp(8px, vw(10, 393), 12px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-30px-600 {
+    font-size: clamp(26px, vw(30, 393), 34px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-18px-500 {
+    font-size: clamp(16px, vw(18, 393), 20px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-16px-500 {
+    font-size: clamp(14px, vw(16, 393), 18px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-14px-500 {
+    font-size: clamp(12px, vw(14, 393), 16px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-12px-500 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-10px-500 {
+    font-size: clamp(8px, vw(10, 393), 12px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-20px-600 {
+    font-size: clamp(18px, vw(20, 393), 22px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-18px-600 {
+    font-size: clamp(16px, vw(18, 393), 20px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-16px-600 {
+    font-size: clamp(14px, vw(16, 393), 18px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-14px-600 {
+    font-size: clamp(12px, vw(14, 393), 16px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-12px-600 {
+    font-size: clamp(10px, vw(12, 393), 14px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-10px-600 {
+    font-size: clamp(8px, vw(10, 393), 12px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-24px-600 {
+    font-size: clamp(22px, vw(24, 393), 26px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-26px-800 {
+    font-size: clamp(24px, vw(26, 393), 28px);
+    font-weight: 800;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-90px-700 {
+    font-size: clamp(84px, vw(90, 393), 96px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-34px-600 {
+    font-size: clamp(30px, vw(34, 393), 38px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-30px-700 {
+    font-size: clamp(26px, vw(30, 393), 34px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-28px-600 {
+    font-size: clamp(26px, vw(28, 393), 30px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin m-font-80px-600 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(74px, vw(80, 393), 86px);
+    font-weight: 600;
+    letter-spacing: vw(1px);
+}
+
+@mixin m-font-80px-300 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(74px, vw(80, 393), 86px);
+    font-weight: 300;
+    letter-spacing: vw(1px);
+}
+
+@mixin m-font-24px-600 {
+    font-size: clamp(22px, vw(24, 393), 26px);
+
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-40px-700 {
+    font-size: clamp(36px, vw(40, 393), 44px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-11px-400 {
+    font-size: clamp(9px, vw(11, 393), 13px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin m-font-8px-400 {
+    font-size: clamp(6px, vw(8, 393), 10px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}

@@ -1,0 +1,25 @@
+@use '../../../../styled/utils' as *;
+
+.tidings_mag {
+    width: vw(610);
+    height: vw(550);
+    text-align: right;
+    @include display_al();
+    padding-right: vw(60);
+    .tidings_text {
+        display: flex;
+        flex-direction: column;
+        gap: vw(40);
+        h2 {
+            @include font-40px-700();
+        }
+        p {
+            @include font-16px-700();
+            white-space: pre-line;
+        }
+        .tidings_btn {
+            margin-left: vw(326);
+            @include button($mw: 224);
+        }
+    }
+}

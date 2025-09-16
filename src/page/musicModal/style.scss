@@ -1,0 +1,230 @@
+@use '../../styled/utils' as *;
+
+.bottom-music-player {
+    width: vw(1920px);
+    height: vw(100px);
+    background: $m_bg;
+    padding: vw(20px) vw(60px);
+    box-sizing: border-box;
+    @include display_al;
+    @include display_between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    .left-close {
+        .close {
+            width: vw(36px);
+            height: vw(36px);
+            display: block;
+            padding: 0 !important;
+            border: none; // border 제거
+            background: none; // 배경 제거
+            line-height: 0; // 텍스트 높이 영향 제거
+            box-sizing: border-box; // width/height가 실제 크기 기준
+            min-width: 0; // 브라우저 기본 최소 크기 제거
+            min-height: 0;
+            outline: none; // 포커스 아웃라인 제거
+        }
+    }
+    .controller-wrap {
+        width: vw(1500px);
+        @include display_between;
+        align-items: center;
+
+        .center-controller {
+            @include display_center;
+            gap: vw(20px);
+            button {
+                padding: 0;
+                @include display_center;
+                .shuffle,
+                .repeat {
+                    width: vw(22px);
+                    height: vw(22px);
+                }
+
+                .btn-prev,
+                .btn-next {
+                    width: vw(30px);
+                    height: vw(30px);
+                }
+
+                .btn-play {
+                    width: vw(60px);
+                    height: vw(60px);
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .center-bar {
+            @include display_between;
+            align-items: center;
+            .current-time {
+                @include font-16px-400;
+                color: $grey555;
+            }
+            .whole-play-time {
+                @include font-16px-400;
+                color: $grey555;
+            }
+            .progress-container {
+                padding: 0 vw(20px);
+                .progress-bar {
+                    position: relative;
+                    width: vw(840px);
+                    height: vw(3px);
+                    background: $fff;
+                    .progress-handle {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: vw(180px);
+                        height: vw(3px);
+                        background: $grey555;
+                        z-index: 100;
+                    }
+                }
+            }
+        }
+        .right-controls {
+            .volume-container {
+                @include display_between;
+                gap: 10px;
+                align-items: center;
+                padding-right: vw(10px);
+                img {
+                    width: vw(30px);
+                    height: vw(30px);
+                }
+                .volume-slider {
+                    .volume-bar {
+                        position: relative;
+                        width: vw(120px);
+                        height: vw(3px);
+                        background: $fff;
+                        .volume-handle {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: vw(40px);
+                            height: vw(3px);
+                            background: $grey555;
+                            z-index: 200;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right-expand {
+        .expand {
+            width: vw(30px);
+            height: vw(30px);
+            display: block;
+            padding: 0 !important;
+            border: none; // border 제거
+            background: none; // 배경 제거
+            line-height: 0; // 텍스트 높이 영향 제거
+            box-sizing: border-box; // width/height가 실제 크기 기준
+            min-width: 0; // 브라우저 기본 최소 크기 제거
+            min-height: 0;
+            outline: none; // 포커스 아웃라인 제거
+        }
+    }
+}
+
+.music_modal {
+    width: vw(330);
+    height: vw(400);
+    position: fixed;
+    right: vw(14);
+    bottom: vw(114);
+    background-color: $m_bg;
+    box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.15);
+    border-radius: vw(20px);
+    @include display_al();
+    flex-direction: column;
+    .album_pic {
+        margin-top: vw(10);
+        width: vw(310);
+        height: vw(310);
+        overflow: hidden;
+        border-radius: vw(10);
+        margin-bottom: vw(10);
+
+        .img-wrap {
+            position: relative;
+            .change {
+                position: absolute;
+                left: vw(15px);
+                top: vw(15px);
+                width: vw(24);
+                z-index: 300;
+                cursor: pointer;
+            }
+            .close {
+                position: absolute;
+                right: vw(15px);
+                top: vw(10px);
+                width: vw(36px);
+                z-index: 400;
+                cursor: pointer;
+            }
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: vw(310);
+                background: rgba(0, 0, 0, 0.4);
+            }
+            img {
+                width: vw(310);
+                display: block;
+            }
+        }
+        p {
+            @include p_center_left();
+            top: vw(247);
+            text-align: center;
+            color: $fff;
+            z-index: 500;
+        }
+        strong {
+            display: block;
+            @include font-18px-700();
+            margin-bottom: vw(10);
+            line-height: 1;
+            color: $fff;
+        }
+        span {
+            @include font-14px-500();
+            line-height: 1;
+            color: $fff;
+        }
+    }
+    .player_controll {
+        @include display_center();
+        gap: vw(20);
+        .btn {
+            @include display_center();
+            width: vw(30);
+            img {
+                width: vw(30);
+            }
+        }
+        .play {
+            width: vw(60);
+            img {
+                width: vw(60);
+            }
+        }
+    }
+}

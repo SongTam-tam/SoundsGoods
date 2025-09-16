@@ -1,0 +1,165 @@
+@use '../../../../styled/utils' as *;
+
+.goods_page_goods_list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: vw(30);
+    .goods_li {
+        // cursor: pointer;
+        width: 100%;
+        box-sizing: border-box;
+        @include display_al();
+        padding: vw(0) vw(60) vw(30) vw(60);
+        border-bottom: 1px solid var(--sub, #dcdcdc);
+        .pic {
+            width: vw(160);
+            height: vw(160);
+            img {
+                width: vw(160);
+            }
+            margin-right: vw(60);
+        }
+        .goods_text_box_li {
+            display: flex;
+            flex-direction: column;
+            width: vw(378);
+            h3 {
+                @include font-20px-600();
+                margin-bottom: vw(12);
+            }
+            .con1 {
+                @include display_al();
+                margin-bottom: vw(20);
+                gap: vw(40);
+                .artist_ganre {
+                    @include display_al();
+                    gap: vw(10);
+                    li {
+                        @include font-16px-400();
+                        position: relative;
+                        &:first-child {
+                            &::after {
+                                content: '';
+                                width: vw(1);
+                                height: vw(13);
+                                background-color: black;
+                                @include p_center_top();
+                                right: vw(-6);
+                            }
+                        }
+                    }
+                }
+                .com_release {
+                    @include display_al();
+                    gap: vw(10);
+                    li {
+                        @include font-16px-400();
+                        position: relative;
+                        &:first-child {
+                            &::after {
+                                content: '';
+                                width: vw(1);
+                                height: vw(13);
+                                background-color: black;
+                                @include p_center_top();
+                                right: vw(-6);
+                            }
+                        }
+                    }
+                }
+            }
+            .price {
+                margin-bottom: vw(10);
+                @include font-20px-500();
+            }
+            .con2 {
+                @include display_al();
+                margin-bottom: vw(10);
+                gap: vw(40);
+                .count_text {
+                    @include display_al();
+                    gap: vw(10);
+                    li {
+                        @include font-16px-400();
+                        position: relative;
+                        &:first-child {
+                            &::after {
+                                content: '';
+                                width: vw(1);
+                                height: vw(13);
+                                background-color: black;
+                                @include p_center_top();
+                                right: vw(-6);
+                            }
+                        }
+                    }
+                }
+                .review_text {
+                    @include display_al();
+                    gap: vw(10);
+                    li {
+                        @include font-16px-400();
+                        position: relative;
+                        &:first-child {
+                            &::after {
+                                content: '';
+                                width: vw(1);
+                                height: vw(13);
+                                background-color: black;
+                                @include p_center_top();
+                                right: vw(-6);
+                            }
+                        }
+                    }
+                }
+            }
+            .limit_start {
+                @include font-16px-400();
+            }
+        }
+        .quantity_count {
+            width: vw(98);
+            height: vw(39);
+            @include display_center();
+            margin-left: vw(373);
+            .down {
+                border: 1px solid rgba(0, 0, 0, 0.6);
+                width: vw(28);
+                height: vw(39);
+                @include display_center();
+                i {
+                    @include display_center();
+                    font-size: vw(8);
+                }
+            }
+            .quantity {
+                @include display_center();
+                width: vw(39);
+                height: vw(37);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+                border-top: 1px solid rgba(0, 0, 0, 0.6);
+            }
+            .up {
+                border: 1px solid rgba(0, 0, 0, 0.6);
+                width: vw(31);
+                height: vw(39);
+                @include display_center();
+                i {
+                    @include display_center();
+                    font-size: vw(8);
+                }
+            }
+        }
+        .goods_btns {
+            margin-left: vw(60);
+            .btn1 {
+                @include button();
+                margin-bottom: vw(20);
+            }
+            .btn2 {
+                @include button();
+            }
+        }
+    }
+}

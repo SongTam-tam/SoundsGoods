@@ -1,0 +1,59 @@
+@use '../../styled/utils' as *;
+
+@include tablet {
+    #header {
+        width: 100vw;
+        height: vw(48, 393);
+        border-bottom: #777;
+        .menu {
+            @include p_center_top();
+            left: vw(10, 393);
+            width: vw(36, 393);
+            height: vw(36, 393);
+
+            button {
+                width: 100%;
+                height: 100%;
+                @include display_center();
+                i {
+                    // @include font-18-700();
+                    @include display_center();
+                    font-size: vw(18, 393);
+                    color: #777;
+                }
+            }
+        }
+        .logo {
+            @include p_center_top();
+            left: vw(66, 393);
+            width: vw(80, 393);
+            height: vw(20, 393);
+            background-color: $m_color2;
+            a {
+                display: block;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .nav_list {
+            @include p_center_top();
+            right: vw(10, 393);
+            @include display_center();
+            gap: vw(4, 393);
+            width: vw(76, 393);
+            height: vw(36, 393);
+            li {
+                width: vw(36, 393);
+                height: vw(36, 393);
+                @include display_center();
+                i {
+                    @include display_center();
+                    font-size: vw(18, 393);
+                    color: #777;
+                }
+            }
+        }
+    }
+}

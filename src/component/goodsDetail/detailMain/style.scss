@@ -1,0 +1,178 @@
+@use '../../../styled/utils' as *;
+
+.detail_main_page {
+    width: vw(600);
+    .detail_pic_1 {
+        width: vw(600);
+        height: vw(600);
+        overflow: hidden;
+        @include display_center();
+        margin-bottom: vw(60);
+        img {
+            width: vw(600);
+        }
+    }
+    //detail_pic_1
+    ////////////////////////////////////
+    .detail_pic_2 {
+        width: vw(600);
+        @include display_ju();
+        margin-bottom: vw(60);
+        img {
+            width: vw(600);
+        }
+    }
+    //detail_pic_2
+    ////////////////////////////////////
+    .delivery_text {
+        width: vw(500);
+        height: vw(140);
+        overflow: hidden;
+        transition: 0.5s;
+        margin-bottom: vw(20);
+        &.show {
+            height: vw(64);
+        }
+        .text_box1 {
+            width: vw(500);
+            height: vw(64);
+            box-sizing: border-box;
+            padding: vw(20);
+            @include display_al();
+            justify-content: space-between;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.7);
+            margin-bottom: vw(10);
+            span {
+                @include font-16px-400();
+            }
+            img {
+                width: vw(24);
+                height: vw(24);
+            }
+        }
+        .delivery_list {
+            padding-left: vw(40);
+            li {
+                list-style: disc;
+                line-height: 160%;
+                @include font-14px-400();
+            }
+        }
+    }
+    // delivery_text
+    ////////////////////////////////////
+    .pay_guide_text {
+        width: vw(500);
+        height: vw(162);
+        overflow: hidden;
+        transition: 0.5s;
+        margin-bottom: vw(20);
+        &.show {
+            height: vw(64);
+        }
+        .text_box1 {
+            width: vw(500);
+            height: vw(64);
+            box-sizing: border-box;
+            padding: vw(20);
+            @include display_al();
+            justify-content: space-between;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.7);
+            margin-bottom: vw(10);
+            span {
+                @include font-16px-400();
+            }
+            img {
+                width: vw(24);
+                height: vw(24);
+            }
+        }
+        .pay_guide_list {
+            padding-left: vw(40);
+            li {
+                list-style: disc;
+                line-height: 160%;
+                @include font-14px-400();
+            }
+        }
+    }
+    // pay_guide_text
+    ////////////////////////////////////
+    .change_text {
+        width: vw(500);
+        height: vw(250);
+        overflow: hidden;
+        transition: 0.5s;
+        margin-bottom: vw(20);
+        &.show {
+            height: vw(64);
+        }
+        .text_box1 {
+            width: vw(500);
+            height: vw(64);
+            box-sizing: border-box;
+            padding: vw(20);
+            @include display_al();
+            justify-content: space-between;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.7);
+            margin-bottom: vw(10);
+            span {
+                @include font-16px-400();
+            }
+            img {
+                width: vw(24);
+                height: vw(24);
+            }
+        }
+        .change_list {
+            padding-left: vw(40);
+            li {
+                list-style: disc;
+                @include font-14px-400();
+                line-height: 160%;
+                ul {
+                    padding-left: vw(20);
+                }
+            }
+        }
+    }
+    // change_text
+    ////////////////////////////////////
+    .goods_status_text {
+        width: vw(500);
+        height: vw(114);
+        overflow: hidden;
+        transition: 0.5s;
+        margin-bottom: vw(60);
+        &.show {
+            height: vw(64);
+        }
+        .text_box1 {
+            width: vw(500);
+            height: vw(64);
+            box-sizing: border-box;
+            padding: vw(20);
+            @include display_al();
+            justify-content: space-between;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.7);
+            margin-bottom: vw(10);
+            span {
+                @include font-16px-400();
+            }
+            img {
+                width: vw(24);
+                height: vw(24);
+            }
+        }
+        .goods_status_list {
+            padding-left: vw(40);
+            li {
+                list-style: disc;
+                line-height: 160%;
+                @include font-14px-400();
+            }
+        }
+    }
+    // goods_status_text
+    ////////////////////////////////////
+}

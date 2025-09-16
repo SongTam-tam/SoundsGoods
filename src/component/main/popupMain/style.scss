@@ -1,0 +1,43 @@
+@use '../../../styled/utils' as *;
+
+.popup_main {
+    padding: vw(120) 0;
+    h2 {
+        margin-bottom: vw(40);
+        text-align: center;
+        @include font-30px-600();
+    }
+    .popup_main_sub {
+        display: flex;
+        gap: vw(60);
+
+        .popup_left {
+            width: vw(940);
+            height: vw(500);
+            img {
+                width: 100%;
+            }
+        }
+        .popup_right {
+            @include display_ju();
+            width: vw(980);
+        }
+    }
+}
+@include tablet {
+    .popup_main {
+        padding: vw(0) 0;
+        h2 {
+            margin-bottom: vw(20, 393);
+            text-align: center;
+            @include font-30px-600();
+            font-size: vw(16, 393);
+        }
+        .popup_main_sub {
+            display: flex;
+            .popup_right {
+                width: 100%;
+            }
+        }
+    }
+}

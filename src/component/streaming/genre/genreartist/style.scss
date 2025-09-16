@@ -1,0 +1,26 @@
+@use '../../../../styled/utils/' as *;
+
+#genre-artist {
+    margin-bottom: vw(75);
+    h2 {
+        @include font-34px-600();
+        margin-bottom: vw(50);
+    }
+    .genre-artist-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .genre-artist-item {
+            cursor: pointer;
+            text-align: center;
+            img {
+                width: vw(260);
+                height: vw(260);
+                margin-bottom: vw(20);
+            }
+            h3 {
+                @include font-24px-600();
+            }
+        }
+    }
+}

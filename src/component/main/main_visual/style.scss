@@ -1,0 +1,16 @@
+@use '../../../styled/utils' as *;
+
+#main-visual {
+    // @include bg();
+    width: 100vw;
+    height: vw(608px);
+    background-color: $m_color2;
+}
+@include tablet {
+    #main-visual {
+        // @include bg();
+        width: 100vw;
+        height: vw(383, 393);
+        background-color: $m_color2;
+    }
+}

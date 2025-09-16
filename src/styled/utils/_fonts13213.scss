@@ -1,0 +1,207 @@
+@use './unit' as *;
+@use './color' as *;
+@mixin font-18px-700 {
+    // font-size: vw(18px);
+    font-size: vw(18px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-16px-700 {
+    font-size: vw(16px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-14px-700 {
+    font-size: vw(14px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-12px-700 {
+    font-size: vw(12px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-10px-700 {
+    font-size: vw(10px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-18px-400 {
+    // font-size: vw(18px);
+    font-size: vw(18px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-16px-400 {
+    font-size: vw(16px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-14px-400 {
+    font-size: vw(14px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-12px-400 {
+    font-size: vw(12px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-10px-400 {
+    font-size: vw(10px);
+    font-weight: 400;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-30px-600 {
+    font-size: vw(30px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-18px-500 {
+    font-size: vw(18px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-16px-500 {
+    font-size: vw(16px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-14px-500 {
+    font-size: vw(14px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-12px-500 {
+    font-size: vw(12px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-10px-500 {
+    font-size: vw(10px);
+    font-weight: 500;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-20px-600 {
+    font-size: vw(20px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-18px-600 {
+    font-size: vw(18px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-16px-600 {
+    font-size: vw(16px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-14px-600 {
+    font-size: vw(14px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-12px-600 {
+    font-size: vw(12px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-10px-600 {
+    font-size: vw(10px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-24px-600 {
+    font-size: vw(24px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-26px-800 {
+    font-size: vw(26px);
+    font-weight: 800;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-90px-700 {
+    font-size: vw(90px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-34px-600 {
+    font-size: vw(34px);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-30px-700 {
+    font-size: vw(30);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-28px-600 {
+    font-size: vw(28);
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+
+@mixin font-80px-600 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: vw(80px);
+    font-weight: 600;
+    letter-spacing: vw(1px);
+}
+
+@mixin font-80px-300 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: vw(80px);
+    font-weight: 300;
+    letter-spacing: vw(1px);
+}
+
+@mixin font-24px-600 {
+    font-size: vw(24px);
+
+    font-weight: 600;
+    letter-spacing: vw(0);
+    color: $fc;
+}
+@mixin font-40px-700 {
+    font-size: vw(40px);
+    font-weight: 700;
+    letter-spacing: vw(0);
+    color: $fc;
+}

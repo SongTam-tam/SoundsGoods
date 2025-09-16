@@ -1,0 +1,16 @@
+@use '../../../styled/utils' as *;
+
+.goods_product_filter {
+    margin-top: vw(120);
+    .goods_title_p {
+        @include font-28px-600();
+        text-align: center;
+        margin-bottom: vw(40);
+    }
+    .goodsList_title_p {
+        @include font-28px-600();
+        text-align: left;
+        margin-bottom: vw(60);
+        margin-left: vw(60);
+    }
+}

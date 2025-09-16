@@ -1,0 +1,54 @@
+@use '../../../../styled/utils/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap');
+
+#genre-img {
+    position: relative;
+    margin-bottom: vw(75);
+    p {
+        img {
+            width: vw(1690);
+        }
+    }
+    h2 {
+        position: absolute;
+        left: vw(140);
+        top: 50%;
+        transform: translateY(-50%);
+        @include font-90px-700();
+        color: $fff;
+        font-family: 'Bricolage Grotesque', 'pretendard';
+    }
+    &.default-text {
+        width: vw(554);
+        &.default-text h2 {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: vw(55);
+            left: vw(50px);
+            top: 50%;
+            transform: translateY(-0%);
+        }
+    }
+}
+
+@include tablet {
+    #genre-img {
+        margin-bottom: vw(32, 393);
+        p {
+            img {
+                width: 100%;
+                height: vw(160, 393);
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        h2 {
+            @include m-font-40px-700();
+            color: $fff;
+            left: vw(25, 393);
+            top: auto;
+            transform: translateY(0%);
+            bottom: vw(15, 393);
+        }
+    }
+}

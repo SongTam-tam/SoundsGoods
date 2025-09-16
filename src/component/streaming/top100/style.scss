@@ -1,0 +1,10 @@
+@use '../../../styled/utils' as *;
+
+#top100-wrap {
+    width: vw(1690px);
+    .inner {
+        width: vw(1410px);
+        padding-top: vw(60px);
+        margin: auto;
+    }
+}

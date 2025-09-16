@@ -1,0 +1,92 @@
+@use '../../../styled/utils' as *;
+.login {
+    align-items: center;
+    text-align: center;
+    border: vw(1px) solid #000;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: vw(380px);
+    height: vw(440px);
+    border-radius: vw(20px);
+    z-index: 20000;
+    background: white;
+    .close {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: vw(24);
+        height: vw(24);
+        padding: vw(26px);
+        cursor: pointer;
+    }
+    h1 {
+        font-size: vw(26px);
+        margin: vw(42px) 0 vw(40px) 0;
+    }
+
+    .loginInput {
+        margin: vw(20px) 0;
+        p {
+            margin: vw(10px) 0;
+            color: #000000;
+            input {
+                font-size: vw(12px);
+                font-weight: 600;
+                color: #000000;
+                width: vw(280px);
+                height: vw(2px);
+                padding: vw(20px) vw(12px);
+                border: vw(1px) solid rgb(119, 119, 119, 0.46);
+                border-radius: vw(10px);
+            }
+            input::placeholder {
+                color: rgb(119, 119, 119, 0.46);
+            }
+        }
+        // .save-find {
+        //     font-size: vw(12px);
+        //     margin: auto;
+        // }
+    }
+
+    .btn1 {
+        margin: vw(20px) 0;
+        .on {
+            box-sizing: border-box;
+            background-color: #697de3;
+            border-radius: vw(50px);
+            color: #fff;
+
+            width: 260px;
+            height: 40px;
+            font-size: 16px;
+            font-weight: 800;
+        }
+    }
+    ul {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        color: #777777;
+        li {
+            margin: vw(20px) 0 vw(20px) 0;
+            cursor: pointer;
+            font-size: vw(12px);
+            padding: 0 vw(10px);
+            box-sizing: border-box;
+            &:nth-child(1) {
+                border-right: vw(1) solid #777777;
+            }
+            &:nth-child(2) {
+                border-right: vw(1) solid #777777;
+            }
+        }
+    }
+    .snslogin {
+        text-align: center;
+        justify-self: center;
+        display: flex;
+        gap: 0 vw(20px);
+    }
+}

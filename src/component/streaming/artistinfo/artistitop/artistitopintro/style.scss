@@ -1,0 +1,22 @@
+@use '../../../../../styled/utils/' as *;
+#artist-i-top-intro {
+    h2 {
+        @include font-34px-600();
+        margin-bottom: vw(30);
+    }
+    .artist-text {
+        height: vw(400);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .artist-intro {
+            color: $grey777;
+            line-height: 1.6;
+        }
+        .artist-desc {
+            word-break: keep-all;
+            color: $grey333;
+            line-height: 1.6;
+        }
+    }
+}

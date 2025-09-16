@@ -1,0 +1,201 @@
+@use '../../styled/utils' as *;
+#footer {
+    width: 100vw;
+    background-color: #fff;
+    margin-top: auto;
+    .inner {
+        padding: vw(40) 0;
+        width: 78.125vw;
+        height: vw(394px);
+        margin: auto;
+        text-align: center;
+        h2 {
+            @include font-14px-700();
+            font-size: vw(32px);
+            margin-top: vw(40px);
+        }
+        .sns_icons {
+            @include display_ju();
+            gap: vw(30px);
+            margin-top: vw(20px);
+            margin-bottom: vw(60px);
+            li {
+                width: 1.875vw;
+                height: vw(36px);
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .promotion {
+            @include display_ju();
+            gap: vw(24px);
+            margin-bottom: vw(10px);
+            li {
+                @include font-14px-400();
+                position: relative;
+                &::after {
+                    content: '';
+                    background-color: $fc;
+                    width: 1px;
+                    @include p_center_top();
+                    left: vw(-12px);
+                    height: vw(15px);
+                    position: absolute;
+                }
+                &:first-child {
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+        }
+        .footer_con {
+            @include display_ju();
+            gap: vw(24px);
+            margin-bottom: vw(10px);
+            li {
+                @include font-14px-400();
+                position: relative;
+                &::after {
+                    content: '';
+                    background-color: $fc;
+                    width: 1px;
+                    @include p_center_top();
+                    left: vw(-12px);
+                    height: vw(15px);
+                    position: absolute;
+                }
+                &:first-child {
+                    &::after {
+                        content: none;
+                    }
+                }
+            }
+        }
+        .con3 {
+            margin-bottom: vw(60px);
+        }
+        .con4 {
+            @include font-14px-400();
+            text-align: center;
+        }
+    }
+}
+@include tablet {
+    #footer {
+        width: 100vw;
+        background-color: #fff;
+        .inner {
+            padding: vw(40, 393) 0;
+            width: vw(373, 393) !important;
+            height: vw(292, 393);
+            margin: auto;
+            box-sizing: border-box;
+            text-align: center;
+            h2 {
+                @include font-14px-700();
+                font-size: vw(22px, 393);
+            }
+            .sns_icons {
+                @include display_ju();
+                gap: vw(28, 393);
+                margin-top: vw(14px, 393);
+                margin-bottom: vw(20, 393);
+                li {
+                    width: vw(24, 393);
+                    height: vw(24, 393);
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .promotion {
+                @include display_ju();
+                gap: vw(13px, 393);
+                margin-bottom: vw(10, 393);
+                li {
+                    position: relative;
+                    &::after {
+                        content: '';
+                        background-color: $fc;
+                        width: 1px;
+                        @include p_center_top();
+                        left: vw(6, 393);
+                        height: vw(10px, 393);
+                        position: absolute;
+                    }
+                    &:first-child {
+                        &::after {
+                            content: none;
+                        }
+                    }
+                }
+            }
+            .con1 {
+                li {
+                    font-size: vw(11, 393);
+                }
+            }
+            .con2 {
+                @include display_ju();
+                flex-wrap: wrap;
+                width: vw(328, 393);
+                gap: vw(0, 393);
+                margin-top: vw(10, 393);
+                li {
+                    font-size: vw(10, 393);
+                    position: relative;
+                    margin-bottom: 0;
+                    text-align: center;
+                    &::after {
+                        content: '';
+                        background-color: $fc;
+                        width: 0.5px;
+                        @include p_center_top();
+                        left: vw(-12px);
+                        height: vw(10px, 393);
+                        position: absolute;
+                    }
+                    &:first-child {
+                        &::after {
+                            content: none;
+                        }
+                    }
+                    &:nth-child(3) {
+                        &::after {
+                            content: none;
+                        }
+                    }
+                    &:nth-child(2) {
+                        &::after {
+                            content: none;
+                        }
+                    }
+                    &:last-child {
+                        &::after {
+                            content: none;
+                        }
+                    }
+                }
+            }
+            .footer_con {
+                @include display_ju();
+                width: 100%;
+            }
+            .con3 {
+                margin-top: vw(10, 393);
+                margin-bottom: vw(20, 393);
+                li {
+                    font-size: vw(12, 393);
+                }
+            }
+            .con4 {
+                @include m-font-8px-400();
+                font-size: vw(8, 393);
+                // font-size: vw(8, 393);
+                text-align: center;
+            }
+        }
+    }
+}

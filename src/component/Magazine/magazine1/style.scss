@@ -1,0 +1,154 @@
+@use '../../../styled/utils' as *;
+.inner {
+    width: vw(1500px) !important;
+    height: auto;
+    margin: vw(120px) auto;
+
+    .content1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: vw(50px);
+
+        h2 {
+            margin-top: vw(80px);
+            font-size: vw(80px);
+            font-weight: 700;
+            border-bottom: vw(3px) solid #000;
+
+            span {
+                font-size: vw(30px);
+                font-weight: 500;
+                color: #777777;
+            }
+        }
+
+        .magazine21,
+        .magazine22,
+        .magazine23,
+        .magazine24 {
+            li {
+                line-height: vw(30px);
+                padding: vw(10px) 0;
+                border-bottom: (1px) solid #000;
+
+                .mg-title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h3 {
+                        font-size: vw(22px);
+                        font-weight: 600;
+                        padding: vw(10px) 0;
+                        line-height: 1.6;
+                    }
+                    span {
+                        font-size: vw(12px);
+                        color: #777777;
+                    }
+                }
+            }
+        }
+        .day21,
+        .day22,
+        .day24 {
+            width: vw(340px);
+            height: vw(1300px);
+            padding: vw(80px) 0;
+            border-bottom: vw(1px) solid #000;
+        }
+
+        .day23 {
+            width: vw(400px);
+            height: vw(1300px);
+            padding: vw(80px) 0;
+            border-bottom: vw(1px) solid #000;
+            h3 {
+                font-size: vw(22px);
+                font-weight: 600;
+                padding: vw(10px) 0;
+                line-height: 1.6;
+                text-align: center;
+            }
+            span {
+                font-size: vw(12px);
+                color: #777777;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 393px) {
+    .inner {
+        width: 100% !important;
+        margin: 0 auto;
+        padding: vw(40, 393) vw(20, 393);
+
+        .content1 {
+            gap: 24px;
+
+            .day21,
+            .day22,
+            .day23 {
+                display: none !important;
+            }
+
+            .day23,
+            .day24 {
+                width: 100% !important;
+                height: auto !important;
+                padding: vw(40px) 0;
+                border-bottom: 1px solid #ddd;
+
+                h2 {
+                    font-size: 30px;
+                    margin-bottom: 12px;
+                    text-align: center;
+
+                    span {
+                        font-size: 14px;
+                        color: #777;
+                    }
+                }
+
+                li {
+                    border-bottom: none;
+                    padding: 12px 0;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+
+                        margin-bottom: 8px;
+                    }
+                    .mg-title {
+                        display: flex !important;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 6px;
+                        h3 {
+                            font-size: 16px;
+                            font-weight: 600;
+                            display: block;
+                            margin: 0;
+                        }
+                        span {
+                            display: block;
+                            font-size: 12px;
+                            font-weight: 500;
+                            color: #777;
+                            margin-bottom: 6px;
+                        }
+                    }
+
+                    p {
+                        font-size: 13px;
+                        line-height: 1.4;
+                        color: #555;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@use '../../../styled/utils' as *;
+
+#artist-info-wrap {
+    width: 100%;
+    .artist-info-img {
+        width: vw(1690);
+        margin: 0 auto;
+    }
+    .artist-info-con {
+        max-width: vw(1410);
+        width: 100%;
+        margin: 0 auto;
+    }
+    @include tablet {
+        width: 100% !important;
+        .artist-info-img {
+            max-width: 100%;
+            width: 100%;
+            padding-top: vw(20, 393);
+        }
+        .artist-info-con {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0;
+            padding: 0 vw(18, 393);
+            box-sizing: border-box;
+        }
+    }
+}

@@ -1,0 +1,117 @@
+@use '../../../../styled/utils' as *;
+
+@include tablet {
+    .main_album_list {
+        .swiper {
+            width: 100%;
+            height: 100%;
+            overflow: visible !important;
+            .swiper-wrapper {
+                gap: vw(20, 393);
+                .swiper-slide {
+                    font-size: 18px;
+                    width: vw(100, 393) !important;
+                    height: vw(141, 393);
+                    display: flex;
+                    justify-content: start;
+                    overflow: visible;
+                }
+            }
+        }
+        width: 100vw;
+        // @include display_center();
+        gap: vw(20, 393);
+        @include display_al();
+        justify-content: start;
+        .video_item {
+            width: vw(100, 393);
+            height: vw(141, 393);
+            background: #fff;
+            box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+            overflow: visible;
+            position: relative;
+            cursor: pointer;
+            z-index: 1;
+            &.active {
+                .album_pic {
+                    img {
+                        border-radius: 100%;
+                        animation: spin 3s linear infinite;
+                    }
+                    &::after {
+                        content: '';
+                        background-image: url(/images/icons/play_album.png);
+                        width: vw(23, 393);
+                        height: vw(23, 393);
+                        @include bg();
+                        @include p_center_left();
+                    }
+                }
+            }
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            .album_pic {
+                width: vw(100, 393);
+                height: vw(100, 393);
+                @include display_center();
+                transition: 1s;
+                img {
+                    width: vw(100, 393);
+                    transition: 0.3s;
+                }
+            }
+            p {
+                box-sizing: border-box;
+                position: absolute;
+                @include display_al();
+                flex-direction: column;
+                width: vw(100, 393);
+                height: vw(40, 393);
+                background-color: $fff;
+                left: 0;
+                bottom: 0;
+                padding-top: vw(15, 393);
+                strong {
+                    text-align: center;
+                    @include font-16px-700();
+                    font-size: vw(12, 393);
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 90%;
+                }
+                span {
+                    @include font-14px-700();
+                }
+            }
+            .artist_pic {
+                @include p_center_left();
+                top: vw(70, 393);
+                width: vw(40, 393);
+                height: vw(40, 393);
+                background: linear-gradient(180deg, #d395f6 0%, #6680ff 100%);
+                overflow: hidden;
+                border-radius: 100%;
+                z-index: 10;
+                @include display_center();
+                .pic2 {
+                    width: vw(36, 393);
+                    border-radius: 100%;
+                    height: vw(36, 393);
+                    overflow: hidden;
+                    @include display_center();
+                }
+                img {
+                    width: vw(100, 393);
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+}

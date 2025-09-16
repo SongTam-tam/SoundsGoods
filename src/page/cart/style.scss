@@ -1,0 +1,18 @@
+@use '../../styled/utils' as *;
+
+#cart {
+    .inner {
+        width: vw(1410);
+        padding-top: vw(60);
+        padding-bottom: vw(286);
+        .cart_co {
+            @include font-30px-600();
+            text-align: center;
+            margin-bottom: vw;
+        }
+        .wish_goods_title {
+            margin-top: vw(110);
+            margin-bottom: vw(40);
+        }
+    }
+}

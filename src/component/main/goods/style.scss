@@ -1,0 +1,128 @@
+@use '../../../styled/utils' as *;
+
+#goods {
+    width: vw(1920);
+    // height: vw(1241);
+    box-sizing: border-box;
+    position: relative;
+    .inner {
+        box-sizing: border-box;
+        padding: vw(120) 0;
+        width: vw(1500);
+        margin: auto;
+        .goods_title {
+            @include font-28px-600();
+            text-align: center;
+            margin-bottom: vw(40);
+        }
+        .limit_goods_title {
+            @include display_center();
+            gap: vw(45.47);
+            margin-bottom: vw(40);
+            h2 {
+                @include font-28px-600;
+                position: relative;
+                &::after {
+                    content: '';
+                    @include p_center_left();
+                    bottom: 0;
+                    width: vw(300);
+                    height: vw(12);
+                    background-image: url(/images/icons/rota.png);
+                }
+            }
+            p {
+                @include font-16px-700;
+            }
+        }
+        .expected_goods_title {
+            margin-top: vw(60);
+            @include display_center();
+            gap: vw(45.47);
+            margin-bottom: vw(40);
+            h2 {
+                @include font-28px-600;
+                position: relative;
+                &::after {
+                    content: '';
+                    @include p_center_left();
+                    bottom: 0;
+                    width: vw(139);
+                    height: vw(12);
+                    background-image: url(/images/icons/rota2.png);
+                }
+            }
+            p {
+                @include font-16px-700;
+            }
+        }
+    }
+}
+@include tablet {
+    #goods {
+        width: vw(393, 393);
+        box-sizing: border-box;
+        position: relative;
+        margin-bottom: vw(40, 393);
+        .inner {
+            box-sizing: border-box;
+            padding: 0;
+            width: vw(373, 393);
+            margin: auto;
+            @include display_al();
+            flex-direction: column;
+            .goods_title {
+                @include font-28px-600();
+                text-align: center;
+                margin-bottom: vw(20, 393);
+                font-size: vw(16, 393);
+            }
+            .limit_goods_title {
+                @include display_center();
+                flex-direction: column;
+                gap: vw(8, 393);
+                margin-bottom: vw(20, 393);
+                h2 {
+                    @include font-28px-600;
+                    position: relative;
+                    font-size: vw(16, 393);
+                    &::after {
+                        content: '';
+                        @include p_center_left();
+                        bottom: 0;
+                        width: vw(181, 393);
+                        height: vw(12, 393);
+                        background-image: url(/images/icons/rota.png);
+                    }
+                }
+                p {
+                    @include font-16px-700;
+                    font-size: vw(12, 393);
+                }
+            }
+            .expected_goods_title {
+                @include display_center();
+                flex-direction: column;
+                gap: vw(8, 393);
+                margin-bottom: vw(20, 393);
+                h2 {
+                    @include font-28px-600;
+                    position: relative;
+                    font-size: vw(16, 393);
+                    &::after {
+                        content: '';
+                        @include p_center_left();
+                        bottom: 0;
+                        width: vw(86, 393);
+                        height: vw(12, 393);
+                        background-image: url(/images/icons/rota2.png);
+                    }
+                }
+                p {
+                    @include font-16px-700;
+                    font-size: vw(12, 393);
+                }
+            }
+        }
+    }
+}

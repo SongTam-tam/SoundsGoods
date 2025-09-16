@@ -1,0 +1,42 @@
+@use '../../../../styled/utils' as *;
+
+.ive_goods_list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: vw(45);
+    row-gap: vw(20);
+    li {
+        width: vw(400);
+        height: vw(140);
+        @include display_al();
+        cursor: pointer;
+        gap: vw(20);
+        .ive_pic {
+            width: vw(140);
+            height: vw(140);
+            @include display_center();
+            img {
+                width: vw(140);
+            }
+        }
+        strong {
+            margin-bottom: vw(8);
+            width: vw(230);
+            display: block;
+            box-sizing: border-box;
+
+            @include font-18px-600();
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        span {
+            display: block;
+            box-sizing: border-box;
+
+            @include font-14px-500();
+            width: vw(230);
+        }
+    }
+}

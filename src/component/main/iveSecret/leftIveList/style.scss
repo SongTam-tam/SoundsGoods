@@ -1,0 +1,34 @@
+@use '../../../../styled/utils' as *;
+
+.ive_list {
+    display: flex;
+    width: vw(800);
+    height: vw(332);
+    li {
+        width: vw(400);
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+        &.show {
+            display: none;
+        }
+    }
+}
+@include tablet {
+    .ive_list {
+        @include display_center();
+        width: vw(393, 393);
+        height: vw(200, 393);
+        li {
+            width: 50%;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+            &.show {
+                display: none;
+            }
+        }
+    }
+}

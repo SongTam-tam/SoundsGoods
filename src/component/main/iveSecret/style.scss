@@ -1,0 +1,98 @@
+@use '../../../styled/utils' as *;
+
+.ive_secret {
+    @include display_center();
+    padding: vw(120) 0;
+    .music_video_right {
+        width: vw(1120);
+        height: vw(800);
+        .muvi {
+            width: vw(1120);
+            height: vw(800);
+        }
+    }
+    .left_ive_secret {
+        display: flex;
+        flex-direction: column;
+        width: vw(800);
+        height: vw(800);
+        .left_ive_text {
+            box-sizing: border-box;
+            width: vw(800);
+            height: vw(468);
+            padding: vw(45) vw(60);
+            h2 {
+                white-space: pre-line;
+                text-transform: uppercase;
+                @include font-30px-700();
+                margin-bottom: vw(40);
+            }
+            .textBox {
+                @include font-16px-700();
+                display: flex;
+                flex-direction: column;
+                gap: vw(2);
+                margin-bottom: vw(40);
+                li {
+                    @include display_al();
+                    gap: vw(12);
+                    p {
+                        &:nth-child(1) {
+                            width: vw(42);
+                            height: vw(26);
+                        }
+                        height: vw(26);
+                    }
+                }
+            }
+            .btn_more {
+                @include button();
+            }
+        }
+    }
+}
+@include tablet {
+    .ive_secret {
+        @include display_center();
+        flex-direction: column;
+        padding: vw(120) 0;
+        .ive_title_mobile {
+            height: vw(32, 393);
+            font-size: vw(20, 393);
+            font-weight: 700;
+        }
+        .music_video_right {
+            width: vw(393, 393);
+            height: vw(297, 393);
+            .muvi {
+                width: vw(393, 393);
+                height: vw(280, 393);
+            }
+        }
+        .left_ive_secret {
+            @include display_center();
+            width: vw(800);
+            height: vw(800);
+            margin-bottom: vw(36, 393);
+        }
+        .ive_secret_mobile {
+            @include display_al();
+            flex-direction: column;
+            gap: vw(8, 393);
+            strong {
+                font-size: vw(16, 393);
+                font-weight: 600;
+            }
+            span {
+                font-size: vw(12, 393);
+                font-weight: 500;
+                display: block;
+                margin-bottom: vw(20, 393);
+            }
+            .btn_ive {
+                @include button_m(105);
+                margin-bottom: vw(40, 393);
+            }
+        }
+    }
+}

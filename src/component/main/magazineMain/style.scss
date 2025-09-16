@@ -1,0 +1,40 @@
+@use '../../../styled/utils' as *;
+
+.magazin_main {
+    width: 100vw;
+    .inner {
+        padding: vw(120) 0;
+        width: vw(1500);
+        height: vw(670);
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+@include tablet {
+    .magazin_main {
+        margin-top: vw(40, 393);
+        width: 100vw;
+        .inner {
+            h2 {
+                font-size: vw(16, 393);
+                font-weight: 600;
+                margin-bottom: vw(30, 393);
+            }
+            padding: vw(0) 0;
+            width: vw(373, 393);
+            height: vw(375, 393);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            .mage_mobile {
+                margin-top: vw(50, 393);
+                @include button_m(152);
+            }
+        }
+        margin-bottom: vw(120, 393);
+    }
+}

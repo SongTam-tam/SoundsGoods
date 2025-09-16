@@ -1,0 +1,11 @@
+@forward '../../../styled/variables';
+#nav {
+    width: 100%;
+    height: vw(48);
+    border: 1px solid #ff0055;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}

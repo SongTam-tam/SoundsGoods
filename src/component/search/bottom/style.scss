@@ -1,0 +1,101 @@
+@use '../../../styled/utils' as *;
+
+//앨범리스트
+.allbumList {
+    .allbumTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: vw(1410);
+
+        h2 {
+            color: #000;
+            font-size: vw(30);
+            font-weight: 600;
+            display: flex;
+            width: vw(184);
+            justify-content: space-between;
+            align-items: center;
+        }
+        h3 {
+            color: #000;
+            font-size: vw(30);
+            font-weight: 600;
+            border-bottom: vw(1) solid #000;
+            cursor: pointer;
+        }
+    }
+    //앨범
+    .allbum {
+        width: vw(1410);
+        margin-top: vw(51);
+        display: flex;
+        height: vw(303);
+        justify-content: space-between;
+        align-items: flex-start;
+        .allbumItem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: vw(20);
+            img {
+                width: vw(180);
+                height: vw(180);
+            }
+            .allbumInfo {
+                display: flex;
+                padding: 0 vw(10);
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: vw(6);
+
+                .allbumtitle {
+                    align-self: stretch;
+                    text-align: left;
+                    h2 {
+                        overflow: hidden;
+                        color: rgba(0, 0, 0, 0.8);
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        font-size: vw(18);
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 130%;
+                    }
+                    h3 {
+                    }
+                }
+                .allbumDate {
+                    margin: vw(6) 0;
+                    h3 {
+                        color: rgba(0, 0, 0, 0.6);
+
+                        font-size: vw(14);
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 160%;
+                    }
+                }
+            }
+            .allbumListen {
+                margin-top: vw(9);
+                display: flex;
+                width: vw(60);
+                padding: vw(3) 0;
+                justify-content: left;
+                align-items: center;
+                gap: vw(10);
+                border-bottom: vw(1) solid #000;
+                p {
+                    color: rgba(0, 0, 0, 0.8);
+                    font-size: vw(14);
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 130%;
+                }
+            }
+        }
+    }
+}

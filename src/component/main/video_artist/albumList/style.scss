@@ -1,0 +1,143 @@
+@use '../../../../styled/utils' as *;
+
+.main_album_list {
+    width: 100%;
+    @include display_center();
+    gap: vw(60px);
+    li {
+        width: 15.625vw;
+        height: vw(402px);
+        background: #fff;
+        box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        &.active {
+            .album_pic {
+                img {
+                    border-radius: 100%;
+                    animation: spin 3s linear infinite;
+                }
+            }
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .album_pic {
+            width: 15.625vw;
+            height: vw(300px);
+            transition: 1s;
+            img {
+                width: 15.625vw;
+                transition: 0.3s;
+            }
+        }
+        p {
+            box-sizing: border-box;
+            position: absolute;
+            @include display_al();
+            flex-direction: column;
+            width: 15.625vw;
+            height: vw(120px);
+            background-color: $fff;
+            left: 0;
+            bottom: 0;
+            padding-top: vw(56px);
+            strong {
+                @include font-16px-700();
+            }
+            span {
+                @include font-14px-700();
+            }
+        }
+        .artist_pic {
+            @include p_center_left();
+            top: vw(222px);
+            width: 5.2083vw;
+            height: vw(100px);
+            background: linear-gradient(180deg, #d395f6 0%, #6680ff 100%);
+            overflow: hidden;
+            border-radius: 100%;
+            z-index: 10;
+            @include display_center();
+            .pic2 {
+                width: 4.6875vw;
+                border-radius: 100%;
+                height: vw(90px);
+                overflow: hidden;
+                @include display_center();
+            }
+            img {
+                width: 5.2083vw;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+// @use '../../../../styled/utils' as *;
+
+// .main_album_list {
+//     width: 100%;
+//     @include display_center();
+//     gap: 3.125vw;
+//     li {
+//         width: 15.625vw;
+//         height: 20.9375vw;
+//         background: #fff;
+//         box-shadow: 0.2083vw 0.2083vw 0.2083vw 0 rgba(0, 0, 0, 0.25);
+//         overflow: hidden;
+//         position: relative;
+//         .album_pic {
+//             width: 15.625vw;
+//             height: 15.625vw;
+//             img {
+//                 width: 15.625vw;
+//             }
+//         }
+//         p {
+//             box-sizing: border-box;
+//             position: absolute;
+//             @include display_al();
+//             flex-direction: column;
+//             width: 15.625vw;
+//             height: 6.25vw;
+//             background-color: $fff;
+//             left: 0;
+//             bottom: 0;
+//             padding-top: 2.9167vw;
+//             strong {
+//                 // @include font-0.8333vw-700();
+//             }
+//             span {
+//                 // @include font-0.7292vw-700();
+//             }
+//         }
+//         .artist_pic {
+//             @include p_center_left();
+//             top: 11.5625vw;
+//             width: 5.2083vw;
+//             height: 5.2083vw;
+//             background: linear-gradient(180deg, #d395f6 0%, #6680ff 100%);
+//             overflow: hidden;
+//             border-radius: 100%;
+//             z-index: 10;
+//             @include display_center();
+//             .pic2 {
+//                 width: 4.6875vw;
+//                 border-radius: 100%;
+//                 height: 4.6875vw;
+//                 overflow: hidden;
+//                 @include display_center();
+//             }
+//             img {
+//                 width: 5.2083vw;
+//                 border-radius: 100%;
+//             }
+//         }
+//     }
+// }

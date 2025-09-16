@@ -1,0 +1,219 @@
+@use '../../styled/utils' as *;
+.inner {
+    width: vw(1400);
+    .search {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: vw(40);
+
+        .toptext {
+            margin-top: vw(124);
+            h2 {
+                color: $m_color1;
+
+                font-size: vw(30);
+                font-style: normal;
+                font-weight: 600;
+                line-height: 130%;
+            }
+        }
+        .profile {
+            display: flex;
+            width: vw(1410);
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            border-top: vw(1) solid hsla(0, 0%, 47%, 0.47);
+            .profileAll {
+                display: flex;
+                align-items: center;
+
+                gap: vw(48);
+                .profileImg {
+                    padding: vw(20) vw(50);
+                    border-right: vw(1) solid rgba(119, 119, 119, 0.47);
+                    img {
+                        border-radius: vw(500);
+                    }
+                }
+                .profile-text {
+                    display: flex;
+                    width: vw(341);
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: vw(22);
+                    h2 {
+                        color: $m_color1;
+                        font-size: vw(20);
+                        font-weight: 700;
+                        line-height: 130%;
+                    }
+                    .subtext {
+                        height: vw(178);
+                        display: flex;
+                        align-items: center;
+                        gap: vw(20);
+                        align-self: stretch;
+                        .subtitle {
+                            display: flex;
+                            width: vw(76);
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            gap: vw(12);
+                            h3 {
+                                width: vw(76);
+                                font-size: vw(20);
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 130%;
+                            }
+                        }
+                        .subspan {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            gap: vw(12);
+                            margin-right: vw(398);
+                            h3 {
+                                font-size: vw(20);
+                                font-weight: 500;
+                                line-height: 130%; /* 26px */
+                            }
+                        }
+                        .Relevant-Artist {
+                            display: flex;
+                            width: vw(225);
+                            height: vw(340);
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 5px;
+                            flex-shrink: 0;
+                            h2 {
+                                font-size: vw(16);
+                                color: #000;
+                            }
+                            h3 {
+                                color: #000;
+                                font-size: vw(16);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //Search-middleWrap
+    .search_middle {
+        margin-top: vw(100);
+        .middle_title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: vw(1410);
+
+            h2 {
+                color: #000;
+                font-size: vw(30);
+                font-weight: 600;
+                display: flex;
+                width: vw(184);
+                justify-content: space-between;
+                align-items: center;
+            }
+            h3 {
+                color: #000;
+                font-size: vw(30);
+                font-weight: 600;
+                cursor: pointer;
+                border-bottom: vw(1) solid #000;
+            }
+        }
+        .listTable {
+            margin-top: vw(51);
+            margin-bottom: vw(100);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: vw(10);
+            align-self: stretch;
+            .middleItem {
+                width: vw(1410);
+                display: flex;
+                height: vw(60);
+                padding: vw(14) 0;
+                align-items: center;
+                gap: vw(16);
+                align-self: stretch;
+                border-top: 1px solid #d9d9d9;
+                border-bottom: 1px solid #d9d9d9;
+                .SearchMusic {
+                    width: vw(1410);
+                    display: flex;
+                    align-items: center;
+                    gap: vw(10);
+                    .Search-Check {
+                        display: flex;
+                        align-items: center;
+                        gap: vw(20);
+                    }
+                    .SongInfo {
+                        display: flex;
+                        width: vw(1410);
+                        align-items: center;
+                        gap: vw(16);
+
+                        .Musictitle {
+                            display: flex;
+                            width: vw(400);
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            gap: vw(4);
+                            flex-shrink: 0;
+                        }
+                        .articttitle {
+                            display: -webkit-box;
+                            width: vw(150);
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 1;
+                            flex-shrink: 0;
+                            h2 {
+                                overflow: hidden;
+                                color: #000;
+                                text-overflow: ellipsis;
+                                font-size: vw(16);
+                                font-weight: 500;
+                                text-transform: uppercase;
+                            }
+                        }
+                        .heart {
+                            margin-right: vw(400);
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            flex-shrink: 0;
+
+                            p {
+                                width: vw(85);
+                                display: flex;
+                                padding: vw(3) 0;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-shrink: 0;
+                            }
+                        }
+                        .icon {
+                            display: flex;
+                            align-items: center;
+                            gap: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

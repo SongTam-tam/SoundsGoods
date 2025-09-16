@@ -1,0 +1,116 @@
+@use '../../../styled/utils' as *;
+
+//음악
+.musicList {
+    margin-top: vw(94);
+    margin-bottom: vw(100);
+    .musicTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: vw(40);
+        width: vw(1410);
+
+        h2 {
+            color: #000;
+            font-size: vw(30);
+            font-weight: 600;
+            display: flex;
+            width: vw(353);
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                display: block;
+            }
+        }
+        h3 {
+            color: #000;
+            font-size: vw(30);
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: vw(1) solid #000;
+        }
+    }
+    table {
+        margin-top: vw(40);
+        width: vw(1410);
+        col {
+            &.col-album {
+                width: 6%;
+            }
+            &.col-title {
+            }
+            &.col-artist {
+                width: 20%;
+            }
+            &.col-time {
+                width: 10%;
+            }
+            &.col-release {
+                width: 10%;
+            }
+            &.col-play {
+                width: 4%;
+            }
+            &.col-like {
+                width: 4%;
+            }
+            &.col-fav {
+                width: 4%;
+            }
+        }
+        thead {
+            border-bottom: 1px solid #d9d9d9;
+            tr {
+                &:hover {
+                    background: none;
+                }
+                th {
+                    padding: 12px 0;
+                    @include font-14px-400();
+                    color: $grey777;
+                    text-align: left;
+                }
+                .th-icon {
+                    text-align: center;
+                }
+            }
+        }
+        tr {
+            border-bottom: 1px solid #d9d9d9;
+            &:hover {
+                background: rgba(220, 220, 220, 0.4);
+            }
+            td {
+                padding: vw(14) 0;
+                vertical-align: middle;
+            }
+            .col-album-td {
+                img {
+                    width: vw(60);
+                    border-radius: vw(10);
+                    display: block;
+                }
+            }
+            .col-title-td {
+                p {
+                    @include font-14px-400();
+                    color: $grey777;
+                    line-height: 1.8;
+                }
+            }
+            .col-play-td,
+            .col-like-td,
+            .col-fav-td {
+                text-align: center;
+            }
+            .icon {
+                img {
+                    width: vw(24);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

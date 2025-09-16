@@ -1,0 +1,137 @@
+@use '../../styled/utils' as *;
+.cart_wish_list {
+    width: vw(1410);
+    display: flex;
+    flex-direction: column;
+    gap: vw(10);
+    .li {
+        width: vw(1410);
+        height: vw(190);
+        box-sizing: border-box;
+        padding: 0 vw(60) vw(30) vw(60);
+        @include display_al();
+        border-bottom: 1px solid var(--sub, #dcdcdc);
+        gap: vw(60);
+        .heart_icons {
+            @include display_center();
+            width: vw(24);
+            height: vw(24);
+            i {
+                @include display_center();
+                width: vw(24);
+                height: vw(24);
+                color: #ff5837;
+                font-size: vw(16);
+            }
+        }
+        ////////// heart_icons
+        //////////////////////////////////////
+        .wish_pic {
+            width: vw(160);
+            height: vw(160);
+            overflow: hidden;
+            img {
+                width: vw(160);
+            }
+        }
+        ////////// wish_pic
+        //////////////////////////////////////
+        .wish_list_text {
+            @include display_ju();
+            flex-direction: column;
+            > strong {
+                @include font-20px-600();
+            }
+            ////////// strong
+            //////////////////////////////////////
+            .con_text {
+                @include display_al();
+                gap: vw(40);
+                margin-top: vw(10);
+                margin-bottom: vw(20);
+                .co {
+                    @include display_al();
+                    gap: vw(15);
+
+                    li {
+                        @include font-16px-400();
+                        position: relative;
+                        &:first-child {
+                            &::after {
+                                content: '';
+                                background-color: #000;
+                                width: vw(1);
+                                height: vw(15);
+                                @include p_center_top();
+                                right: vw(-8);
+                            }
+                        }
+                    }
+                }
+            }
+            ////////// con_text
+            //////////////////////////////////////
+            .wish_price {
+                @include font-20px-500();
+            }
+            ////////// wish_price
+            //////////////////////////////////////
+            .con_text2 {
+                @include display_al();
+                gap: vw(20);
+                margin-top: vw(10);
+                margin-bottom: vw(20);
+                .co {
+                    @include display_al();
+                    gap: vw(15);
+
+                    li {
+                        @include font-16px-400();
+                        position: relative;
+                        &:first-child {
+                            &::after {
+                                content: '';
+                                background-color: #000;
+                                width: vw(1);
+                                height: vw(15);
+                                @include p_center_top();
+                                right: vw(-8);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ////////// wish_list_text
+        //////////////////////////////////////
+        .btn_close {
+            @include display_al();
+            justify-content: space-between;
+            width: vw(244);
+            height: vw(100);
+            margin-left: vw(136);
+            .ppp {
+                button {
+                    width: vw(188);
+                    height: vw(40);
+                    @include display_center();
+                    border-radius: vw(50px);
+                    border: 1px solid var(--main2, #d395f6);
+                    color: $m_color2;
+                }
+            }
+            .close {
+                width: vw(24);
+                height: vw(24);
+                @include display_center();
+                i {
+                    @include display_center();
+                    @include font-20px-400();
+                    font-size: vw(24);
+                }
+            }
+        }
+        ////////// btn_close
+        //////////////////////////////////////
+    }
+}

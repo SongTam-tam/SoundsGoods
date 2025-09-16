@@ -1,0 +1,19 @@
+@use '../../styled/utils' as *;
+#mymusic {
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    .inner {
+        position: relative;
+        width: vw(1500);
+        height: 100%;
+        margin: 0 auto;
+
+        .mymusic {
+            padding-top: 1.042vw;
+            padding-bottom: 7.656vw;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@use '../../styled/utils' as *;
+
+.shopping_cart {
+    width: vw(1410);
+    height: vw(561);
+    padding: 0 vw(60);
+    @include display_al();
+    justify-content: space-between;
+    .shopping_item {
+        width: vw(700);
+        .all_select {
+            margin-bottom: vw(40);
+            button {
+                width: vw(100);
+                height: vw(40);
+                padding: vw(8) vw(10);
+                border-radius: vw(50);
+                border: 1px solid var(--main2, #d395f6);
+                color: $m_color2;
+            }
+        }
+        // all_select
+        ////////////////////////////
+        .total_price {
+            width: vw(700);
+            margin-top: vw(40);
+            @include display_al();
+            justify-content: space-between;
+            span {
+                @include font-20px-500();
+            }
+            strong {
+                @include font-26px-700();
+                color: $m_color1;
+            }
+        }
+        // total_price
+        ////////////////////////////
+    }
+    .total_price_box {
+        width: vw(520);
+        padding: vw(0) vw(40) vw(85) vw(40);
+        border-left: 1px solid #000;
+        box-sizing: border-box;
+        h3 {
+            @include font-22px-600();
+            margin-bottom: vw(40);
+        }
+        .price_cnt {
+            display: flex;
+            flex-direction: column;
+            gap: vw(20);
+            width: 100%;
+            position: relative;
+            margin-bottom: vw(70);
+            &::after {
+                content: '';
+                background-color: #000;
+                @include p_center_left();
+                height: vw(1);
+                width: 100%;
+                bottom: vw(-35);
+            }
+            li {
+                @include display_al();
+                justify-content: space-between;
+                span {
+                    @include font-20px-600();
+                    color: #999;
+                }
+                strong {
+                    @include font-20px-400();
+                }
+            }
+        }
+        .payment_price {
+            @include display_al();
+            margin-bottom: vw(40);
+            span {
+                @include font-22px-600();
+            }
+            strong {
+                @include font-22px-600();
+            }
+        }
+        .payment_btn {
+            button {
+                width: vw(440);
+                height: vw(50);
+                border-radius: vw(50);
+                @include display_center();
+                background-color: $m_color1;
+                @include font-18px-700();
+                color: #fff;
+            }
+        }
+    }
+}
+// total_price_box
+////////////////////////////

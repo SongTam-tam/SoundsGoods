@@ -1,0 +1,80 @@
+@use './unit' as *;
+@use './color' as *;
+@use './position' as *;
+@use './fonts' as *;
+@mixin button_m($w) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: vw(10);
+    background-color: $m_color1;
+    border-radius: vw(50);
+    height: vw(40);
+    width: $w;
+}
+@mixin button($w: 40, $mw: 161) {
+    position: relative;
+    width: vw($mw);
+    height: vw(40);
+    cursor: pointer;
+    button {
+        @include p_center_top();
+        left: 0;
+        display: block;
+        background-color: $m_color1;
+        border-radius: vw(50);
+        width: vw($w);
+        height: vw(40);
+        transition: 0.4s;
+        text-align: left;
+        img {
+            @include p_center_top();
+            left: vw(10);
+        }
+    }
+    span {
+        @include p_center_top();
+        left: vw(44);
+        @include font-16px-600();
+        transition: 0.4s;
+    }
+    &:hover {
+        button {
+            width: vw($mw);
+        }
+        span {
+            color: $fff;
+        }
+    }
+}
+@mixin button_m($mw: 91) {
+    position: relative;
+    width: vw($mw, 393);
+    height: vw(26, 393);
+    cursor: pointer;
+    button {
+        @include p_center_top();
+        left: 0;
+        display: block;
+        background-color: $m_color1;
+        border-radius: vw(50, 393);
+        width: vw($mw, 393);
+        height: vw(26, 393);
+        transition: 0.4s;
+        text-align: left;
+        img {
+            width: vw(18, 393);
+            @include p_center_top();
+            left: vw(6, 393);
+        }
+    }
+    span {
+        white-space: nowrap;
+        @include p_center_top();
+        left: vw(29, 393);
+        @include font-16px-600();
+        color: #fff;
+        font-size: vw(12, 393);
+        transition: 0.4s;
+    }
+}

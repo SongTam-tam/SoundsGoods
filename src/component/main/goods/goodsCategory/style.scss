@@ -1,0 +1,73 @@
+@use '../../../../styled/utils' as *;
+.goods_category_list {
+    @include display_center();
+    gap: vw(40);
+    margin-bottom: vw(60);
+    li {
+        &:not(:last-child) {
+            img {
+                width: vw(103);
+            }
+        }
+        &:last-child {
+            img {
+                height: vw(100);
+            }
+        }
+        a {
+            @include display_al();
+            flex-direction: column;
+            div {
+                width: vw(103);
+                height: vw(100);
+                overflow: hidden;
+                @include display_center();
+            }
+            span {
+                @include font-14px-700();
+            }
+        }
+    }
+}
+@include tablet {
+    .goods_category_list {
+        @include display_center();
+        gap: vw(5.75, 393);
+        margin-bottom: vw(20, 393);
+        li {
+            height: vw(92, 393);
+            &:nth-child(2) {
+                height: vw(112, 393);
+            }
+            &:nth-child(4) {
+                height: vw(112, 393);
+            }
+            &:not(:last-child) {
+                img {
+                    width: vw(70, 393);
+                }
+            }
+            &:last-child {
+                img {
+                    height: vw(70, 393);
+                }
+            }
+            a {
+                @include display_al();
+                gap: vw(10, 393);
+                flex-direction: column;
+                div {
+                    width: vw(70, 393);
+                    height: vw(70, 393);
+                    overflow: hidden;
+                    @include display_center();
+                    border-radius: 100%;
+                    border: 1px solid rgba(0, 0, 0, 0.25);
+                }
+                span {
+                    @include font-14px-700();
+                }
+            }
+        }
+    }
+}

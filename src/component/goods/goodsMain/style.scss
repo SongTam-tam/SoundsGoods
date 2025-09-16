@@ -1,0 +1,63 @@
+@use '../../../styled/utils' as *;
+
+.goods_main {
+    position: relative;
+
+    .goods_page_main_title {
+        margin-left: vw(60);
+        @include font-30px-600();
+        margin-bottom: vw(40);
+    }
+    .goods_banner {
+        @include display_al();
+        gap: vw(16);
+        margin-bottom: vw(60);
+        .banner_pic {
+            width: vw(858);
+            height: vw(361);
+            img {
+                width: vw(858);
+            }
+        }
+        .goods_list {
+            @include display_al();
+            gap: vw(16);
+            li {
+                cursor: pointer;
+                width: vw(200);
+                height: vw(365);
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                gap: vw(10);
+                .li_pic {
+                    width: vw(200);
+                    height: vw(260);
+                    overflow: hidden;
+                    @include display_center();
+                    margin-bottom: vw(10);
+                    img {
+                        width: vw(300);
+                    }
+                }
+                strong {
+                    width: vw(160);
+                    display: block;
+                    box-sizing: border-box;
+                    margin-left: vw(20);
+                    @include font-18px-600();
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                span {
+                    display: block;
+                    box-sizing: border-box;
+                    margin-left: vw(20);
+                    @include font-14px-500();
+                    width: vw(160);
+                }
+            }
+        }
+    }
+}

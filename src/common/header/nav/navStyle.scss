@@ -1,0 +1,17 @@
+@use '../../../styled/utils' as *;
+#nav {
+    width: 100%;
+    height: vw(48);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @include display_al();
+    justify-content: space-between;
+    p {
+        cursor: pointer;
+        width: 7.8125vw;
+        height: vw(40);
+        @include font-18px-400();
+        @include display_center();
+    }
+}

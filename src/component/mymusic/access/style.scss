@@ -1,0 +1,62 @@
+@use '../../../styled/utils' as *;
+.inner {
+    margin: 0 auto;
+}
+.access {
+    padding-top: vw(217);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: vw(150);
+        height: vw(150);
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+}
+.text {
+    margin-top: vw(83);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        color: #777;
+        text-align: center;
+        font-size: vw(22);
+        font-weight: 500;
+        line-height: 160%;
+        text-transform: uppercase;
+        span {
+            color: var(--main1, #6680ff);
+            font-size: vw(22);
+            font-weight: 500;
+            line-height: 160%;
+            text-transform: uppercase;
+        }
+    }
+}
+.login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: vw(30);
+    gap: vw(10);
+    flex-shrink: 0;
+    button {
+        border-radius: vw(50);
+        padding: vw(4) vw(20);
+        width: vw(147);
+        height: vw(32);
+        background: rgba(102, 128, 255, 0.8);
+        color: #fff;
+        text-align: center;
+        font-size: vw(16);
+        font-weight: 600;
+        line-height: 130%;
+        svg {
+            margin-right: vw(10);
+            align-items: center;
+        }
+    }
+}

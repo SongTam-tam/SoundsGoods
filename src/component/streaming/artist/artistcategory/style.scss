@@ -1,0 +1,136 @@
+@use '../../../../styled/utils/' as *;
+
+#artist-category {
+    margin-bottom: vw(75);
+    .artist-category-top {
+        @include display_between();
+        h2 {
+            @include font-30px-600();
+            margin-bottom: vw(60);
+        }
+        .artist-sort {
+            position: relative;
+            width: vw(98);
+            min-width: 90px;
+            white-space: nowrap;
+            .sort-down {
+                cursor: pointer;
+                @include font-16px-500();
+                color: $m_color1;
+                width: 100%;
+                min-width: 90px;
+                border: vw(1) solid $m_color1;
+                border-radius: vw(50);
+                padding: 7px 20px;
+                box-sizing: border-box;
+                text-align: left;
+                background: url('/images/streaming/bg_down.png') no-repeat;
+                background-position: calc(100% - 10px) center;
+                background-size: vw(24) auto;
+                background-origin: content-box;
+                padding-right: vw(0);
+            }
+            .sorting {
+                display: none;
+                ul {
+                    background-color: $fff;
+                    width: 100%;
+                    min-width: 90px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border: vw(1) solid $m_color1;
+                    border-radius: 18px;
+                    padding: 1px 10px 1px 20px;
+                    box-sizing: border-box;
+                    li {
+                        cursor: pointer;
+                        @include font-16px-400();
+                        color: $m_color1;
+                        line-height: 2;
+                        &.sorting-title {
+                            @include font-16px-500();
+                            color: $m_color1;
+                            line-height: 2;
+                            background: url('/images/streaming/bg_up.png') no-repeat;
+                            background-position: right center;
+                            background-size: vw(24) auto;
+                            background-origin: content-box;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .artist-category-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .artist-category-item {
+            width: vw(260);
+            text-align: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-bottom: vw(40);
+            img {
+                width: vw(260);
+                height: vw(260);
+                margin-bottom: vw(20);
+                object-fit: contain;
+            }
+            h3 {
+                @include font-24px-600();
+            }
+        }
+    }
+}
+@include tablet {
+    #artist-category {
+        margin-bottom: vw(40, 393);
+        .artist-category-top {
+            h2 {
+                @include m-font-18px-600();
+                margin-bottom: vw(20, 393);
+            }
+        }
+        .artist-sort {
+            width: 75px !important;
+            min-width: 68px !important;
+            .sort-down {
+                font-size: 12px !important;
+                min-width: 68px !important;
+                padding: 5px 10px 5px 16px !important;
+                background-position: right center !important;
+                background-size: 16px auto !important;
+            }
+            .sorting {
+                ul {
+                    width: 75px !important;
+                    min-width: 68px !important;
+                    border-radius: 12px !important;
+                    padding: 0px 10px 0px 16px !important;
+                    li {
+                        font-size: 12px !important;
+                        &.sorting-title {
+                            background-size: 16px auto !important;
+                        }
+                    }
+                }
+            }
+        }
+        .artist-category-list {
+            .artist-category-item {
+                width: vw(100, 393);
+                img {
+                    width: vw(100, 393);
+                    height: vw(100, 393);
+                    margin-bottom: vw(10, 393);
+                }
+                h3 {
+                    @include font-14px-600();
+                }
+            }
+        }
+    }
+}

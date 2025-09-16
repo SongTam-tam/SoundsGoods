@@ -1,0 +1,68 @@
+@use '../../../styled/utils' as *;
+
+//팝업
+.popup {
+    width: vw(1410);
+    margin-top: vw(51);
+    display: flex;
+    height: vw(303);
+    justify-content: space-between;
+    align-items: flex-start;
+    .popupItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: vw(20);
+        width: vw(180);
+        height: vw(297);
+        .popupInfo {
+            display: flex;
+            padding: 0 vw(10);
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: vw(6);
+
+            .popuptitle {
+                height: 45px;
+                align-self: stretch;
+                h2 {
+                    overflow: hidden;
+                    color: #000;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-size: vw(18);
+                    font-weight: 500;
+                }
+                h3 {
+                }
+            }
+            .popupDate {
+                margin: vw(6) 0;
+                h3 {
+                    color: rgba(0, 0, 0, 0.6);
+                    font-size: vw(14);
+                    font-weight: 500;
+                    line-height: 160%;
+                }
+            }
+        }
+        .popupListen {
+            color: rgba(0, 0, 0, 0.8);
+            font-family: Pretendard;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%; /* 18.2px */
+
+            p {
+                color: rgba(0, 0, 0, 0.8);
+                font-size: vw(14);
+                font-style: normal;
+                font-weight: 600;
+                line-height: 130%;
+            }
+        }
+    }
+}

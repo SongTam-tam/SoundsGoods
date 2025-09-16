@@ -1,0 +1,12 @@
+@use '../../../../styled/utils/' as *;
+#artist-i-top {
+    margin-bottom: vw(75);
+    display: flex;
+    justify-content: space-between;
+    .artist-i-top-left {
+        width: vw(464);
+    }
+    .artist-i-top-right {
+        width: vw(806);
+    }
+}

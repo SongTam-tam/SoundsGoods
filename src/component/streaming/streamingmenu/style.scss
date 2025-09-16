@@ -1,0 +1,41 @@
+@use '../../../styled/utils/' as *;
+
+#streamingmenu {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding: vw(40);
+    box-sizing: border-box;
+    height: vw(860);
+    position: relative;
+    .menu_inner {
+        width: vw(150);
+        li {
+            margin-bottom: 16px;
+            a {
+                @include font-16px-400();
+                text-decoration: none;
+                &:hover,
+                &.active {
+                    @include font-16px-700();
+                }
+            }
+            &.btt_common {
+                a {
+                    @include font-14px-400();
+                    &:hover {
+                        @include font-14px-700();
+                    }
+                }
+            }
+        }
+        .streamingmenu_btt {
+            position: absolute;
+            bottom: vw(20);
+            li {
+                margin-bottom: vw(5);
+            }
+        }
+    }
+    @include tablet {
+        display: none;
+    }
+}

@@ -1,0 +1,110 @@
+@use '../../../styled/utils' as *;
+
+//굿즈리스트
+.goodsList {
+    margin-top: vw(94);
+    margin-bottom: vw(100);
+    .goodsTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: vw(40);
+        width: vw(1410);
+
+        h2 {
+            color: #000;
+            font-size: vw(30);
+            font-weight: 600;
+            display: flex;
+            width: vw(353);
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                display: block;
+            }
+        }
+        h3 {
+            color: #000;
+            font-size: vw(30);
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: vw(1) solid #000;
+        }
+    }
+
+    .goods {
+        width: vw(1410);
+        margin-top: vw(51);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: vw(50);
+        align-self: stretch;
+        .GoodsItem {
+            position: relative;
+            width: vw(230);
+            height: vw(300);
+            cursor: pointer;
+            .heartbox {
+                position: absolute;
+                top: vw(9.59);
+                right: vw(8);
+                display: flex;
+                width: vw(20);
+                height: vw(20);
+                padding: vw(4) vw(10);
+                align-items: center;
+                gap: vw(10);
+                border-radius: vw(500);
+                background: rgba(0, 0, 0, 0.6);
+                img {
+                    width: vw(20);
+                    height: vw(20);
+                }
+            }
+            img {
+                width: vw(230);
+                height: vw(300);
+            }
+            .GoodsInfo {
+                display: flex;
+                width: vw(230);
+                padding: vw(7) 0;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px 10px 0 0;
+                background: rgba(255, 255, 255, 0.6);
+                .GoodsPrice {
+                    display: flex;
+                    width: vw(230);
+                    padding: 0 vw(20);
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: vw(10);
+                    flex-shrink: 0;
+                    h2 {
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
+                        align-self: stretch;
+                        overflow: hidden;
+                        color: #000;
+                        text-overflow: ellipsis;
+                        font-size: vw(16);
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        p {
+                            color: #000;
+                            text-align: right;
+                            font-size: vw(14);
+                            font-weight: 500;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

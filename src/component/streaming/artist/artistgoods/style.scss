@@ -1,0 +1,134 @@
+@use '../../../../styled/utils/' as *;
+#artist-goods {
+    h2 {
+        @include font-30px-600();
+        color: $m_color2;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        margin-bottom: vw(40);
+        img {
+            width: vw(40px);
+            height: vw(40px);
+            margin-left: vw(14px);
+            object-fit: cover;
+            vertical-align: top;
+        }
+    }
+    .artist-goods-list {
+        display: flex;
+        justify-content: space-between;
+        .artist-goods-item {
+            cursor: pointer;
+            width: vw(260);
+            margin-bottom: vw(40);
+            .goods-img {
+                position: relative;
+                margin-bottom: vw(10);
+                img {
+                    width: vw(260);
+                    height: vw(260);
+                    border-radius: vw(20);
+                    object-fit: contain;
+                }
+                p {
+                    position: absolute;
+                    top: vw(10);
+                    right: vw(10);
+                    cursor: pointer;
+                    background-color: $fc;
+                    opacity: 0.6;
+                    border-radius: vw(500);
+                    padding: vw(4) vw(10);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        width: vw(20);
+                        height: vw(20);
+                    }
+                }
+            }
+            .artist-goods-text {
+                line-height: 1.5;
+                h3 {
+                    @include font-18px-600();
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-bottom: 0;
+                }
+                h4 {
+                    @include font-18px-400();
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    #artist-goods {
+        h2 {
+            @include m-font-18px-600();
+            color: $m_color2;
+            img {
+                width: vw(24, 393);
+                height: vw(24, 393);
+                margin-left: vw(10, 393);
+            }
+        }
+        .artist-goods-list {
+            .artist-goods-item {
+                width: vw(110, 393);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+                padding-bottom: vw(2, 393);
+                .goods-img {
+                    position: relative;
+                    width: vw(110, 393);
+                    height: vw(143, 393);
+                    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+                    @include display_center();
+                    margin-bottom: vw(8, 393);
+                    img {
+                        width: vw(110, 393);
+                        height: vw(110, 393);
+                        border-radius: 0;
+                    }
+                    p {
+                        position: absolute;
+                        top: auto;
+                        left: auto;
+                        bottom: vw(6, 393);
+                        right: vw(6, 393);
+                        background-color: transparent;
+                        opacity: 1;
+                        border-radius: 0;
+                        padding: 0;
+                        width: vw(20, 393);
+                        height: vw(20, 393);
+                        display: block;
+                        img {
+                            width: vw(20, 393);
+                            height: vw(20, 393);
+                        }
+                    }
+                }
+                .artist-goods-text {
+                    h3 {
+                        @include m-font-12px-500();
+                        white-space: normal !important;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        margin-bottom: vw(5, 393);
+                    }
+                    h4 {
+                        @include m-font-12px-500();
+                    }
+                }
+            }
+        }
+    }
+}

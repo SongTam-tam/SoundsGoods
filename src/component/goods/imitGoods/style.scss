@@ -1,0 +1,24 @@
+@use '../../../styled/utils' as *;
+
+.limit_goods {
+    .limit_goods_title_p {
+        @include display_center();
+        gap: vw(45.47);
+        margin-bottom: vw(40);
+        h2 {
+            @include font-28px-600;
+            position: relative;
+            &::after {
+                content: '';
+                @include p_center_left();
+                bottom: 0;
+                width: vw(300);
+                height: vw(12);
+                background-image: url(/images/icons/rota.png);
+            }
+        }
+        p {
+            @include font-16px-700;
+        }
+    }
+}

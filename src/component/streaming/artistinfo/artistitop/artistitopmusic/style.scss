@@ -1,0 +1,49 @@
+@use '../../../../../styled/utils/' as *;
+
+#artist-i-top-music {
+    h2 {
+        @include font-34px-600();
+        margin-bottom: vw(30);
+    }
+    table {
+        border-top: 1px solid #d9d9d9;
+        width: 100%;
+        tr {
+            td {
+                border-bottom: 1px solid #d9d9d9;
+                padding-top: vw(10);
+                padding-bottom: vw(7);
+                vertical-align: middle;
+            }
+            .artist-music-1 {
+                width: 10%;
+                img {
+                    width: vw(60);
+                    border-radius: vw(10);
+                }
+            }
+            .artist-music-2 {
+                p {
+                    @include font-14px-400();
+                    color: $grey777;
+                    line-height: 1.8;
+                }
+            }
+            .artist-music-3 {
+                width: 15%;
+            }
+            .artist-music-4,
+            .artist-music-5,
+            .artist-music-6 {
+                text-align: right;
+                width: 7%;
+            }
+            .icon {
+                img {
+                    width: vw(24);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

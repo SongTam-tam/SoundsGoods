@@ -1,0 +1,98 @@
+@use '../../../../styled/utils/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap');
+
+#genre-category-mobile {
+    margin-bottom: vw(40, 393);
+    h2 {
+        @include m-font-18px-600();
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        margin-bottom: vw(20, 393);
+        img {
+            width: vw(24, 393);
+            height: vw(24, 393);
+            margin-left: vw(10, 393);
+            object-fit: cover;
+            vertical-align: top;
+        }
+    }
+    .genre-category-list-mobile {
+        width: 100%;
+        margin-right: vw(-20, 393);
+        .mySwiper {
+            width: 100%;
+            padding-right: vw(20, 393);
+            .swiper-slide {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                text-align: center;
+                .genre-sub-img-mobile {
+                    position: relative;
+                    display: block;
+                    width: vw(133, 393);
+                    height: vw(75, 393);
+                    overflow: hidden;
+                    transition: transform 0.3s;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; // 비율 유지 + 꽉 채우기
+                        border-radius: vw(10, 393);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.4);
+                        border-radius: vw(10, 393);
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                    }
+                    span {
+                        font-family: 'Bricolage Grotesque', 'pretendard';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        color: $fff !important;
+                        z-index: 1;
+                        @include m-font-24px-600();
+                    }
+                    &:hover {
+                        transform: translateY(vw(20));
+                        &::after {
+                            opacity: 1;
+                        }
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                }
+                p {
+                    @include m-font-14px-600();
+                    margin-top: vw(10, 393);
+                    transition: opacity 0.3s;
+                }
+                &:hover {
+                    p {
+                        opacity: 0;
+                    }
+                    .genre-sub-img-mobile {
+                        transform: translateY(vw(10, 393));
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
