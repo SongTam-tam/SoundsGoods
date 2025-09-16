@@ -1,0 +1,38 @@
+@use '../../../styled/utils' as *;
+
+.popup_map {
+    @include display_center();
+    gap: vw(40);
+
+    .left_map {
+        @include display_al();
+        .popup_search {
+            width: vw(347);
+            height: vw(600);
+            background-color: $m_color2;
+            padding: vw(20);
+            box-sizing: border-box;
+            .more_title {
+                @include display_al();
+                gap: vw(10);
+                margin-bottom: vw(16);
+                img {
+                    width: vw(24);
+                }
+                strong {
+                    @include font-14px-400();
+                }
+            }
+        }
+        .map_pic {
+            width: vw(463);
+            height: vw(600);
+            background-color: $m_color1;
+        }
+    }
+    .right_pic {
+        background-color: $m_color1;
+        width: vw(440);
+        height: vw(600);
+    }
+}

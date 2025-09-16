@@ -3,6 +3,7 @@ import './style.scss';
 import PopupSw from '../../component/popup/popupSwiper/PopupSw';
 import Festival from '../../component/popup/festival/Festival';
 import LimitPopup from '../../component/popup/limitPopup/LimitPopup';
+import PopupMap from '../../component/popup/popupMap/PopupMap';
 const Popup = () => {
     return (
         <div id="popup">
@@ -10,6 +11,7 @@ const Popup = () => {
                 <PopupSw />
                 <Festival />
                 <LimitPopup />
+                <PopupMap />
             </div>
         </div>
     );
