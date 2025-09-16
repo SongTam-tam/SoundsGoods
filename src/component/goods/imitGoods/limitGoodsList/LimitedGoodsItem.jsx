@@ -20,13 +20,6 @@ const LimitedGoodsItem = ({ item }) => {
         <li className="lilili">
             <div className="goods_pic">
                 <img src={imageM} alt="" />
-                {width > 1024 && (
-                    <div className="bottom_text">
-                        <strong>{title}</strong>
-                        <span>₩{price.toString()}</span>
-                    </div>
-                )}
-
                 {width > 1024 ? (
                     <p className="like_count" onClick={() => isLike(id)}>
                         {like ? (
@@ -54,6 +47,12 @@ const LimitedGoodsItem = ({ item }) => {
                     </p>
                 )}
             </div>
+            {width > 1024 && (
+                <div className="bottom_text">
+                    <strong>{title}</strong>
+                    <span>₩{price.toString()}</span>
+                </div>
+            )}
             {width < 1024 && (
                 <div className="bottom_text_mobile">
                     <strong>{title}</strong>

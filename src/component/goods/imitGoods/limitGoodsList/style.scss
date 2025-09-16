@@ -14,31 +14,6 @@
             img {
                 width: vw(230);
             }
-            .bottom_text {
-                @include p_center_left();
-                gap: vw(10);
-                bottom: 0;
-                width: vw(230);
-                height: vw(60);
-                @include display_center();
-                flex-direction: column;
-                border-radius: vw(10px) vw(10px) 0 0;
-                background: rgba(0, 0, 0, 0.1);
-                strong {
-                    width: vw(190);
-                    display: block;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    @include font-16px-700();
-                }
-                span {
-                    width: vw(190);
-                    display: block;
-                    text-align: left;
-                    @include font-14px-700();
-                }
-            }
 
             .like_count {
                 cursor: pointer;
@@ -59,6 +34,30 @@
                     color: $dc;
                     font-size: vw(16);
                 }
+            }
+        }
+        .bottom_text {
+            gap: vw(10);
+
+            width: vw(230);
+            height: vw(60);
+            @include display_center();
+            flex-direction: column;
+            border-radius: vw(10px) vw(10px) 0 0;
+            background: rgba(0, 0, 0, 0.1);
+            strong {
+                width: vw(190);
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include font-16px-700();
+            }
+            span {
+                width: vw(190);
+                display: block;
+                text-align: left;
+                @include font-14px-700();
             }
         }
     }
