@@ -1289,22 +1289,22 @@ export default [
             {
                 artist: 'Crush',
                 artistimg:
-                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/crush.png',
             },
             {
-                artist: 'Paul',
+                artist: 'Ella Fitzgerald',
                 artistimg:
-                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/fitz.png',
             },
             {
-                artist: '임영웅',
+                artist: 'George Benson',
                 artistimg:
-                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/im.png',
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/georgebenson.png',
             },
             {
-                artist: '손태진',
+                artist: 'Chet Baker',
                 artistimg:
-                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/chetbaker.png',
             },
         ],
         music: [
@@ -2067,23 +2067,28 @@ export default [
         singer: [
             {
                 artist: 'WOODZ',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/woodz.png',
             },
             {
                 artist: '10CM',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/10cm.png',
             },
             {
                 artist: '이무진',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/lmj.png',
             },
             {
                 artist: 'DAY6 (데이식스)',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/day6.png',
             },
             {
                 artist: 'QWER',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/qwer.png',
             },
         ],
         music: [
@@ -2845,23 +2850,28 @@ export default [
         singer: [
             {
                 artist: '우디 (Woody)',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/woody.png',
             },
             {
                 artist: '황가람',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/hgr.png',
             },
             {
                 artist: '아이유',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/iu.png',
             },
             {
                 artist: '이창섭',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/lcs.png',
             },
             {
                 artist: 'AKMU (악뮤)',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/akmu.png',
             },
         ],
         music: [
@@ -3623,23 +3633,28 @@ export default [
         singer: [
             {
                 artist: 'Charlie Puth',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/charlieputh.png',
             },
             {
                 artist: 'Anne-Marie',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/annemarie.png',
             },
             {
                 artist: 'Taylor Swift',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/taylorswift.png',
             },
             {
                 artist: 'Lauv',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/lauv.png',
             },
             {
                 artist: 'Ed Sheeran',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/edsheeran.png',
             },
         ],
         music: [
@@ -4401,23 +4416,28 @@ export default [
         singer: [
             {
                 artist: '이영지',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/lyj.png',
             },
             {
                 artist: '지코 (ZICO)',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/zico.png',
             },
             {
                 artist: 'Paul Blanco',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/paulblanco.png',
             },
             {
                 artist: 'BIGBANG (빅뱅)',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/bigbang.png',
             },
             {
                 artist: 'MC몽',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/mcmong.png',
             },
         ],
         music: [
@@ -5228,23 +5248,28 @@ export default [
         singer: [
             {
                 artist: '성시경',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/ssk.png',
             },
             {
                 artist: '폴킴',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/paulkim.png',
             },
             {
                 artist: '멜로망스',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/melo.png',
             },
             {
                 artist: 'Crush',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/crush.png',
             },
             {
                 artist: '정승환',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/jsh.png',
             },
         ],
         music: [
@@ -6006,23 +6031,28 @@ export default [
         singer: [
             {
                 artist: '정준일',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/jong.png',
             },
             {
                 artist: '10CM',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/10cm.png',
             },
             {
                 artist: '혁오 (HYUKOH)',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/hyukoh.png',
             },
             {
                 artist: '델리스파이스',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/deli.png',
             },
             {
                 artist: '윤딴딴',
-                artistimg: '',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/yoondd.png',
             },
         ],
         music: [

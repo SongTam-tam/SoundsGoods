@@ -46,13 +46,11 @@ const Con5Newmv = () => {
     };
 
     return (
-        <div className="con-inner">
+        <div className="con5 inner">
             <h3>새로 나온 MUSIC VIDEO</h3>
             <div className="mv-visual-wrap">
                 <div className="video">
                     <iframe
-                        width="710"
-                        height="400"
                         src="https://www.youtube.com/embed/CgCVZdcKcqY?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=CgCVZdcKcqY"
                         title="dd"
                         frameBorder="0"

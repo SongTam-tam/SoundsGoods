@@ -5,7 +5,7 @@ import genre from '../../../assets/api/genre';
 const Con4Genre = ({ allGenres, selectedGenre, onSelect }) => {
     const navigate = useNavigate();
     return (
-        <div className="con-inner">
+        <div className="con4 inner">
             <h3>
                 장르별 음악
                 <Link to="genre">

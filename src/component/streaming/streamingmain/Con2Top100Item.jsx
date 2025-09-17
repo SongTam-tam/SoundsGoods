@@ -9,6 +9,7 @@ const Con2Top100Item = ({ data }) => {
         <div className="rank">
             <li>
                 <div className="img-wrap">
+                    <strong>{data.id}</strong>
                     <img src={data.image} alt="" />
                     <button className="play-btn" onClick={handleClick}>
                         <img
