@@ -108,7 +108,10 @@
                 object-fit: cover;
                 vertical-align: top;
                 @include tablet {
-                    display: none;
+                    // display: none;
+                    margin-left: vw(10, 393);
+                    width: vw(24, 393);
+                    height: vw(24, 393);
                 }
             }
         }
@@ -286,7 +289,7 @@
             }
 
             strong {
-                @include m-font-12px-400;
+                @include m-font-14px-400;
                 margin-bottom: vw(4, 393);
                 line-height: 1;
                 color: $grey777;
@@ -299,7 +302,7 @@
             }
 
             p {
-                @include m-font-12px-400;
+                @include m-font-14px-400;
                 line-height: 1;
                 color: $grey777;
                 width: vw(100, 393);
@@ -469,21 +472,44 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            @include tablet {
+                width: (100%, 393);
+            }
             li {
                 cursor: pointer;
                 margin-bottom: vw(30);
+                &:nth-child(7),
+                &:nth-child(8) {
+                    @include tablet {
+                        margin-bottom: vw(0, 393);
+                    }
+                }
+                @include tablet {
+                    width: vw(173.5, 393);
+                    margin-bottom: vw(16, 393);
+                }
+
                 .genre-sub-img {
                     position: relative;
-                    display: inline-block;
+                    display: block;
                     overflow: hidden; // 오버레이 안 넘치게
                     transition: transform 0.3s; // 박스 이동 애니메이션
+                    @include tablet {
+                        width: vw(173.5, 393);
+                        height: vw(97, 393);
+                        border-radius: vw(10, 393);
+                    }
 
                     img {
                         border-radius: vw(10);
                         width: vw(337);
+                        height: vw(190);
                         display: block;
                         object-fit: cover;
-                        height: vw(190);
+                        @include tablet {
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
 
                     // 오버레이
@@ -498,6 +524,9 @@
                         border-radius: vw(10);
                         opacity: 0;
                         transition: opacity 0.3s; // <-- 여기!
+                        @include tablet {
+                            border-radius: vw(10, 393);
+                        }
                     }
 
                     span {
@@ -511,10 +540,17 @@
                         color: $fff !important;
                         z-index: 1;
                         @include font-40px-800();
+                        @include tablet {
+                            @include m-font-26px-800;
+                            color: $fff;
+                        }
                     }
 
                     &:hover {
                         transform: translateY(vw(20));
+                        @include tablet {
+                            transform: translateY(vw(16, 393)) !important;
+                        }
 
                         &::after {
                             opacity: 1;
@@ -530,6 +566,10 @@
                     @include font-20px-600();
                     margin-top: vw(16);
                     transition: opacity 0.3s;
+                    @include tablet {
+                        margin-top: vw(10, 393);
+                        @include m-font-14px-600;
+                    }
                 }
                 &:hover {
                     p {
@@ -537,6 +577,10 @@
                     }
                     .genre-sub-img {
                         transform: translateY(vw(20));
+                        @include tablet {
+                            transform: translateY(vw(10), 393);
+                        }
+
                         span {
                             opacity: 1;
                             z-index: 50;
@@ -548,6 +592,10 @@
 
         .mv-visual-wrap {
             @include display_between;
+            @include tablet {
+                display: flex;
+                flex-wrap: wrap;
+            }
             // align-items: center;
             margin-bottom: vw(40px);
             .video {
@@ -557,6 +605,12 @@
                 box-sizing: border-box;
                 overflow: hidden;
                 position: relative;
+                @include tablet {
+                    width: vw(357, 393);
+                    height: vw(200, 393);
+                    border-radius: vw(10, 393);
+                    margin-bottom: vw(14, 393);
+                }
                 .play-btn {
                     position: absolute;
                     top: 50%;
@@ -576,6 +630,10 @@
                         height: vw(50px);
                         margin-bottom: 0;
                         background: none;
+                        @include tablet {
+                            width: vw(30, 393);
+                            height: vw(30, 393);
+                        }
                     }
                 }
                 iframe {
@@ -590,40 +648,79 @@
             }
             .text-wrap {
                 width: vw(660px);
+                @include tablet {
+                    width: vw(357, 393);
+                }
                 strong {
                     width: 100%;
                     display: block;
                     @include font-40px-600;
                     line-height: 1;
                     margin-bottom: vw(10px);
+                    @include tablet {
+                        @include m-font-20px-600;
+                        margin-bottom: vw(6, 393);
+                    }
                 }
                 em {
                     width: 100%;
                     @include display_between;
                     margin-bottom: vw(60px);
                     @include font-20px-600;
+                    @include tablet {
+                        @include m-font-14px-400;
+                        align-items: center;
+                        margin-bottom: vw(20, 393);
+                    }
                     span {
                         @include font-16px-400;
-                        color: $g777;
+                        color: $grey777;
                         display: block;
                         text-align: right;
                         height: vw(24px);
                         line-height: vw(24px);
                         padding-right: vw(12px);
+                        @include tablet {
+                            @include m-font-12px-400;
+                            color: $grey777;
+                        }
                     }
                 }
                 p {
                     width: 100%;
-                    color: $g777;
+                    color: $grey777;
                     line-height: 1.5;
+                    @include tablet {
+                        @include m-font-14px-400;
+                        color: $grey777;
+                        line-height: 1.4;
+                        margin-bottom: vw(20, 393);
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3; /* 표시할 줄 수 */
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }
         .newmv-wrap {
             @include display_between;
+            @include tablet {
+                display: flex;
+                gap: vw(10, 393) !important;
+            }
+
             li {
                 position: relative;
-
+                &:nth-child(3) {
+                    @include tablet {
+                        display: none;
+                    }
+                }
+                @include tablet {
+                    width: vw(173.5, 393) !important;
+                }
                 .video-wrap {
                     position: relative;
                     width: vw(444px);
@@ -631,6 +728,11 @@
                     border-radius: 10px;
                     overflow: hidden;
                     margin-bottom: vw(20px);
+                    @include tablet {
+                        width: vw(173.5, 393) !important;
+                        height: vw(97, 393) !important;
+                        margin-bottom: vw(10, 393);
+                    }
 
                     video {
                         width: 100%;
@@ -670,6 +772,10 @@
                         img {
                             width: vw(50px);
                             height: vw(50px);
+                            @include tablet {
+                                width: vw(30, 393);
+                                height: vw(30, 393);
+                            }
                         }
                     }
 
@@ -685,6 +791,12 @@
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    @include tablet {
+                        width: vw(173.5, 393) !important;
+                        @include m-font-16px-600;
+                        line-height: 1;
+                        margin-bottom: vw(6, 393);
+                    }
                 }
 
                 strong {
@@ -696,6 +808,13 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     display: block;
+                    @include tablet {
+                        width: vw(173.5, 393) !important;
+                        @include m-font-14px-400;
+                        color: $grey777;
+                        line-height: 1;
+                        margin-bottom: vw(6, 393);
+                    }
                 }
 
                 p {
@@ -705,6 +824,12 @@
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    @include tablet {
+                        width: vw(173.5, 393) !important;
+                        @include m-font-14px-400;
+                        color: $grey777;
+                        line-height: 1;
+                    }
                 }
             }
         }
