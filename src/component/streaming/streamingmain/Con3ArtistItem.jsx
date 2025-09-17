@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Con3ArtistItem = ({ data }) => {
     return (
         <li key={data.id} data={data}>
-            <img src={data.artist_img} alt="" />
+            <Link to={`/streaming/artistinfo/${data.id}`}>
+                <img src={data.imageS} alt={data.artist} />
+            </Link>
             <h4>{data.artist}</h4>
-            <p>{data.ganre}</p>
+            <p>{data.category}</p>
         </li>
     );
 };

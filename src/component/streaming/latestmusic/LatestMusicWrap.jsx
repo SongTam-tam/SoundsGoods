@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -7,6 +7,9 @@ import LatestMusicListWrap from './latestmusiclistwrap/LatestMusicListWrap';
 
 const LatestMusicWrap = () => {
     const swiperRef = useRef(null);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const videos = [
         {

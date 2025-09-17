@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Con1Latest from './Con1Latest';
 import Con2Top100 from './Con2Top100';
 import Con3Artist from './Con3Artist';
@@ -6,6 +7,9 @@ import Con5Newmv from './Con5Newmv';
 import './style.scss';
 
 const StreamingMainWrap = ({ data, allGenres, onSelect }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <section id="streaming-wrap">
             <div className="video-visual">
