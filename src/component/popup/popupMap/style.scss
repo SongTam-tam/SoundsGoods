@@ -27,7 +27,11 @@
         .map_pic {
             width: vw(463);
             height: vw(600);
-            background-color: $m_color1;
+           
+            #map{
+               width: 100%;
+               height: 100%;
+            }
         }
     }
     .right_pic {
