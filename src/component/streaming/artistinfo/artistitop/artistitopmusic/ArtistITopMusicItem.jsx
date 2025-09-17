@@ -13,8 +13,8 @@ const ArtistITopMusicItem = ({ item }) => {
                 <img src={item.image || '/images/streaming/album.png'} alt={item.title} />
             </td>
             <td className="artist-music-2">
-                {item.title}
-                <p>{item.description}</p>
+                <strong>{item.title}</strong>
+                <p>{item.album}</p>
             </td>
             <td className="artist-music-3">3:{minute < 10 ? `0${minute}` : minute}</td>
             <td className="artist-music-4 icon">

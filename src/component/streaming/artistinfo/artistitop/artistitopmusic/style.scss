@@ -6,9 +6,48 @@
         margin-bottom: vw(30);
     }
     table {
-        border-top: 1px solid #d9d9d9;
         width: 100%;
+        col {
+            &.col-album {
+                width: 10%;
+            }
+            &.col-title {
+                width: auto;
+            }
+            &.col-time {
+                width: 15%;
+            }
+            &.col-play {
+                width: 6%;
+            }
+            &.col-like {
+                width: 6%;
+            }
+            &.col-fav {
+                width: 6%;
+            }
+        }
+        thead {
+            border-bottom: 1px solid #d9d9d9;
+            tr {
+                &:hover {
+                    background: none;
+                }
+                th {
+                    padding: vw(12) 0;
+                    @include font-14px-400();
+                    color: $grey777;
+                    text-align: left;
+                }
+                .th-icon {
+                    text-align: center;
+                }
+            }
+        }
         tr {
+            &:hover {
+                background: rgba(220, 220, 220, 0.4);
+            }
             td {
                 border-bottom: 1px solid #d9d9d9;
                 padding-top: vw(10);
@@ -16,27 +55,38 @@
                 vertical-align: middle;
             }
             .artist-music-1 {
-                width: 10%;
                 img {
                     width: vw(60);
                     border-radius: vw(10);
                 }
             }
             .artist-music-2 {
+                strong {
+                    padding-right: vw(40px);
+                    box-sizing: border-box;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
                 p {
                     @include font-14px-400();
                     color: $grey777;
                     line-height: 1.8;
+                    padding-right: vw(60px);
+                    box-sizing: border-box;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
-            }
-            .artist-music-3 {
-                width: 15%;
             }
             .artist-music-4,
             .artist-music-5,
             .artist-music-6 {
-                text-align: right;
-                width: 7%;
+                text-align: center;
             }
             .icon {
                 img {
@@ -51,8 +101,74 @@
 @include tablet {
     #artist-i-top-music {
         h2 {
-            @include m-font-18px-600();
-            margin-bottom: vw(30);
+            @include m-font-20px-600();
+            margin-bottom: vw(20, 393);
+        }
+        table {
+            col {
+                &.col-album {
+                    width: 10%;
+                }
+                &.col-title {
+                    width: auto;
+                }
+                &.col-time {
+                    display: none;
+                }
+                &.col-play {
+                    width: 10%;
+                }
+                &.col-like {
+                    width: 10%;
+                }
+                &.col-fav {
+                    width: 10%;
+                }
+            }
+            thead {
+                tr {
+                    th {
+                        padding: 0 0 vw(10, 393) 0;
+                        @include m-font-12px-400();
+                        color: $grey777;
+                        &:nth-child(2) {
+                            padding-left: vw(10, 393);
+                        }
+                        &:nth-child(3) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            tr {
+                td {
+                    padding: vw(10, 393) 0;
+                }
+                .artist-music-1 {
+                    img {
+                        width: vw(60, 393);
+                        border-radius: vw(10, 393);
+                    }
+                }
+                .artist-music-2 {
+                    padding-left: vw(10, 393);
+                    strong {
+                        @include m-font-14px-600();
+                    }
+                    p {
+                        @include m-font-12px-500();
+                        color: $grey777;
+                    }
+                }
+                .artist-music-3 {
+                    display: none;
+                }
+                .icon {
+                    img {
+                        width: vw(22, 393);
+                    }
+                }
+            }
         }
     }
 }
