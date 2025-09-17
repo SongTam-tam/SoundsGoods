@@ -4,7 +4,7 @@ import './style.scss';
 import newData_51_100 from '../../../../assets/api/musicComponents/newData_51_100';
 
 const LatestMusicListWrap = () => {
-    const [sortType, setSortType] = useState('최신순');
+    const [sortType, setSortType] = useState('정렬');
     const [sortedList, setSortedList] = useState([...(newData_51_100 || [])]);
     const [sortOpen, setSortOpen] = useState(false);
     const [selectedAll, setSelectedAll] = useState(false);

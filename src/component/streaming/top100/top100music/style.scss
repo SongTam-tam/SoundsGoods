@@ -22,6 +22,7 @@
             }
         }
         .top100-music-sort {
+            display: none;
             position: relative;
             width: vw(106);
             min-width: 96px;
@@ -58,6 +59,8 @@
                 display: none;
                 max-height: 200px;
                 overflow: hidden;
+                z-index: 5;
+
                 &.on {
                     display: block;
                 }
