@@ -6032,7 +6032,7 @@ export default [
             {
                 artist: '정준일',
                 artistimg:
-                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/jong.png',
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/jung.png',
             },
             {
                 artist: '10CM',
@@ -6042,7 +6042,7 @@ export default [
             {
                 artist: '혁오 (HYUKOH)',
                 artistimg:
-                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/hyukoh.png',
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/hyuckoh.png',
             },
             {
                 artist: '델리스파이스',
