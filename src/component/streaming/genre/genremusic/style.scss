@@ -16,63 +16,69 @@
                 color: $grey555;
                 border: vw(1) solid $grey555;
                 border-radius: vw(50);
-                padding: 5px 20px 7px;
+                padding: 7px 20px;
                 margin-right: vw(10);
                 letter-spacing: vw(-1);
             }
         }
         .genre-music-sort {
             position: relative;
-            width: vw(96);
-            min-width: 76px;
+            width: vw(106);
+            min-width: 96px;
             white-space: nowrap;
             .sort-down {
                 cursor: pointer;
                 @include font-16px-500();
                 color: $m_color1;
                 width: 100%;
-                min-width: 76px;
+                min-width: 96px;
                 border: vw(1) solid $m_color1;
                 border-radius: vw(50);
                 padding: 7px 20px;
                 box-sizing: border-box;
                 text-align: left;
                 background: url('/images/streaming/bg_down.png') no-repeat;
-                background-position: calc(100% - 13px) center;
+                background-position: right 12px center;
                 background-size: vw(24) auto;
                 background-origin: content-box;
                 padding-right: vw(0);
             }
-            .sorting {
+            .sorting-list {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-width: 96px;
+                background-color: $fff;
+                border: vw(1) solid $m_color1;
+                border-radius: 18px;
+                padding: 1px 10px 1px 20px;
+                box-sizing: border-box;
+                list-style: none;
+                display: none;
+                max-height: 200px;
+                overflow: hidden;
                 &.on {
                     display: block;
                 }
-                ul {
-                    background-color: $fff;
-                    width: 100%;
-                    min-width: 76px;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    z-index: 10;
-                    border: vw(1) solid $m_color1;
-                    border-radius: 18px;
-                    padding: 1px 10px 1px 20px;
-                    box-sizing: border-box;
-                    li {
-                        cursor: pointer;
-                        @include font-16px-400();
+                li {
+                    cursor: pointer;
+                    @include font-16px-400();
+                    color: $m_color1;
+                    line-height: 2;
+                    background: none;
+                    &.sorting-title {
+                        @include font-16px-500();
                         color: $m_color1;
                         line-height: 2;
-                        &.sorting-title {
-                            @include font-16px-500();
-                            color: $m_color1;
-                            line-height: 2;
-                            background: url('/images/streaming/bg_up.png') no-repeat;
-                            background-position: right vw(3) center;
-                            background-size: vw(24) auto;
-                            background-origin: content-box;
-                        }
+                        background: url('/images/streaming/bg_up.png') no-repeat;
+                        background-position: right vw(3) center;
+                        background-size: vw(24) auto;
+                        background-origin: content-box;
+                    }
+
+                    &.on {
+                        font-weight: 600;
                     }
                 }
             }
@@ -113,7 +119,7 @@
                     background: none;
                 }
                 th {
-                    padding: 12px 0;
+                    padding: vw(12) 0;
                     @include font-14px-400();
                     color: $grey777;
                     text-align: left;
@@ -147,7 +153,7 @@
                     padding-right: vw(40px);
                     box-sizing: border-box;
                     display: -webkit-box;
-                    -webkit-line-clamp: 1; /* 2줄까지만 표시 */
+                    -webkit-line-clamp: 1;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -159,7 +165,7 @@
                     padding-right: vw(60px);
                     box-sizing: border-box;
                     display: -webkit-box;
-                    -webkit-line-clamp: 1; /* 2줄까지만 표시 */
+                    -webkit-line-clamp: 1;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -171,7 +177,7 @@
                     word-break: keep-all;
                     padding-right: vw(40px);
                     display: -webkit-box;
-                    -webkit-line-clamp: 2; /* 2줄까지만 표시 */
+                    -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -198,23 +204,80 @@
             @include m-font-20px-600();
             margin-bottom: vw(20, 393);
         }
+        .genre-music-top {
+            margin-bottom: vw(30, 393);
+            .genre-music-btn {
+                button {
+                    @include m-font-12px-400();
+                    color: $grey555;
+                    border-radius: vw(50, 393);
+                    padding: 7px 10px;
+                    margin-right: vw(4, 393);
+                }
+            }
+            .genre-music-sort {
+                width: vw(68, 393);
+                min-width: 68px;
+                .sort-down {
+                    min-width: 68px;
+                    @include m-font-12px-400();
+                    color: $m_color1;
+                    border-radius: vw(50, 393);
+                    background-size: vw(16, 393) auto;
+                    background-position: right -5px center;
+                    padding: 7px 15px;
+                }
+                .sorting-list {
+                    min-width: 68px;
+                    li {
+                        @include m-font-12px-400();
+                        color: $m_color1;
+                        &.sorting-title {
+                            @include m-font-12px-400();
+                            color: $m_color1;
+                            background-size: vw(16, 393) auto;
+                        }
+                    }
+                }
+            }
+        }
         table {
             width: 100%;
             col {
                 &.col-album {
+                    width: 10%;
                 }
                 &.col-title {
+                    width: auto;
+                }
+                &.col-artist {
+                    display: none;
+                }
+                &.col-time {
+                    display: none;
+                }
+                &.col-release {
+                    display: none;
                 }
                 &.col-play {
+                    width: 10%;
                 }
                 &.col-like {
+                    width: 10%;
                 }
                 &.col-fav {
+                    width: 10%;
                 }
             }
             thead {
                 tr {
                     th {
+                        padding: 0 0 vw(10, 393) 0;
+                        @include m-font-12px-400();
+                        color: $grey777;
+                        &:nth-child(2) {
+                            padding-left: vw(10, 393);
+                        }
                         &:nth-child(3) {
                             display: none;
                         }
@@ -237,6 +300,16 @@
                         border-radius: vw(10, 393);
                     }
                 }
+                .col-title-td {
+                    padding-left: vw(10, 393);
+                    strong {
+                        @include m-font-14px-600();
+                    }
+                    p {
+                        @include m-font-12px-500();
+                        color: $grey777;
+                    }
+                }
                 .col-artist-td {
                     display: none;
                 }
@@ -248,8 +321,7 @@
                 }
                 .icon {
                     img {
-                        width: auto;
-                        height: vw(22, 393);
+                        width: vw(22, 393);
                     }
                 }
             }
