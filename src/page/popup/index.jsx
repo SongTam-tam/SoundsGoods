@@ -9,7 +9,7 @@ const Popup = () => {
         <div id="popup">
             <div className="inner">
                 <PopupSw />
-                <Festival />
+                <Festival />      
                 <LimitPopup />
                 <PopupMap />
             </div>

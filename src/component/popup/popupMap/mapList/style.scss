@@ -1,0 +1,30 @@
+@use '../../../../styled/utils' as*;
+
+.map_list_popup{
+    @include display_al();
+    flex-direction: column;
+    li{
+        overflow: hidden;
+        width: vw(307);
+        height: vw(60);
+        &.active{
+            height: vw(160);
+        }
+        .view{
+            @include display_al();
+            gap: vw(8);
+            .pic{
+                width: vw(60);
+                height: vw(60);
+                img{
+                    width: vw(60);
+                }
+            }
+            .title{
+                strong{
+                    
+                }
+            }
+        }
+    }
+}
