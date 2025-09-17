@@ -3,28 +3,77 @@
 .map_list_popup{
     @include display_al();
     flex-direction: column;
+    // justify-content: space-between;
+    gap: vw(16.75);
     li{
         overflow: hidden;
         width: vw(307);
+        position: relative;
+        cursor: pointer;
         height: vw(60);
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.60);
+        padding-bottom: vw(8);
+        transition: 0.4s;
         &.active{
             height: vw(160);
+            padding-bottom: vw(20);
         }
         .view{
+            width: vw(307);
+            
+            margin-bottom: vw(20);
             @include display_al();
             gap: vw(8);
             .pic{
                 width: vw(60);
                 height: vw(60);
+                overflow: hidden;
+                @include display_center();
                 img{
-                    width: vw(60);
+                    width: vw(100);
                 }
             }
             .title{
+                @include display_ju();
+                flex-direction: column;
+                gap: vw(8);
+                width: vw(122);
                 strong{
-                    
+                    display: block;
+                    @include font-16px-500();
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                span{
+                    display: block;
+                    @include font-12px-500();
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
+        }
+        .more_text{
+           display: flex;
+           flex-direction: column;
+           width: vw(307);
+           height: vw(66);
+           strong{
+            @include font-14px-500();
+display: block;
+margin-bottom: vw(8);
+           }
+           span{
+            @include font-14px-500();
+            display: block;
+            margin-bottom: vw(10);
+           }
+           em{
+            @include font-12px-500();
+            display: block;
+           }
+           margin-bottom: vw(20);
         }
     }
 }

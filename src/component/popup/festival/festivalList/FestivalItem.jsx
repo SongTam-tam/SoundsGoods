@@ -5,7 +5,7 @@ const FestivalItem = ({ item }) => {
     return (
         <li>
             <div className="pic">
-                <img src="" alt="" />
+                <img src={img} alt="" />
             </div>
             <div className="text_con">
                 <strong>{title}</strong>

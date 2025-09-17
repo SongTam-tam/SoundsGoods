@@ -314,6 +314,85 @@ export const useGoodsStore = create((set, get) => {
                 goodspush: limitData4,
             });
         },
+        filterCD:(x)=>{
+            set((state)=>({
+                goods:[...goodsData].filter(item=>item.category === x)
+            }))
+            window.scrollTo({
+                top: 1500, 
+                behavior: 'smooth',
+              });
+        },
+        newSort:() => {set((state)=>({
+            goods: [...state.goods].sort((a,b) => a.title.localeCompare(b.title))
+            
+        }))
+        window.scrollTo({
+            top: 1500,
+            behavior: 'smooth',
+          });
+    },
+        topSort:() =>{ set((state)=>({
+            goods: [...state.goods].sort((a,b) => a.cpn.localeCompare(b.cpn))
+        }))
+        window.scrollTo({
+            top: 1500,
+            behavior: 'smooth',
+          });
+        },
+        defaultSort:() => {set((state)=>({
+            goods: [...state.goods].sort((a,b) => a.id - b.id)
+        }))
+        window.scrollTo({
+            top: 1500, 
+            behavior: 'smooth',
+          });
+    },
+        priceFilter1:()=>{set((state)=>({
+            goods: [...goodsData].filter(item=> item.price < 10000)
+        }))
+        window.scrollTo({
+            top: 1500, 
+            behavior: 'smooth',
+          });
+    },
+        priceFilter2:()=>{set((state)=>({
+            goods: [...goodsData].filter(item=> item.price > 10000 && item.price < 20000)
+        }))
+        window.scrollTo({
+            top: 1500, 
+            behavior: 'smooth',
+          });},
+        priceFilter3:()=>{set((state)=>({
+            goods: [...goodsData].filter(item=> item.price > 30000 && item.price < 40000)
+        }))
+        window.scrollTo({
+            top: 1500, 
+            behavior: 'smooth',
+          });},
+        priceFilter4:()=>{set((state)=>({
+            goods: [...goodsData].filter(item=> item.price > 50000 && item.price < 60000 )
+        }))
+        window.scrollTo({
+            top: 1500, 
+            behavior: 'smooth',
+          });},
+        priceFilter5:()=>{set((state)=>({
+            goods: [...goodsData].filter(item=> item.price > 100000)
+        }))
+        window.scrollTo({
+            top: 1500, 
+            behavior: 'smooth',
+          });},
+          artistSearch:(id)=>{
+            set((state)=>({
+                goods:[...goodsData].filter(item=>item.artist.toLowerCase().includes(id.toLowerCase()))
+            }))
+            window.scrollTo({
+                top: 1500, 
+                behavior: 'smooth',
+              });
+          },
         wishPush: (x) => {
             const { goods, wish } = get();
             const id = x.id;

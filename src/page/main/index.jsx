@@ -7,6 +7,12 @@ import Goods from '../../component/main/goods/Goods';
 import PopupMain from '../../component/main/popupMain/PopupMain';
 import MagazineMain from '../../component/main/magazineMain/MagazineMain';
 const Main = () => {
+    const top = () => {
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+        })
+    }
     return (
         <div id="main home">
             <Main_visual />
@@ -15,6 +21,9 @@ const Main = () => {
             <Goods />
             <PopupMain />
             <MagazineMain />
+            <button className='top_btn_style' onClick={top}>
+                <span>TOP</span>
+            </button>
         </div>
     );
 };
