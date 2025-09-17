@@ -2,16 +2,16 @@
 
 .pagination {
     @include display_center;
-    gap: vw(24px);
-    padding: vw(80px) 0;
+    gap: vw(24);
+    padding: vw(80) 0;
     li {
         &.prev,
         &.next {
             button {
                 cursor: pointer;
                 img {
-                    width: vw(20px);
-                    height: vw(20px);
+                    width: vw(20);
+                    height: vw(20);
                     padding: 0;
                     vertical-align: middle;
                 }
@@ -23,7 +23,7 @@
                 // 기본 버튼 스타일
                 font-family: 'pretendard' !important;
                 cursor: pointer;
-                padding: 0 vw(4px);
+                padding: 0 vw(4);
                 @include font-18px-400;
             }
 
@@ -33,6 +33,36 @@
                     font-family: 'pretendard' !important;
                     @include font-18px-600;
                     color: $m_color1 !important;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .pagination {
+        gap: vw(15, 393);
+        padding: vw(40, 393) 0;
+        li {
+            &.prev,
+            &.next {
+                button {
+                    cursor: pointer;
+                    img {
+                        width: vw(15, 393);
+                        height: vw(15, 393);
+                    }
+                }
+            }
+            &.page {
+                button {
+                    @include m-font-16px-400;
+                }
+                &.on {
+                    button {
+                        @include m-font-16px-600;
+                        color: $m_color1 !important;
+                    }
                 }
             }
         }
