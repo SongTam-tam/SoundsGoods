@@ -4,12 +4,12 @@ import './style.scss';
 
 function parseRelease(str) {
     const [year, month] = str.split('-').map(Number);
-    return new Date(year, month - 1, 1); // 월은 0부터 시작
+    return new Date(year, month - 1, 1);
 }
 
 const GenreMusic = ({ data }) => {
     const [selectedAll, setSelectedAll] = useState(false);
-    const [sortType, setSortType] = useState('정렬'); // 🔹 디폴트는 "정렬"
+    const [sortType, setSortType] = useState('정렬');
     const [sortedList, setSortedList] = useState([]);
     const [sortOpen, setSortOpen] = useState(false);
 

@@ -9,7 +9,7 @@ const ArtistIAlbum = ({ data }) => {
                 <h2>
                     앨범
                     <Link to="">
-                        <img src="../../../../../public/images/streaming/more.png" alt="" />
+                        <img src="/images/streaming/more.png" alt="" />
                     </Link>
                 </h2>
             </div>
