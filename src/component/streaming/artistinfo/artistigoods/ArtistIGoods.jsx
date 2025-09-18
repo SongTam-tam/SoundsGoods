@@ -17,7 +17,9 @@ const ArtistIGoods = ({ data }) => {
         <section id="artist-i-goods">
             <div>
                 <h2>
-                    {data?.artist || '아티스트 정보 없음'}
+                    {data?.artist
+                        ? `${data.artist} 굿즈 예매하기`
+                        : '아티스트 정보 없음'}
                     <Link to="">
                         <img
                             src="/images/streaming/more_color.png"

@@ -8,15 +8,14 @@ const ArtistIAlbumMobile = ({ data }) => {
     return (
         <section id="artist-i-album-mobile">
             <div>
-                <h2>
-                    앨범
-                    <Link to="">
-                        <img src="/images/streaming/more.png" alt="" />
-                    </Link>
-                </h2>
+                <h2>앨범</h2>
             </div>
             <div className="artist-i-cover-mobile">
-                <Swiper className="mySwiper" slidesPerView={3.2} spaceBetween={10}>
+                <Swiper
+                    className="mySwiper"
+                    slidesPerView={3.2}
+                    spaceBetween={10}
+                >
                     {data.album.map((item) => (
                         <SwiperSlide>
                             <ArtistIAlbumItemMobile key={item.id} item={item} />
