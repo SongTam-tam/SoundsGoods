@@ -106,14 +106,15 @@ const Goods = () => {
         update();
 
         // ⚡ GSAP ScrollTrigger 핀 고정만 추가
-        if (sidebarRef.current) {
-            gsap.to(sidebarRef.current, {
+        if (sliderWrapperRef.current) {
+            gsap.to(sliderWrapperRef.current, {
                 scrollTrigger: {
-                    trigger: sidebarRef.current,
+                    trigger: sliderWrapperRef.current,
                     start: 'top top',
-                    // end: () => `+=${totalWdith}`,
+                    end: '+=6000',
                     pin: true,
                     pinSpacing: false,
+                    markers:true,
                 },
             });
         }
