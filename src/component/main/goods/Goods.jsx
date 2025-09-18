@@ -10,7 +10,7 @@ const Goods = () => {
     const slidesRef = useRef([]);
     const animationRef = useRef(null);
     const sidebarRef = useRef(null);
-    const mainGoodsRef = useRef(null); // main-goods ref 추가
+    const mainGoodsRef = useRef(null);
     const targetRef = useRef(0);
     const currentRef = useRef(0);
     const ease = 0.075;
@@ -99,7 +99,7 @@ const Goods = () => {
                 end: `+=${totalScrollDistance * 0.8}`, // 슬라이더가 끝날 때까지
                 pin: mainGoodsRef.current, // main-goods 전체를 핀 고정
                 pinSpacing: true,
-                markers: true,
+                // markers: true,
             });
         }
         return () => {
