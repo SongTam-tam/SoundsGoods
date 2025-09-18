@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 const ArtistITopMusicItem = ({ item }) => {
     const [minute, setMinute] = useState(0);
+    const [like, setLike] = useState(false);
+    const [fav, setFav] = useState(false);
 
     useEffect(() => {
         const randomMinute = Math.floor(Math.random() * 60);
@@ -21,10 +23,26 @@ const ArtistITopMusicItem = ({ item }) => {
                 <img src="/images/streaming/icon_play.png" alt="재생" />
             </td>
             <td className="artist-music-5 icon">
-                <img src="/images/streaming/icon_heart.png" alt="좋아요" />
+                <img
+                    src={
+                        like
+                            ? '/images/streaming/icon_heart_on.png'
+                            : '/images/streaming/icon_heart.png'
+                    }
+                    alt="좋아요"
+                    onClick={() => setLike(!like)}
+                />
             </td>
             <td className="artist-music-6 icon">
-                <img src="/images/streaming/icon_star.png" alt="즐겨찾기" />
+                <img
+                    src={
+                        fav
+                            ? '/images/streaming/icon_star_on.png'
+                            : '/images/streaming/icon_star.png'
+                    }
+                    alt="찜하기"
+                    onClick={() => setFav(!fav)}
+                />
             </td>
         </tr>
     );

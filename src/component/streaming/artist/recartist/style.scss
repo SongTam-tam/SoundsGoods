@@ -8,13 +8,6 @@
         align-items: center;
         line-height: 1;
         margin-bottom: vw(40);
-        img {
-            width: vw(40px);
-            height: vw(40px);
-            margin-left: vw(14px);
-            object-fit: cover;
-            vertical-align: top;
-        }
     }
     .rec-artist-list {
         @include display_between();
