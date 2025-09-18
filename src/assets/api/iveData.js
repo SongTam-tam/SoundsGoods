@@ -8,7 +8,7 @@ export default [
     {
         id: 3,
         yid: '',
-        img: '/images/main/main_con5_3.jpg',
+        img: '/images/main/main_con5_2.jpg',
         isShow: false,
     },
 ];

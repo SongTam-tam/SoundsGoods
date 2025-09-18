@@ -15,56 +15,6 @@
             @include font-30px-600();
             margin-bottom: vw(40px);
         }
-
-        .top_new_list {
-            margin-top: 150px;
-            @include display_al();
-            justify-content: space-between;
-            gap: vw(20);
-            .main_artist_left {
-                width: vw(700);
-                height: vw(464);
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.4);
-                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-                box-sizing: border-box;
-                padding: vw(20) vw(40);
-                position: relative;
-                .text_right_box {
-                    margin-bottom: vw(20);
-                    > strong {
-                        text-align: left;
-                        display: block;
-                        @include font-20px-600();
-                    }
-                }
-
-                .btn_top_new {
-                    @include button($mw: 144);
-                    margin-left: vw(238);
-                }
-            }
-            .main_artist_right {
-                width: vw(660);
-                height: vw(464);
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.4);
-                box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.25);
-                box-sizing: border-box;
-                padding: vw(20) vw(40);
-                .text_right_box {
-                    margin-bottom: vw(20);
-                    > strong {
-                        text-align: left;
-                        display: block;
-                        @include font-20px-600();
-                    }
-                    span {
-                        display: none;
-                    }
-                }
-            }
-        }
     }
 }
 @include tablet {
