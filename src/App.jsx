@@ -14,6 +14,7 @@ import {
     GoodsDetail,
     Cart,
     Popup,
+    Pay,
 } from './page';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/ReactToastify.css';
@@ -40,21 +41,17 @@ const App = () => {
                         <Route path="magazine" element={<Magazine />} />
                         <Route path="cart" element={<Cart />} />
                         <Route path="popup" element={<Popup />} />
-
+                        <Route path="pay" element={<Pay />} />
                         <Route path="goods">
                             <Route index element={<Goods />} />
-
                             <Route path=":goodsID" element={<GoodsDetail />} />
                         </Route>
                         <Route path="streaming">
                             <Route index element={<Streaming />} />
                             <Route path="artist" element={<Artist />} />
-
                             <Route path="artistinfo/:id" element={<ArtistInfo />} />
-
                             <Route path="genre" element={<Genre />} />
                             <Route path="genre/:title" element={<Genre />} />
-
                             <Route path="latestmusic" element={<LatestMusic />} />
                             <Route path="top100" element={<Top100 />} />
                         </Route>

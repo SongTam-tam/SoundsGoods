@@ -38,6 +38,7 @@ const GoodsCart = ({ data }) => {
                         <label htmlFor="chk1"></label>
                         <span>상세페이지 및 배송 일정 확인 후 구매 부탁드립니다</span>
                     </div>
+                  
                     <div className="form_con form_con2">
                         <input type="checkbox" name="chk2" id="chk2" />
                         <label htmlFor="chk2"></label>
@@ -53,6 +54,7 @@ const GoodsCart = ({ data }) => {
                         <label htmlFor="chk4"></label>
                         <span>안내 사항을 모두 확인했습니다</span>
                     </div>
+                 
                 </div>
                 <div className="updown_price">
                     <strong className="updown_title">{title}</strong>

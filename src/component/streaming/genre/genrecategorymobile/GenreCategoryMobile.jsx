@@ -7,18 +7,9 @@ const GenreCategoryMobile = ({ allGenres, selectedGenre, onSelect }) => {
     const navigate = useNavigate();
     return (
         <section id="genre-category-mobile">
-            <h2>
-                장르별 음악
-                <Link to="">
-                    <img src="/images/streaming/more.png" alt="" />
-                </Link>
-            </h2>
+            <h2>장르별 음악</h2>
             <div className="genre-category-list-mobile">
-                <Swiper
-                    className="mySwiper"
-                    spaceBetween={16}
-                    slidesPerView={2.5}
-                >
+                <Swiper className="mySwiper" spaceBetween={16} slidesPerView={2.5}>
                     {allGenres?.map((item, index) => (
                         <SwiperSlide key={index}>
                             <div

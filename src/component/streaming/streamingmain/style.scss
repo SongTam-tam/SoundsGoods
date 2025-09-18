@@ -17,6 +17,7 @@
 // }
 #streaming-wrap {
     width: vw(1690px);
+
     @include tablet {
         width: 100%;
         padding-top: vw(20, 393);

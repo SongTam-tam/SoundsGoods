@@ -8,37 +8,26 @@
         align-items: center;
         line-height: 1;
         margin-bottom: vw(20, 393);
-        img {
-            width: vw(24, 393);
-            height: vw(24, 393);
-            margin-left: vw(10, 393);
-            object-fit: cover;
-            vertical-align: top;
-        }
     }
     .artist-i-cover-mobile {
         width: 100%;
         margin-right: vw(-20, 393);
-        // padding-left: vw(10, 393);
         .mySwiper {
             width: 100%;
             padding-right: vw(20, 393);
             .swiper-slide {
                 .artist-i-album-item {
-                    width: vw(110, 393);
+                    width: vw(105, 393);
                     text-align: center;
                     cursor: pointer;
                     img {
                         border-radius: vw(20, 393);
-                        width: vw(110, 393);
-                        height: vw(110, 393);
+                        width: vw(105, 393);
+                        height: vw(105, 393);
                         margin-bottom: vw(16, 393);
                     }
                     .album-item-text {
                         text-align: left;
-                        padding-left: vw(14);
-                        padding-right: vw(14);
-                        padding-top: vw(10);
                         line-height: 1.5;
                         h3 {
                             @include m-font-14px-600;
@@ -47,14 +36,14 @@
                             text-overflow: ellipsis;
                         }
                         h4 {
-                            @include font-18px-400;
+                            @include m-font-12px-400;
                             color: $grey777;
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
                         }
                         p {
-                            @include font-16px-400;
+                            @include m-font-12px-400;
                             color: $grey777;
                         }
                     }

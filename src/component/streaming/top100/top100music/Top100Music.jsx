@@ -4,7 +4,7 @@ import Top100MusicList from './Top100MusicList';
 import top_1_50 from '../../../../assets/api/musicComponents/top_1_50';
 
 const Top100Music = () => {
-    const [sortType, setSortType] = useState('최신순');
+    const [sortType, setSortType] = useState('정렬');
     const [sortedList, setSortedList] = useState([...(top_1_50 || [])]);
     const [sortOpen, setSortOpen] = useState(false);
     const [selectedAll, setSelectedAll] = useState(false);

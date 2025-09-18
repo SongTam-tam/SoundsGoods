@@ -6,12 +6,7 @@ const ArtistIVideo = ({ data }) => {
     return (
         <section id="artist-i-video">
             <div>
-                <h2>
-                    뮤직비디오
-                    <Link to="">
-                        <img src="/images/streaming/more.png" alt="" />
-                    </Link>
-                </h2>
+                <h2>뮤직비디오</h2>
             </div>
             <div className="artist-i-video-list">
                 {data.album.slice(0, 3).map((item) => (

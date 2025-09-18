@@ -16,10 +16,8 @@ const PopupSideBar = () => {
         const day = date.getDate();
         const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
         const weekday = weekdays[date.getDay()];
-
-        return `${year}/${month < 10 ? '0' + month : month}/${
-            day < 10 ? '0' + day : day
-        } (${weekday})`;
+    
+        return `${year} .${month < 10 ? '0' + month : month} .${day < 10 ? '0' + day : day} (${weekday}) ~`;
     };
     const isSameMonthDate = (date) => {
         return isSameMonth(date, startDate);
