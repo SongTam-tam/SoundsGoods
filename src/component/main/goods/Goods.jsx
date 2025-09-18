@@ -96,7 +96,7 @@ const Goods = () => {
             ScrollTrigger.create({
                 trigger: mainGoodsRef.current,
                 start: 'top 25%',
-                end: `+=${totalScrollDistance * 0.8}`, // 슬라이더가 끝날 때까지
+                end: `+=${totalScrollDistance * 0.2}`, // 슬라이더가 끝날 때까지
                 pin: mainGoodsRef.current, // main-goods 전체를 핀 고정
                 pinSpacing: true,
                 markers: true,
