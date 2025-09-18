@@ -11,10 +11,40 @@
         height: vw(140);
         @include display_al();
         justify-content: space-between;
+        &:nth-child(1){
+            .pic{
+                img{
+                    width: vw(300);
+                }
+            }
+        }
+        &:nth-child(4){
+            .pic{
+                img{
+                    width: vw(220);
+                }
+            }
+        }
+        &:nth-child(5){
+            .pic{
+                img{
+                    width: vw(200);
+                }
+            }
+        }
+        &:nth-child(6){
+            .pic{
+                img{
+                    width: vw(200);
+                }
+            }
+        }
         .pic {
             width: vw(140);
             height: vw(140);
             background-color: aliceblue;
+            overflow: hidden;
+            @include display_center();
             img {
                 width: vw(140);
             }

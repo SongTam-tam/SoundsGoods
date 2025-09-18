@@ -6,14 +6,13 @@ import { useEffect } from 'react';
 
 const GenreMusicList = ({ data, selectedAll }) => {
     const { setData, getCurrentPageData } = usePaginationStore();
-
     useEffect(() => {
         if (data) {
             setData(data);
         }
     }, [data, setData]);
 
-    const currentData = getCurrentPageData(); // slice 없이 바로 데이터 가져오기
+    const currentData = getCurrentPageData();
     return (
         <div>
             <table>

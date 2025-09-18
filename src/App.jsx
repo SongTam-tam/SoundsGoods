@@ -21,12 +21,15 @@ import Layout from './common/Layout';
 import './styled/reset.scss';
 import Mymusic_Access from './component/mymusic/access/Mymusic_Access';
 import Search from './page/search';
+import ScrollTop from './ui/ScrollTop';
 
 const App = () => {
     return (
         <>
-            <ToastContainer />
+      
+            <ToastContainer className='toast_custom' toastClassName='toast_custom_div'/>
             <BrowserRouter>
+            <ScrollTop/>
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Main />} />

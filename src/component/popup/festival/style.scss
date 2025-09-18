@@ -17,6 +17,11 @@
             width: vw(330);
             height: vw(460);
             background-color: $m_color1;
+            overflow: hidden;
+            @include display_center();
+            img{
+                width: vw(350);
+            }
         }
         .festival_text {
             width: vw(304);

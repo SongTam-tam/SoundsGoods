@@ -22,7 +22,11 @@ const WishItem = ({ item }) => {
         bookmark,
         count,
     } = item;
-
+const {delWish} = useGoodsStore()
+const Del = (x) =>{
+    delWish(x)
+    toast('위시리스트 삭제')
+}
     return (
         <li className="li">
             <p className="heart_icons">
@@ -61,7 +65,7 @@ const WishItem = ({ item }) => {
                 <p className="ppp">
                     <button>구매 하러가기</button>
                 </p>
-                <button className="close">
+                <button className="close" onClick={()=>Del(id)}>
                     <i>
                         <IoIosClose />
                     </i>

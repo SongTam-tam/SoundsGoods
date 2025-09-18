@@ -6,7 +6,7 @@ const Festival = () => {
         <div className="festival">
             <div className="festival_left">
                 <div className="pic">
-                    <img src="" alt="" />
+                    <img src="/images/popup/pop_con2_left01.jpg" alt="" />
                 </div>
                 <div className="festival_text">
                     <strong>{`핫한 부산에서 열리는

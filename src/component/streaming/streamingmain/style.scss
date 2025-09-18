@@ -264,6 +264,7 @@
                     top: vw(6, 393);
                     left: vw(8, 393);
                     @include m-font-20px-800;
+                    z-index: 5;
                 }
                 .play-btn {
                     position: absolute;
@@ -279,6 +280,26 @@
                         width: vw(30, 393);
                         height: vw(30, 393);
                     }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.4);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 1;
+                    pointer-events: none;
+                }
+
+                &:hover::after {
+                    opacity: 1;
+                }
+                &:hover .play-btn {
+                    opacity: 1;
                 }
             }
             h4 {
@@ -424,6 +445,7 @@
                         border-radius: vw(30, 393);
                         object-fit: cover;
                         overflow: hidden;
+                        cursor: pointer;
                     }
                     h4 {
                         @include m-font-14px-500();
@@ -458,13 +480,24 @@
                     box-sizing: border-box;
                     margin-bottom: vw(20px);
                     object-fit: cover;
+                    cursor: pointer;
                 }
                 h4 {
                     @include font-16px-700;
+                    width: vw(120px);
                     margin-bottom: vw(8px);
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
                 p {
                     @include font-14px-500;
+                    width: vw(120px);
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
         }
