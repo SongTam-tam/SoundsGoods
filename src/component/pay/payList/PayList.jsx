@@ -3,10 +3,10 @@ import './style.scss'
 import { useGoodsStore } from '../../../store';
 import PayItem from './PayItem';
 const PayList = () => {
-    const cart = useGoodsStore(state=>state.cart)
+    const payment = useGoodsStore(state=>state.payment)
     return (
         <ul className='payment_list'>
-            {cart.map(item=><PayItem key={item.id} item={item}/>)}
+            {payment.map(item=><PayItem key={item.id} item={item}/>)}
         </ul>
     );
 };

@@ -265,8 +265,9 @@ export const useGoodsStore = create((set, get) => {
         goods: localStorage.getItem('goods')
             ? JSON.parse(localStorage.getItem('goods'))
             : goodsData,
-
         cart: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [],
+        payment: localStorage.getItem('payment') ? JSON.parse(localStorage.getItem('payment')) : [],
+        complete: localStorage.getItem('complete') ? JSON.parse(localStorage.getItem('complete')) : [],
         iveGoods: localStorage.getItem('iveGoods')
             ? JSON.parse(localStorage.getItem('iveGoods'))
             : [],
@@ -297,6 +298,17 @@ export const useGoodsStore = create((set, get) => {
                 cartItemCount: newCartItemCount,
             });
         },
+        updateTotals2: () => {
+            const { payment } = get();
+            const newItemTotal = payment.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const newCartItemCount = payment.reduce((sum, item) => sum + item.quantity, 0);
+
+            set({
+                itemTotal: newItemTotal,
+                paymentTotal: newItemTotal + 2000,
+                cartItemCount: newCartItemCount,
+            });
+        },
         shuffl: () => {
             const { goods } = get();
             const limitData = [...goods].sort(() => Math.random() - 0.5).slice(0, 5);
@@ -313,6 +325,22 @@ export const useGoodsStore = create((set, get) => {
                 iveGoods: limitData3,
                 goodspush: limitData4,
             });
+        },
+        completePush: (orderData) => {
+            const { complete } = get();
+            const newComplete = [...complete, orderData];
+            localStorage.setItem('complete', JSON.stringify(newComplete));
+            set({ complete: newComplete });
+            localStorage.setItem('cart', JSON.stringify([]));
+            set({ cart: [] , payment:[] });
+        },
+        payPush:(x) => {
+            const {goods , payment} = get();
+            const id = x.id
+            const item = goods.find(item=>item.id === id)
+            const updataItem  =[...payment , item]
+            localStorage.setItem('payment', JSON.stringify(updataItem));
+            set({payment:updataItem})
         },
         filterCD:(x)=>{
             set((state)=>({

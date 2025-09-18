@@ -24,8 +24,15 @@ const GoodsItem = ({ goods }) => {
         count,
         totalPrice,
     } = goods;
-    const { cartPush, downCountGoods, upCountGoods } = useGoodsStore();
+    const { cartPush, downCountGoods, upCountGoods ,payPush} = useGoodsStore();
     const nav = useNavigate();
+    const payadd = (x) => {
+        payPush(x)
+        setTimeout(()=>{
+            nav('/pay')
+        },50)
+    
+    }
     const notify = (x) => {
         cartPush(x);
         toast('장바구니의 담기 성공');
@@ -83,7 +90,7 @@ const GoodsItem = ({ goods }) => {
                     </button>
                     <span>카드에 넣기</span>
                 </div>
-                <div className="btn2">
+                <div className="btn2" onClick={()=>payadd(goods)}>
                     <button>
                         <img src="images/icons/white_next.png" alt="" />
                     </button>
