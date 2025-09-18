@@ -1,0 +1,29 @@
+@use '../../../styled/utils' as *;
+
+.artists_main {
+    padding: vw(120) 0;
+    position: relative;
+
+    .artist_title {
+        font-size: 200px;
+        font-weight: 900;
+        font-family: 'Bricolage Grotesque', 'Pretendard';
+        opacity: 10%;
+        padding: 0 50px;
+    }
+    .artist_list_main {
+        margin-top: vw(-30);
+        z-index: 20;
+    }
+}
+
+@include tablet {
+    .artists_main {
+        padding: vw(40, 393) 0;
+
+        h2 {
+            margin-bottom: vw(20, 393);
+            font-size: vw(18, 393);
+        }
+    }
+}

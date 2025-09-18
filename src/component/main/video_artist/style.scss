@@ -15,24 +15,9 @@
             @include font-30px-600();
             margin-bottom: vw(40px);
         }
-        .artist_title {
-            @include font-30px-600();
-            margin-top: vw(120px);
-            margin-bottom: vw(10);
-        }
-        .artist_sub_title {
-            @include font-16px-700();
-            display: block;
-            margin-bottom: vw(40);
-        }
-        .more_main_artist {
-            @include button($mw: 238);
-            color: #777;
-            margin-left: vw(631);
-            margin-top: vw(40);
-            margin-bottom: vw(120);
-        }
+
         .top_new_list {
+            margin-top: 150px;
             @include display_al();
             justify-content: space-between;
             gap: vw(20);

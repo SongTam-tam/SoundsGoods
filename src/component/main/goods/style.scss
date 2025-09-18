@@ -1,128 +1,118 @@
 @use '../../../styled/utils' as *;
 
-#goods {
-    width: vw(1920);
-    // height: vw(1241);
+.main-goods {
+    margin: 0;
+    height: vw(800px);
+    padding: 0;
     box-sizing: border-box;
     position: relative;
-    .inner {
-        box-sizing: border-box;
-        padding: vw(120) 0;
-        width: vw(1500);
-        margin: auto;
-        .goods_title {
-            @include font-28px-600();
-            text-align: center;
-            margin-bottom: vw(40);
-        }
-        .limit_goods_title {
-            @include display_center();
-            gap: vw(45.47);
-            margin-bottom: vw(40);
-            h2 {
-                @include font-28px-600;
-                position: relative;
-                &::after {
-                    content: '';
-                    @include p_center_left();
-                    bottom: 0;
-                    width: vw(300);
-                    height: vw(12);
-                    background-image: url(/images/icons/rota.png);
-                }
+
+    .sidebar {
+        width: 100vh;
+        height: max-content;
+        display: flex;
+        align-items: flex-start;
+        transform: rotate(-90deg) translate(-70%, 0);
+        transform-origin: left top;
+        padding: 1.5em 3em;
+        font-family: 'PP Neue Montreal';
+
+        > div {
+            &:nth-child(1) {
+                flex: 2;
             }
-            p {
-                @include font-16px-700;
-            }
-        }
-        .expected_goods_title {
-            margin-top: vw(60);
-            @include display_center();
-            gap: vw(45.47);
-            margin-bottom: vw(40);
-            h2 {
-                @include font-28px-600;
-                position: relative;
-                &::after {
-                    content: '';
-                    @include p_center_left();
-                    bottom: 0;
-                    width: vw(139);
-                    height: vw(12);
-                    background-image: url(/images/icons/rota2.png);
-                }
-            }
-            p {
-                @include font-16px-700;
+
+            &:nth-child(2) {
+                flex: 2;
+                display: flex;
+                gap: 4em;
             }
         }
     }
+
+    .main-pop {
+        font-family: 'Bricolage Grotesque', 'Pretendard';
+        text-transform: uppercase;
+        font-size: 7rem;
+        line-height: 85%;
+        margin-bottom: 4rem;
+        font-weight: 700;
+    }
+    .bg-artists_goods {
+        font-family: 'Bricolage Grotesque', 'Pretendard';
+        font-size: vw(100px);
+        font-weight: 700;
+        transform: rotate(90deg) translate(90%, 360%);
+        color: #000;
+        opacity: 10%;
+    }
+    .sidebar-item {
+        font-size: 30px;
+        z-index: 20;
+    }
+    .sliders {
+        width: 100%;
+        // height: 100%;
+        overflow: hidden;
+    }
+
+    .slider-wrapper {
+        position: absolute;
+        top: 0;
+        width: vw(8000px);
+        padding: 0 vw(600px);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: vw(100px);
+    }
+
+    .slide {
+        width: vw(300px);
+        height: vw(400px);
+        background: none;
+    }
+
+    img {
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+    }
 }
-@include tablet {
-    #goods {
-        width: vw(393, 393);
-        box-sizing: border-box;
-        position: relative;
-        margin-bottom: vw(40, 393);
-        .inner {
-            box-sizing: border-box;
-            padding: 0;
-            width: vw(373, 393);
-            margin: auto;
-            @include display_al();
-            flex-direction: column;
-            .goods_title {
-                @include font-28px-600();
-                text-align: center;
-                margin-bottom: vw(20, 393);
-                font-size: vw(16, 393);
+
+@media screen and (max-width: 393px) {
+    .main-goods {
+        height: 1200px;
+
+        .sidebar {
+            transform: rotate(-90deg) translate(-80%, 0);
+            padding: 1em 2em;
+
+            .main-pop {
+                font-size: 3rem;
+                line-height: 1;
+                margin-bottom: 2rem;
             }
-            .limit_goods_title {
-                @include display_center();
-                flex-direction: column;
-                gap: vw(8, 393);
-                margin-bottom: vw(20, 393);
-                h2 {
-                    @include font-28px-600;
-                    position: relative;
-                    font-size: vw(16, 393);
-                    &::after {
-                        content: '';
-                        @include p_center_left();
-                        bottom: 0;
-                        width: vw(181, 393);
-                        height: vw(12, 393);
-                        background-image: url(/images/icons/rota.png);
-                    }
-                }
-                p {
-                    @include font-16px-700;
-                    font-size: vw(12, 393);
-                }
-            }
-            .expected_goods_title {
-                @include display_center();
-                flex-direction: column;
-                gap: vw(8, 393);
-                margin-bottom: vw(20, 393);
-                h2 {
-                    @include font-28px-600;
-                    position: relative;
-                    font-size: vw(16, 393);
-                    &::after {
-                        content: '';
-                        @include p_center_left();
-                        bottom: 0;
-                        width: vw(86, 393);
-                        height: vw(12, 393);
-                        background-image: url(/images/icons/rota2.png);
-                    }
-                }
-                p {
-                    @include font-16px-700;
-                    font-size: vw(12, 393);
-                }
-            }
+        }
+
+        .slider-wrapper {
+            width: 3000px;
+            padding: 0 100px;
+            gap: 20px;
+        }
+
+        .slide {
+            width: 150px;
+            height: 200px;
+        }
+
+        img {
+            height: 100%;
+        }
+
+        .bg-artists_goods {
+            font-size: 40px;
+            transform: rotate(90deg) translate(80%, 300%);
         }
     }
 }
