@@ -24,7 +24,7 @@
     .more_main_artist {
         position: absolute;
         left: 45%;
-        @include button($mw: 238);
+        @include button($mw: 170);
         color: #777;
         text-align: center;
         align-items: center;
