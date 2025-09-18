@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useGoodsStore } from '../../store';
 import './style.scss'
+import PayList from './payList/PayList';
+import PayForm from './payInput/PayForm';
 const Payment = () => {
         const { itemTotal, paymentTotal, cartItemCount, cart } = useGoodsStore();
         const { updateTotals } = useGoodsStore();
@@ -9,6 +11,17 @@ const Payment = () => {
         }, [itemTotal, cart]);
     return (
         <div className='payment_style'>
+            <div className="pay_list_content">
+                <div className="title_box_con">
+                <h2 className='pay_title_con'>주문상품 {`(총 ${cart.length})`}</h2>
+                <img src="images/icons/black_top.png" alt="" />
+                </div>
+                <PayList/>
+                <h2 className="delivery_addr">
+                    배송지 정보 입력
+                </h2>
+                <PayForm/>
+            </div>
              <div className="total_price_box">
                 <h3>TOTAL</h3>
                 <ul className="price_cnt">
@@ -35,6 +48,7 @@ const Payment = () => {
                         <input type="checkbox" name="chk1" id="chk1" />
                         <label htmlFor="chk1"></label>
                         <span>약관 모두 동의</span>
+                        <img src="images/icons/black_top.png" alt="" />
                     </div>
                     <div className="form_con form_con2">
                         <input type="checkbox" name="chk2" id="chk2" />
