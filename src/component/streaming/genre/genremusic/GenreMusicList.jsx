@@ -29,7 +29,7 @@ const GenreMusicList = ({ data, selectedAll }) => {
                 <thead>
                     <tr>
                         <th></th>
-                        <th>곡명</th>
+                        <th>곡명 / 앨범명</th>
                         <th>아티스트명</th>
                         <th>재생시간</th>
                         <th>발매일</th>

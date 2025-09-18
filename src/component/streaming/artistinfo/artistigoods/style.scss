@@ -21,7 +21,6 @@
         display: flex;
         justify-content: space-between;
         .artist-i-goods-item {
-            cursor: pointer;
             width: vw(260);
             margin-bottom: vw(40);
             .artist-i-goods-img {
@@ -37,8 +36,7 @@
                     top: vw(10);
                     right: vw(10);
                     cursor: pointer;
-                    background-color: $fc;
-                    opacity: 0.6;
+                    background-color: rgba($fc, 0.6);
                     border-radius: vw(500);
                     padding: vw(4) vw(10);
                     display: flex;
@@ -51,6 +49,7 @@
                 }
             }
             .artist-i-goods-text {
+                cursor: pointer;
                 line-height: 1.5;
                 h3 {
                     @include font-18px-600();

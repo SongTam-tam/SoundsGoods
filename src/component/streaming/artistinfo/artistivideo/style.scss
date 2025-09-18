@@ -80,30 +80,47 @@
         .artist-i-video-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-gap: vw(20, 393);
+            grid-gap: vw(10, 393);
+            grid-auto-rows: auto;
             .artist-i-video-item {
                 width: 100%;
-                iframe {
-                    border-radius: vw(10, 393);
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 16 / 9;
-                }
+                display: flex;
+                flex-direction: column;
                 .video-thumbnail {
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    border-radius: vw(10, 393);
+                    overflow: hidden;
+
                     & > img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                         border-radius: vw(10, 393);
                     }
-                    .play-icon {
-                        & > img {
-                            width: vw(30, 393);
-                        }
-                    }
+                }
+
+                iframe {
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    border-radius: vw(10, 393);
                 }
                 .video-item-text {
+                    padding-top: vw(10, 393);
+                    line-height: 1.5;
                     h3 {
                         @include m-font-16px-600;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
-                    h4,
+                    h4 {
+                        @include m-font-12px-400;
+                        color: $grey777;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                     p {
                         @include m-font-12px-400;
                         color: $grey777;
@@ -111,20 +128,6 @@
                 }
                 &:nth-child(1) {
                     grid-column: 1 / span 2;
-                    .video-item-text {
-                        h3 {
-                            @include m-font-18px-600;
-                        }
-                        h4,
-                        p {
-                            @include m-font-14px-400;
-                            color: $grey777;
-                        }
-                    }
-                }
-                &:nth-child(2),
-                &:nth-child(3) {
-                    grid-column: span 1;
                 }
             }
         }
