@@ -61,7 +61,7 @@ const MagazinItem = () => {
     }, [currentIndex]);
 
     return (
-        <div className="popup_item">
+        <div className="team-carousel-wrapper">
             <div
                 className="carousel-container"
                 onTouchStart={(e) => (touchStartX.current = e.changedTouches[0].screenX)}

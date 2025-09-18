@@ -6,32 +6,32 @@ const teamMembers = [
         name: '로제(ROSÉ)',
         role: '25.09.01 ~ 25.12.31',
         ff: '말레이시아, 쿠알라룸푸르',
-        img: '/images/main/main_con6_01.jpg',
+        img: '/images/popup/pop_con1_01.jpg',
     },
     {
         name: 'Futurea canvas 2025',
         role: '25.09.25 ~ 25.09.06',
         ff: '서울 강남구 가로수길',
-        img: '/images/main/main_con6_02.jpg',
+        img: '/images/popup/pop_con1_right02.jpg',
     },
     {
         name: 'ADA POP-UP STORE – Ado',
         role: '25.08.21 ~ 25.09.03',
         ff: '서울 중구 명동길 60',
-        img: '/images/main/main_con_03.jpg',
+        img: '/images/popup/pop_con1_right03.jpg',
     },
 
     {
         name: 'AHOF – “WHO WE ARE”',
         role: '2025. 9. 1 ~ 2025. 9. 10',
         ff: '영등포 타임스퀘어',
-        img: 'https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+        img: '/images/popup/pop_con1_left03.jpg',
     },
     {
         name: '2025 레코드 팝업스토어',
         role: '25.09.15 ~ 25.12.30',
         ff: '인천 개항장 인근',
-        img: '/images/main/main_con6_04.jpg',
+        img: '/images/popup/pop_con1_left02.jpg',
     },
 ];
 

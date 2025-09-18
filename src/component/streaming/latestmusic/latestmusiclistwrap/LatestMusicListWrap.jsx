@@ -4,20 +4,19 @@ import './style.scss';
 import newData_51_100 from '../../../../assets/api/musicComponents/newData_51_100';
 
 const LatestMusicListWrap = () => {
-    const [musicData, setMusicData] = useState([...(newData_51_100 || [])]);
-    const [selectedAll, setSelectedAll] = useState(false);
-    const [sortType, setSortType] = useState('최신순');
+    const [sortType, setSortType] = useState('정렬');
     const [sortedList, setSortedList] = useState([...(newData_51_100 || [])]);
     const [sortOpen, setSortOpen] = useState(false);
+    const [selectedAll, setSelectedAll] = useState(false);
 
     const handleSelectAll = () => {
         setSelectedAll((prev) => !prev);
     };
 
-    const toggleSort = () => setSortOpen(!sortOpen);
+    const toggleSort = () => setSortOpen((prev) => !prev);
 
     useEffect(() => {
-        let newList = [...(newData_51_100 || [])];
+        let newList = [...newData_51_100];
         if (sortType === '최신순') {
             newList.sort((a, b) => new Date(b.release) - new Date(a.release));
         } else if (sortType === '인기순') {
@@ -26,8 +25,7 @@ const LatestMusicListWrap = () => {
             newList.sort((a, b) => a.title.localeCompare(b.title));
         }
         setSortedList(newList);
-        setMusicData(newList);
-    }, [sortType, newData_51_100]);
+    }, [sortType]);
 
     return (
         <section id="latest-music">
@@ -40,29 +38,28 @@ const LatestMusicListWrap = () => {
                     <button>전체 재생</button>
                 </div>
                 <div className="latest-music-sort">
-                    <div className="sort-down" onClick={toggleSort}>
-                        정렬
-                    </div>
-
-                    <div className="sorting">
-                        {sortOpen && (
-                            <ul className={`sorting ${sortOpen ? 'on' : ''}`}>
-                                <li className="sorting-title">정렬</li>
-                                {['최신순', '인기순', '이름순'].map((type) => (
-                                    <li
-                                        key={type}
-                                        className={sortType === type ? 'on' : ''}
-                                        onClick={() => {
-                                            setSortType(type);
-                                            setSortOpen(false);
-                                        }}
-                                    >
-                                        {type}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
+                    {!sortOpen && (
+                        <div className="sort-down" onClick={toggleSort}>
+                            {sortType}
+                        </div>
+                    )}
+                    <ul className={`sorting-list ${sortOpen ? 'on' : ''}`}>
+                        <li className="sorting-title" onClick={() => setSortOpen(false)}>
+                            정렬
+                        </li>
+                        {['최신순', '인기순', '이름순'].map((type) => (
+                            <li
+                                key={type}
+                                className={sortType === type ? 'on' : ''}
+                                onClick={() => {
+                                    setSortType(type);
+                                    setSortOpen(false);
+                                }}
+                            >
+                                {type}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
             <LatestMusicList data={sortedList} selectedAll={selectedAll} />

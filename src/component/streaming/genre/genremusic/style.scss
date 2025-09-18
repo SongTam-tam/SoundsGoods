@@ -12,13 +12,12 @@
         .genre-music-btn {
             button {
                 font-family: 'Pretendard', sans-serif;
-                @include font-16px-500();
+                @include font-16px-400();
                 color: $grey555;
                 border: vw(1) solid $grey555;
                 border-radius: vw(50);
                 padding: 7px 20px;
                 margin-right: vw(10);
-                letter-spacing: vw(-1);
             }
         }
         .genre-music-sort {

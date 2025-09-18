@@ -98,3 +98,53 @@
 }
 // total_price_box
 ////////////////////////////
+.noCart{
+    margin-top: vw(60);
+    width: 100%;
+    height: vw(299);
+    @include display_al();
+    flex-direction: column;
+    gap: vw(40);
+    img{
+        width: vw(150);
+     
+    }
+    p{
+        @include font-18px-700();
+    }
+    button{
+        background-color: $m_color1;
+border-radius: vw(50);
+        width: vw(380);
+        height: vw(40);
+        @include display_center();
+        @include font-18px-700();
+        color: #fff;
+    }
+
+}
+.noWish{
+    margin-top: vw(60);
+    width: 100%;
+    height: vw(299);
+    @include display_al();
+    flex-direction: column;
+    gap: vw(40);
+    img{
+        width: vw(150);
+     
+    }
+    p{
+        @include font-18px-700();
+    }
+    button{
+        background-color: $m_color1;
+border-radius: vw(50);
+        width: vw(380);
+        height: vw(40);
+        @include display_center();
+        @include font-18px-700();
+        color: #fff;
+    }
+
+}

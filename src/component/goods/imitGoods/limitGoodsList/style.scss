@@ -9,6 +9,10 @@
         height: vw(300);
         position: relative;
         cursor: pointer;
+        // .my-toast-custom{
+        //     width: vw(380);
+        //     height: vw(160);
+        // }
         &:hover {
             .bottom_text {
                 border-bottom: 2px solid #000;

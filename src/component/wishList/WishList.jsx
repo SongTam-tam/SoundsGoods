@@ -4,14 +4,10 @@ import WishItem from './WishItem';
 import './style.scss';
 import { useGoodsStore } from '../../store';
 const WishList = () => {
-    const { shuffl } = useGoodsStore();
-    useEffect(() => {
-        shuffl();
-    }, []);
-    const goodspush = useGoodsStore((state) => state.goodspush);
+    const wish = useGoodsStore((state) => state.wish);
     return (
         <ul className="cart_wish_list">
-            {goodspush.map((item) => (
+            {wish.map((item) => (
                 <WishItem key={item.id} item={item} />
             ))}
         </ul>
