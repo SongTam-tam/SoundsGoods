@@ -2,6 +2,7 @@ import './style.scss';
 import { Link, useNavigate } from 'react-router-dom';
 const GenreCategory = ({ allGenres, selectedGenre, onSelect }) => {
     const navigate = useNavigate();
+
     return (
         <section id="genre-category">
             <h2>

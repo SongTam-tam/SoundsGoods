@@ -1,0 +1,17 @@
+@use '../utils' as*;
+
+ .top_btn_style{
+    position: fixed;
+    bottom: vw(140);
+    right: vw(80);
+    width: vw(62);
+    height: vw(62);
+    @include display_center();
+    box-sizing: border-box;
+    background: rgba(102, 128, 255, 0.60);
+    border-radius: 100%;
+    span{
+        @include font-18px-600();
+color: #fff;
+    }
+}

@@ -172,3 +172,11 @@ a {
     text-decoration: none;
     color: $fc;
 }
+.toast_custom_div{
+    width: vw(380);
+    height: vw(80);
+    @include display_center();
+    @include font-16px-700();
+    color: #777;
+    border-radius: vw(20);
+}

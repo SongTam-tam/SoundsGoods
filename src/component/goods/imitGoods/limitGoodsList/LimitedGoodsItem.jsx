@@ -4,6 +4,7 @@ import { FaHeart } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
 import { useGoodsStore } from '../../../../store';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 const LimitedGoodsItem = ({ item }) => {
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {

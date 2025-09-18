@@ -13,6 +13,7 @@ const GenreWrap = ({ data, allGenres, onSelect }) => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
     return (
         <section id="genre-wrap">
             <div className="genre-img">
@@ -20,11 +21,7 @@ const GenreWrap = ({ data, allGenres, onSelect }) => {
             </div>
             <div className="genre_con">
                 {width > 1024 ? (
-                    <GenreCategory
-                        allGenres={allGenres}
-                        selectedGenre={data}
-                        onSelect={onSelect}
-                    />
+                    <GenreCategory allGenres={allGenres} selectedGenre={data} onSelect={onSelect} />
                 ) : (
                     <GenreCategoryMobile
                         allGenres={allGenres}
@@ -32,11 +29,7 @@ const GenreWrap = ({ data, allGenres, onSelect }) => {
                         onSelect={onSelect}
                     />
                 )}
-                {width > 1024 ? (
-                    <GenreArtist data={data} />
-                ) : (
-                    <GenreArtistMobile data={data} />
-                )}
+                {width > 1024 ? <GenreArtist data={data} /> : <GenreArtistMobile data={data} />}
                 <GenreMusic data={data} />
             </div>
         </section>

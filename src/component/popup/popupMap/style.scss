@@ -9,7 +9,7 @@
         .popup_search {
             width: vw(347);
             height: vw(600);
-            background-color: $m_color2;
+          
             padding: vw(20);
             box-sizing: border-box;
             .more_title {
@@ -38,5 +38,11 @@
         background-color: $m_color1;
         width: vw(440);
         height: vw(600);
+        overflow: hidden;
+        @include display_center();
+        img{
+            width: vw(440);
+           
+        }
     }
 }

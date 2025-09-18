@@ -12,14 +12,11 @@ const ArtistWrap = ({ data }) => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
     return (
         <section id="artist-wrap">
             <div className="inner">
-                {width > 1024 ? (
-                    <RecArtist data={data} />
-                ) : (
-                    <RecArtistMobile data={data} />
-                )}
+                {width > 1024 ? <RecArtist data={data} /> : <RecArtistMobile data={data} />}
                 <ArtistCategory />
                 <ArtistGoods />
             </div>

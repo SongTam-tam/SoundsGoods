@@ -4,12 +4,12 @@ import './style.scss';
 
 function parseRelease(str) {
     const [year, month] = str.split('-').map(Number);
-    return new Date(year, month - 1, 1); // 월은 0부터 시작
+    return new Date(year, month - 1, 1);
 }
 
 const GenreMusic = ({ data }) => {
     const [selectedAll, setSelectedAll] = useState(false);
-    const [sortType, setSortType] = useState('정렬'); // 🔹 디폴트는 "정렬"
+    const [sortType, setSortType] = useState('정렬');
     const [sortedList, setSortedList] = useState([]);
     const [sortOpen, setSortOpen] = useState(false);
 
@@ -24,9 +24,7 @@ const GenreMusic = ({ data }) => {
 
         let newList = [...data.music];
         if (sortType === '최신순') {
-            newList.sort(
-                (a, b) => parseRelease(b.release) - parseRelease(a.release)
-            );
+            newList.sort((a, b) => parseRelease(b.release) - parseRelease(a.release));
         } else if (sortType === '인기순') {
             newList.sort(() => Math.random() - 0.5);
         } else if (sortType === '이름순') {
@@ -52,10 +50,7 @@ const GenreMusic = ({ data }) => {
                         </div>
                     )}
                     <ul className={`sorting-list ${sortOpen ? 'on' : ''}`}>
-                        <li
-                            className="sorting-title"
-                            onClick={() => setSortOpen(false)}
-                        >
+                        <li className="sorting-title" onClick={() => setSortOpen(false)}>
                             정렬
                         </li>
                         {['최신순', '인기순', '이름순'].map((type) => (

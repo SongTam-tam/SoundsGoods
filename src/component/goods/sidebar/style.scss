@@ -167,6 +167,7 @@
                 margin-bottom: vw(20);
                 li {
                     padding: vw(2) vw(10);
+                    cursor: pointer;
                     border: 1px solid $m_color2;
                     @include font-12px-400();
                     line-height: vw(24);

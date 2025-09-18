@@ -9,7 +9,7 @@ const ArtistIVideo = ({ data }) => {
                 <h2>
                     뮤직비디오
                     <Link to="">
-                        <img src="../../../../../public/images/streaming/more.png" alt="" />
+                        <img src="/images/streaming/more.png" alt="" />
                     </Link>
                 </h2>
             </div>
@@ -17,9 +17,6 @@ const ArtistIVideo = ({ data }) => {
                 {data.album.slice(0, 3).map((item) => (
                     <ArtistIVideoItem key={item.id} item={item} />
                 ))}
-
-                {/* <ArtistIVideoItem />
-                <ArtistIVideoItem /> */}
             </div>
         </section>
     );

@@ -9,11 +9,33 @@
         height: vw(297);
         @include display_al();
         flex-direction: column;
+        &:nth-child(4){
+            .pic{
+                img{
+                width: vw(220);
+                }
+            }
+        }
+        &:nth-child(5){
+            .pic{
+                img{
+                    width: vw(300);
+                }
+            }
+        }
+        &:nth-child(6){
+            .pic{
+                img{
+                    width: vw(210);
+                }
+            }
+        }
         .pic {
             width: vw(180);
             height: vw(180);
             overflow: hidden;
             margin-bottom: vw(20);
+            @include display_center();
             background-color: $m_color2;
             img {
                 width: vw(180);

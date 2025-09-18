@@ -2,9 +2,18 @@ import './style.scss';
 import { GoPlus } from 'react-icons/go';
 import { LuMinus } from 'react-icons/lu';
 import { useGoodsStore } from '../../../store';
+import { toast } from 'react-toastify';
 const GoodsCart = ({ data }) => {
     const { artist, title, price, release, cpn, quantity, id, totalPrice } = data;
-    const { upCountGoods, downCountGoods, cartPush } = useGoodsStore();
+    const { upCountGoods, downCountGoods, cartPush ,wishPush } = useGoodsStore();
+    const addCart = (x) =>{
+        cartPush(x)
+        toast('장바구니 담기 성공')
+    }
+    const addWish = (x) =>{
+        wishPush(x)
+        toast('관심상품 등록')
+    }
     return (
         <div className="goods_cart">
             <div className="cart_inner">
@@ -78,10 +87,10 @@ const GoodsCart = ({ data }) => {
                         <span>구매하기</span>
                     </button>
                     <div className="wish_list">
-                        <button className="btn0 cart_next" onClick={() => cartPush(data)}>
+                        <button className="btn0 cart_next" onClick={() => addCart(data)}>
                             <span>장바구니 담기</span>
                         </button>
-                        <button className="btn0 wish_next">
+                        <button className="btn0 wish_next"  onClick={() => addWish(data)}>
                             <span>관심 상품 담기 </span>
                         </button>
                     </div>

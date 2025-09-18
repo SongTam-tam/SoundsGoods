@@ -8,6 +8,12 @@ import MagazineMain from '../../component/main/magazineMain/MagazineMain';
 import ArtistsMain from '../../component/main/artistsMain/ArtistsMain';
 import GoodsDetailMain from '../../component/main/goods/GoodsDetailMain/GoodsDetailMain';
 const Main = () => {
+    const top = () => {
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth',
+        })
+    }
     return (
         <div id="main home">
             <Main_visual />
@@ -17,6 +23,9 @@ const Main = () => {
             <Goods />
             <GoodsDetailMain />
             <MagazineMain />
+            <button className='top_btn_style' onClick={top}>
+                <span>TOP</span>
+            </button>
         </div>
     );
 };
