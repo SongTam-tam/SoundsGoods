@@ -5,12 +5,7 @@ const GenreCategory = ({ allGenres, selectedGenre, onSelect }) => {
 
     return (
         <section id="genre-category">
-            <h2>
-                장르별 음악
-                <Link to="">
-                    <img src="/images/streaming/more.png" alt="" />
-                </Link>
-            </h2>
+            <h2>장르별 음악</h2>
             <ul className="genre-sub">
                 {allGenres?.map((item, index) => (
                     <li key={index}>

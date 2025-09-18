@@ -4,6 +4,8 @@ import './style.scss';
 const GenreMusicItem = ({ item, isSelected }) => {
     const [minute, setMinute] = useState(0);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+    const [like, setLike] = useState(false);
+    const [fav, setFav] = useState(false);
 
     useEffect(() => {
         const randomMinute = Math.floor(Math.random() * 60);
@@ -33,10 +35,26 @@ const GenreMusicItem = ({ item, isSelected }) => {
                 <img src="/images/streaming/icon_play.png" alt="" />
             </td>
             <td className="col-like-td icon">
-                <img src="/images/streaming/icon_heart.png" alt="" />
+                <img
+                    src={
+                        like
+                            ? '/images/streaming/icon_heart_on.png'
+                            : '/images/streaming/icon_heart.png'
+                    }
+                    alt="좋아요"
+                    onClick={() => setLike(!like)}
+                />
             </td>
             <td className="col-fav-td icon">
-                <img src="/images/streaming/icon_star.png" alt="" />
+                <img
+                    src={
+                        fav
+                            ? '/images/streaming/icon_star_on.png'
+                            : '/images/streaming/icon_star.png'
+                    }
+                    alt="찜하기"
+                    onClick={() => setFav(!fav)}
+                />
             </td>
         </tr>
     );

@@ -9,13 +9,6 @@
         align-items: center;
         line-height: 1;
         margin-bottom: vw(20);
-        img {
-            width: vw(40px);
-            height: vw(40px);
-            margin-left: vw(14px);
-            object-fit: cover;
-            vertical-align: top;
-        }
     }
     .genre-sub {
         display: flex;
@@ -23,6 +16,7 @@
         justify-content: space-between;
         li {
             margin-bottom: vw(30);
+            cursor: pointer;
             .genre-sub-img {
                 position: relative;
                 display: inline-block;
