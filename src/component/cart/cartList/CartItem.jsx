@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GoPlus } from 'react-icons/go';
 import { LuMinus } from 'react-icons/lu';
 import { IoIosClose } from 'react-icons/io';
 import { useGoodsStore } from '../../../store';
+import { toast } from 'react-toastify';
 const CartItem = ({ item }) => {
     const {
         id,
@@ -23,11 +24,16 @@ const CartItem = ({ item }) => {
         count,
         totalPrice,
     } = item;
-    const { delCart, upCount, downCount } = useGoodsStore();
+    const { delCart, upCount, downCount, toggleCheck } = useGoodsStore();
+    const del = (x) =>{
+        delCart(x)
+        toast('카트 삭제')
+
+    }
     return (
         <li>
             <div className="cart_chk">
-                <input type="checkbox" name={`chk${id}`} id={`chk${id}`} />
+                <input type="checkbox" name={`chk${id}`} id={`chk${id}`} checked={chk || false} onChange={()=>toggleCheck(id)}/>
                 <label htmlFor={`chk${id}`}></label>
             </div>
             {/* cark_chk */}
@@ -59,7 +65,7 @@ const CartItem = ({ item }) => {
             </div>
             {/* item_list */}
             <p className="price_close">
-                <button onClick={() => delCart(id)}>
+                <button onClick={() => del(id)}>
                     <i>
                         <IoIosClose />
                     </i>

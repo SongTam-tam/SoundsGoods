@@ -334,11 +334,36 @@ export const useGoodsStore = create((set, get) => {
             localStorage.setItem('cart', JSON.stringify([]));
             set({ cart: [] , payment:[] });
         },
+        toggleCheck: (id) => {
+            const { cart } = get();
+            const updatedCart = cart.map(item => 
+              item.id === id ? { ...item, chk: !item.chk } : item
+            );
+            set({ cart: updatedCart });
+            get().updateTotals(); 
+          },
+          
+          toggleAllCheck: (checked) => {
+            const { cart } = get();
+            const updatedCart = cart.map(item => ({ ...item, chk: checked }));
+            set({ cart: updatedCart });
+            get().updateTotals(); 
+          },
+        payPush2: (x) => {
+            const { cart, payment } = get();
+            const id = x.id;
+            const checkedItems = cart.filter(item => item.chk === true);
+            const existingIds = new Set(payment.map(item => item.id));
+            const newItems = checkedItems.filter(item => !existingIds.has(item.id));
+            const updatedItems = [...newItems];
+            localStorage.setItem('payment', JSON.stringify(updatedItems));
+            set({ payment: updatedItems });
+          },
         payPush:(x) => {
             const {goods , payment} = get();
             const id = x.id
             const item = goods.find(item=>item.id === id)
-            const updataItem  =[...payment , item]
+            const updataItem  =[item]
             localStorage.setItem('payment', JSON.stringify(updataItem));
             set({payment:updataItem})
         },

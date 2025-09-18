@@ -34,21 +34,24 @@ const useUserStore = create((set, get) => {
 
         login: (payload) => {
             const { name, loginId } = payload;
-            set({ authed: true, user: { name, loginId } });
             localStorage.setItem('authed', JSON.stringify(true));
             localStorage.setItem('user', JSON.stringify({ name, loginId }));
+            set({ authed: true, user: { name, loginId } });
+          
         },
 
         loginSuccess: (user) => {
-            set({ authed: true, user });
             localStorage.setItem('authed', JSON.stringify(true));
             localStorage.setItem('user', JSON.stringify(user));
+            set({ authed: true, user });
+       
         },
 
         logout: () => {
-            set({ authed: false, user: null });
             localStorage.setItem('authed', JSON.stringify(false));
             localStorage.removeItem('user');
+            set({ authed: false, user: null });
+         
         },
 
         signup: (payload) => {
