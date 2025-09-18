@@ -99,7 +99,7 @@ const Goods = () => {
                 end: `+=${totalScrollDistance * 0.2}`, // 슬라이더가 끝날 때까지
                 pin: mainGoodsRef.current, // main-goods 전체를 핀 고정
                 pinSpacing: true,
-                markers: true,
+           
             });
         }
         return () => {
