@@ -10,7 +10,7 @@ const Goods = () => {
     const slidesRef = useRef([]);
     const animationRef = useRef(null);
     const sidebarRef = useRef(null);
-    const mainGoodsRef = useRef(null); // main-goods ref 추가
+    const mainGoodsRef = useRef(null);
     const targetRef = useRef(0);
     const currentRef = useRef(0);
     const ease = 0.075;
