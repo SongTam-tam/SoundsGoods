@@ -6,12 +6,7 @@ const ArtistIAlbum = ({ data }) => {
     return (
         <section id="artist-i-album">
             <div>
-                <h2>
-                    앨범
-                    <Link to="">
-                        <img src="/images/streaming/more.png" alt="" />
-                    </Link>
-                </h2>
+                <h2>앨범</h2>
             </div>
             <div className="artist-i-cover">
                 {data.album.map((item) => (
