@@ -4,8 +4,9 @@ import Main_visual from '../../component/main/main_visual/Main_visual';
 import VideoArtist from '../../component/main/video_artist/VideoArtist';
 import IveSecret from '../../component/main/iveSecret/IveSecret';
 import Goods from '../../component/main/goods/Goods';
-import PopupMain from '../../component/main/popupMain/PopupMain';
 import MagazineMain from '../../component/main/magazineMain/MagazineMain';
+import ArtistsMain from '../../component/main/artistsMain/ArtistsMain';
+import GoodsDetailMain from '../../component/main/goods/GoodsDetailMain/GoodsDetailMain';
 const Main = () => {
     const top = () => {
         window.scrollTo({
@@ -18,8 +19,9 @@ const Main = () => {
             <Main_visual />
             <VideoArtist />
             <IveSecret />
+            <ArtistsMain />
             <Goods />
-            <PopupMain />
+            <GoodsDetailMain />
             <MagazineMain />
             <button className='top_btn_style' onClick={top}>
                 <span>TOP</span>

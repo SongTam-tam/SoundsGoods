@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArtistItem = ({ ganre, artist, artist_img }) => {
+const ArtistsMainItem = ({ ganre, artist, artist_img }) => {
     return (
         <li>
             <div className="pic">
@@ -12,4 +12,4 @@ const ArtistItem = ({ ganre, artist, artist_img }) => {
     );
 };
 
-export default ArtistItem;
+export default ArtistsMainItem;
