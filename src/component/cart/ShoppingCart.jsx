@@ -25,13 +25,14 @@ const ShoppingCart = () => {
             <div className="total_price_box">
                 <h3>TOTAL</h3>
                 <ul className="price_cnt">
-                    <li>
+                    {cart.map(item=><li>
                         <span>상품금액</span>
-                        <p>1000원</p>
-                    </li>
+                        <p>+ {item.totalPrice} 원</p>
+                    </li>)}
+                   
                     <li>
                         <span>배송비</span>
-                        <p>- 3,000원</p>
+                        <p>+ 3,000원</p>
                     </li>
                     <li>
                         <span>할인 금액</span>
@@ -40,7 +41,7 @@ const ShoppingCart = () => {
                 </ul>
                 <p className="payment_price">
                     <span>총 결제 금액</span>
-                    <strong>106,000원</strong>
+                    <strong>{paymentTotal.toLocaleString()}원</strong>
                 </p>
                 <p className="payment_btn">
                     <button>구매하기</button>

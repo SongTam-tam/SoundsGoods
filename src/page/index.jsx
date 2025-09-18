@@ -14,3 +14,4 @@ export { default as Goods } from './goods';
 export { default as GoodsDetail } from './goodsDetail';
 export { default as Cart } from './cart';
 export { default as Popup } from './popup';
+export { default as Pay } from './pay';

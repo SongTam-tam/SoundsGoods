@@ -293,7 +293,7 @@ export const useGoodsStore = create((set, get) => {
 
             set({
                 itemTotal: newItemTotal,
-                paymentTotal: newItemTotal + 3000,
+                paymentTotal: newItemTotal + 2000,
                 cartItemCount: newCartItemCount,
             });
         },
