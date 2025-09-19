@@ -4,8 +4,8 @@ import MainAlbumItem from './MainAlbumItem';
 import './style.scss';
 
 const MainAlbumList = () => {
-    const mainAlAtData = usemainAlbumStore((state) => state.mainAlAtData);
-    const data = mainAlAtData.slice(0, 4);
+    const mainArtistData = usemainAlbumStore((state) => state.mainArtistData);
+    const data = mainArtistData.slice(0, 4);
     return (
         <ul className="main_album_list">
             {data.map((al) => (
