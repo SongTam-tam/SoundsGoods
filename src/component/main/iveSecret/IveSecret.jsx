@@ -19,55 +19,58 @@ const IveSecret = () => {
     }, []);
     return (
         <section className="ive_secret">
-            {width < 1024 && <h2 className="ive_title_mobile">NEW IVE SECRET</h2>}
-            <div className="music_video_right">
-                <iframe src="https://www.youtube.com/embed/B1ShLiq3EVc" className="muvi"></iframe>
-            </div>
-            <div className="left_ive_secret">
+            {width < 1024 && (
+                <h2 className="ive_title_mobile">
+                    NEW <br />
+                    IVE SECRET
+                </h2>
+            )}
+
+            <div className="ive_content">
                 {width > 1024 && (
-                    <div className="left_ive_text">
-                        <h2>{`NEw
-IVE SECRET`}</h2>
-                        <ul className="textBox">
-                            <li>
-                                <p>발매일</p>
-                                <p>2025.08.25</p>
-                            </li>
-                            <li>
-                                <p>장르</p>
-                                <p>댄스 / 발라드</p>
-                            </li>
-                            <li>
-                                <p>발매사</p>
-                                <p>카카오엔터테인먼트</p>
-                            </li>
-                            <li>
-                                <p>기획사</p>
-                                <p>스타쉽엔터테인먼트</p>
-                            </li>
-                        </ul>
-                        <div className="btn_more">
-                            <button>
-                                <img src="/images/icons/white_next.png" alt="" />
-                            </button>
-                            <span>앨범 구매하기</span>
+                    <div className="left_ive_secret">
+                        <div className="left_ive_text">
+                            <strong>Music Vedio</strong>
+                            <h2>
+                                NEW <br />
+                                IVE SECRET
+                            </h2>
+
+                            {width > 1024 && (
+                                <div className="more_main_musicV">
+                                    <button>
+                                        <img src="/images/icons/white_next.png" alt="" />
+                                    </button>
+                                    <span className="more_music-vedio">신곡 더 보러가기</span>
+                                </div>
+                            )}
+                            <div className="leftImg">
+                                <p className="leftImg1">
+                                    <img
+                                        src="../../../public/images/main/main_con5_1.jpg"
+                                        alt=""
+                                        style={{ width: 570 }}
+                                    />
+                                </p>
+                                <p className="leftImg2">
+                                    <img
+                                        src="../../../public/images/main/main_con5_2.jpg"
+                                        alt=""
+                                        style={{ width: 280 }}
+                                    />
+                                </p>
+                            </div>
                         </div>
                     </div>
                 )}
-                <IveList data={data} />
-            </div>
-            {width < 1024 && (
-                <div className="ive_secret_mobile">
-                    <strong>아이브 (IVE) - 미니앨범 4집 [IVE SECRET]</strong>
-                    <span>발매일 | 2025.08.25</span>
-                    <div className="btn_ive">
-                        <button>
-                            <img src="/images/icons/white_next.png" alt="" />
-                        </button>
-                        <span>앨범 구매하기</span>
-                    </div>
+
+                <div className="music_video_right">
+                    <iframe
+                        src="https://www.youtube.com/embed/B1ShLiq3EVc"
+                        className="muvi"
+                    ></iframe>
                 </div>
-            )}
+            </div>
         </section>
     );
 };

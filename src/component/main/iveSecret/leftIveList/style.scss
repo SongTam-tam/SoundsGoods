@@ -4,15 +4,21 @@
     display: flex;
     width: vw(800);
     height: vw(332);
-    li {
-        width: vw(400);
-        overflow: hidden;
-        img {
-            width: 100%;
-        }
-        &.show {
-            display: none;
-        }
+
+    gap: 30px;
+    li.item-1 {
+        width: 60%;
+        height: auto;
+    }
+    li.item-2 {
+    
+        width: 40%;
+        height: auto;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 @include tablet {

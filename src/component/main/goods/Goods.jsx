@@ -2,21 +2,18 @@ import React, { useEffect, useState, useRef } from 'react';
 import './style.scss';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 gsap.registerPlugin(ScrollTrigger);
-
 const Goods = () => {
     const [width, setWidth] = useState(window.innerWidth);
     const sliderRef = useRef(null);
     const sliderWrapperRef = useRef(null);
     const slidesRef = useRef([]);
     const animationRef = useRef(null);
-    const sidebarRef = useRef(null); // sidebar ref 추가
-
+    const sidebarRef = useRef(null);
+    const mainGoodsRef = useRef(null);
     const targetRef = useRef(0);
     const currentRef = useRef(0);
     const ease = 0.075;
-
     const slideImages = [
         '../../../public/images/main/maingoods/main_goods01.jpg',
         '../../../public/images/main/maingoods/main_goods03.jpg',
@@ -31,16 +28,13 @@ const Goods = () => {
         '../../../public/images/main/maingoods/main_goods12.jpg',
         '../../../public/images/main/maingoods/main_goods13.jpg',
     ];
-
     const lerp = (start, end, factor) => start + (end - start) * factor;
-
     const updateScaleAndPosition = () => {
         slidesRef.current.forEach((slide) => {
             if (!slide) return;
             const rect = slide.getBoundingClientRect();
             const centerPosition = (rect.left + rect.right) / 2;
             const distanceFromCenter = centerPosition - window.innerWidth / 2;
-
             let scale, offsetX;
             if (distanceFromCenter > 0) {
                 scale = Math.min(1.75, 1 + distanceFromCenter / window.innerWidth);
@@ -49,7 +43,6 @@ const Goods = () => {
                 scale = Math.max(0.5, 1 - Math.abs(distanceFromCenter) / window.innerWidth);
                 offsetX = 0;
             }
-
             if (window.gsap) {
                 window.gsap.set(slide, { scale, x: offsetX });
             } else {
@@ -57,10 +50,8 @@ const Goods = () => {
             }
         });
     };
-
     const update = () => {
         currentRef.current = lerp(currentRef.current, targetRef.current, ease);
-
         if (sliderWrapperRef.current) {
             if (window.gsap) {
                 window.gsap.set(sliderWrapperRef.current, {
@@ -70,11 +61,9 @@ const Goods = () => {
                 sliderWrapperRef.current.style.transform = `translateX(-${currentRef.current}px)`;
             }
         }
-
         updateScaleAndPosition();
         animationRef.current = requestAnimationFrame(update);
     };
-
     useEffect(() => {
         const handleResize = () => {
             setWidth(window.innerWidth);
@@ -83,7 +72,6 @@ const Goods = () => {
                 targetRef.current = Math.min(targetRef.current, maxScroll);
             }
         };
-
         const handleWheel = (e) => {
             if (sliderWrapperRef.current) {
                 const maxScroll = sliderWrapperRef.current.offsetWidth - window.innerWidth;
@@ -92,52 +80,43 @@ const Goods = () => {
                 targetRef.current = Math.min(maxScroll, targetRef.current);
             }
         };
-
         window.addEventListener('resize', handleResize);
         window.addEventListener('wheel', handleWheel);
-
         return () => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('wheel', handleWheel);
         };
     }, []);
-
     useEffect(() => {
         update();
-
-        // ⚡ GSAP ScrollTrigger 핀 고정만 추가
-        if (sliderWrapperRef.current) {
-            gsap.to(sliderWrapperRef.current, {
-                scrollTrigger: {
-                    trigger: sliderWrapperRef.current,
-                    start: 'top top',
-                    end: '+=6000',
-                    pin: true,
-                    pinSpacing: false,
-                    markers:true,
-                },
+        // main-goods를 기준으로 GSAP ScrollTrigger 핀 고정
+        if (mainGoodsRef.current && sliderWrapperRef.current) {
+            // 전체 스크롤 거리 계산
+            const totalScrollDistance = sliderWrapperRef.current.offsetWidth - window.innerWidth;
+            ScrollTrigger.create({
+                trigger: mainGoodsRef.current,
+                start: 'top 25%',
+                end: `+=${totalScrollDistance * 0.2}`, // 슬라이더가 끝날 때까지
+                pin: mainGoodsRef.current, // main-goods 전체를 핀 고정
+                pinSpacing: true,
+           
             });
         }
-
         return () => {
             if (animationRef.current) cancelAnimationFrame(animationRef.current);
             ScrollTrigger.getAll().forEach((st) => st.kill());
         };
-    }, []);
-
+    }, [width]); // width 의존성 추가로 리사이즈시 재계산
     return (
-        <div className="main-goods">
+        <div className="main-goods" ref={mainGoodsRef}>
             <div className="sidebar" ref={sidebarRef}>
                 <div className="sidebar-item">
                     <p className="main-pop">
-                        Kategorie
-                        <br />
-                        collection
+                        Kategorie <br /> collection
                     </p>
                     <p className="bg-artists_goods">Artists goods</p>
                 </div>
             </div>
-
             <div className="sliders" ref={sliderRef}>
                 <div className="slider-wrapper" ref={sliderWrapperRef}>
                     {slideImages.map((imageSrc, index) => (
@@ -154,5 +133,4 @@ const Goods = () => {
         </div>
     );
 };
-
 export default Goods;

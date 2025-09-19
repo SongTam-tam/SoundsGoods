@@ -3,8 +3,28 @@
 #main-visual {
     // @include bg();
     width: 100vw;
-    height: vw(608px);
+    height: vw(944);
     background-color: $m_color2;
+    .visual_wrap {
+        width: 100%;
+        height: vw(944);
+
+        .visual {
+            @include display_center();
+            gap: vw(60);
+            .pic {
+                width: vw(700);
+                height: vw(394);
+                overflow: hidden;
+                img {
+                    width: vw(700);
+                }
+            }
+            strong {
+                @include font-200px-700();
+            }
+        }
+    }
 }
 @include tablet {
     #main-visual {

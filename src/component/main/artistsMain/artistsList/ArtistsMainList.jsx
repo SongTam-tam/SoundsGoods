@@ -3,8 +3,8 @@ import { usemainAlbumStore } from '../../../../store';
 import './style.scss';
 import ArtistsMainItem from './ArtistsMainItem';
 const ArtistMainList = () => {
-    const mainAlAtData = usemainAlbumStore((state) => state.mainAlAtData);
-    const data = mainAlAtData.slice(0, 9);
+    const mainArtistData = usemainAlbumStore((state) => state.mainArtistData);
+    const data = mainArtistData.slice(0, 9);
     return (
         <ul className="artist_list_main">
             {data.map((item) => (

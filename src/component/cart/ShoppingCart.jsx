@@ -1,18 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useGoodsStore } from '../../store';
 import CartList from './cartList/CartList';
 import './style.scss';
+import { useNavigate } from 'react-router-dom';
 const ShoppingCart = () => {
-    const { itemTotal, paymentTotal, cartItemCount, cart } = useGoodsStore();
+    const [allChk, setAllChk] = useState(false);
+    const { itemTotal, paymentTotal, cartItemCount, cart ,toggleAllCheck ,payPush2} = useGoodsStore();
     const { updateTotals } = useGoodsStore();
+    const nav = useNavigate()
+    const handleAllCheck = () => {
+        const chk = !allChk;
+        setAllChk(chk);
+        toggleAllCheck(chk);
+    };
     useEffect(() => {
         updateTotals();
     }, [itemTotal, cart]);
+    const payCom = (x) => {
+        const checkedItems = cart.filter(item => item.chk);
+        if (checkedItems.length === 0) {
+            alert('구매할 상품을 선택해주세요.');
+            return;
+        }
+        payPush2(x);
+        setTimeout(()=>{
+            nav('/pay')
+        })
+    };
+    
     return (
         <div className="shopping_cart">
             <div className="shopping_item">
-                <h3 className="all_select">
-                    <button>전체 선택</button>
+                <h3 className="all_select" onClick={handleAllCheck}>
+                    <button>{allChk ?'전체 해제'  : '전체 선택' }</button>
                 </h3>
                 {/* all_select */}
                 <CartList />
@@ -43,7 +63,7 @@ const ShoppingCart = () => {
                     <span>총 결제 금액</span>
                     <strong>{paymentTotal.toLocaleString()}원</strong>
                 </p>
-                <p className="payment_btn">
+                <p className="payment_btn" onClick={()=>payCom(cart)}>
                     <button>구매하기</button>
                 </p>
             </div>

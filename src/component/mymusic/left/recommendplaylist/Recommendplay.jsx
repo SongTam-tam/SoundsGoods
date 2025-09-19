@@ -7,7 +7,7 @@ const Recommendplay = () => {
         <div className="Recomnedplaylist">
             <div className="recommendList">
                 <div className="recommnedlisttitle">
-                    <h2>추천 플레이리스트</h2>
+                    <h2>찜한 음악목록</h2>
                     <FaAngleRight />
                 </div>
                 <Recomnedplaylist />

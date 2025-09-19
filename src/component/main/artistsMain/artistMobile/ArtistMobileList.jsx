@@ -5,8 +5,8 @@ import ArtistMobileItem from './ArtistMobileItem';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 const ArtistMobileList = () => {
-    const mainAlAtData = usemainAlbumStore((state) => state.mainAlAtData);
-    const data = mainAlAtData.slice(0, 9);
+    const mainArtistData = usemainAlbumStore((state) => state.mainArtistData);
+    const data = mainArtistData.slice(0, 9);
     return (
         <div className="artist_list_main">
             <Swiper className="mySwiper" slidesPerView={3}>

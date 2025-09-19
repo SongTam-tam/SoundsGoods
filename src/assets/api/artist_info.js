@@ -9,11 +9,11 @@ export default [
         type: '그룹',
         cpn: '빅히트엔터테인먼트',
         desc: '방탄소년단은 빅히트 엔터테인먼트에 소속된 대한민국의 7인조 보이 그룹으로 RM, SUGA, 진, j-hope, 지민, V, 정국으로 구성되어 있다. 2013년 학교 시리즈의 시작인 [2 COOL 4 SKOOL]로 데뷔, 이듬해 첫 정규 앨범 [DARK&WILD]을 성공적으로 발매한데 이어 네 번째 미니앨범 [화양연화 pt.2]는 빌보드 200에 첫 진입하는 쾌거를 이루며 해외에서 사랑받는 아이돌로 전환점을 맞게 했고, 정규 2집 앨범 [WINGS]는 국내 차트는 물론, 미국을 포함한 97개국의 아이튠즈 앨범 차트 1위를 휩쓸었다. 앨범의 성공에 이어 한국 아티스트 최초로 "빌보드 뮤직 어워드"에 초청받아 "톱 소셜 아티스트" 부문을 수상하며 그 영향력을 증명하기도 했다.',
-        category: '랩/힙합, 댄스, POP',
+        category: '댄스',
         album: [
             {
-                id: 196,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/197.jpg',
+                id: 1,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/196.jpg',
                 track: 'WMweEpGlu_U',
                 artist: '방탄소년단',
                 album: 'Butter',
@@ -27,8 +27,8 @@ export default [
                 bookmark: false,
             },
             {
-                id: 197,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/199.jpg',
+                id: 2,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/197.jpg',
                 track: 'CuklIb9d3fI',
                 artist: '방탄소년단',
                 album: 'Butter / Permission to Dance',
@@ -42,8 +42,8 @@ export default [
                 bookmark: false,
             },
             {
-                id: 198,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/200.jpg',
+                id: 3,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/198.jpg',
                 track: 'MBdVXkSdhwU',
                 artist: '방탄소년단',
                 album: "LOVE YOURSELF 承 'Her'",
@@ -57,8 +57,8 @@ export default [
                 bookmark: false,
             },
             {
-                id: 199,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/151.jpg',
+                id: 4,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/199.jpg',
                 track: '4ujQOR2DMFM',
                 artist: '방탄소년단',
                 album: '화양연화 Young Forever',
@@ -72,8 +72,8 @@ export default [
                 bookmark: false,
             },
             {
-                id: 200,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/151.jpg',
+                id: 5,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/200.jpg',
                 track: '7C2z4GqqS5E',
                 artist: '방탄소년단',
                 album: "LOVE YOURSELF 轉 'Tear'",
@@ -191,10 +191,10 @@ export default [
         type: '그룹',
         cpn: '플레디스 엔터테인먼트',
         desc: '세븐틴 (SEVENTEEN)은 플레디스 엔터테인먼트에 소속된 대한민국의 보이 그룹이다. 13명의 멤버와 3개의 유닛, 한 개의 캐럿이 이루어져 하나로 빛난다는 의미를 내포하고 있으며, 힙합팀, 보컬팀, 퍼포먼스팀 이상 세 팀이 구성되어 완전체, 혹은 유닛으로 활동을 펼친다. 또한, 인터넷 방송 "세븐틴 TV"로 팬들과 활발한 소통을 시작해 데뷔 EP [17 CARAT]의 \'아낀다\'로 가요계에 출사표를 던졌고, 첫 앨범부터 프로듀싱과 작사, 작곡, 안무 창작 등에 참여하여 실력을 뽐냈다. 미니 2집 [BOYS BE]는 11만 장 이상의 판매고를 올렸으며, 2016년 첫 정규 앨범 [LOVE&LETTER]를 발매하여 대세 아티스트로 떠올랐다.',
-        category: '댄스, 발라드, 랩/힙합',
+        category: '댄스',
         album: [
             {
-                id: 551,
+                id: 1,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/551.jpg',
                 track: 'pS57UX6s-xw',
                 artist: '세븐틴',
@@ -209,7 +209,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 552,
+                id: 2,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/552.jpg',
                 track: '-GQg25oP0S4',
                 artist: '세븐틴',
@@ -224,7 +224,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 553,
+                id: 3,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/553.jpg',
                 track: 'J-wFp43XOrA',
                 artist: '세븐틴',
@@ -239,7 +239,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 554,
+                id: 4,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/554.jpg',
                 track: 'bw4AuPrLWeA',
                 artist: '세븐틴',
@@ -254,7 +254,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 555,
+                id: 5,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/555.jpg',
                 track: 'ThI0pBAbFnk',
                 artist: '세븐틴',
@@ -372,7 +372,7 @@ export default [
         type: '그룹',
         cpn: 'CJ ENM',
         desc: 'ZEROBASEONE (제로베이스원)은 웨이크원에 소속된 9인조 다국적 보이 그룹이다. Mnet "보이즈 플래닛"을 통해 결성되었으며, 팀명은 제로(0)에서 시작해 원(1)으로 탄생하는 아홉 멤버의 찬란한 시작을 의미한다. 미완성인 0부터 1까지 ZEROBASEONE이 걷게 될 자유로운 여정을 팬들과 함께 하겠다는 멤버들의 다짐도 내포하고 있으며, 2023년 7월 첫 EP [YOUTH IN THE SHADE]로 첫 시작을 알렸다. 탈 신인급 행보를 보이며 명실상부 "글로벌 메가 루키"로 활약을 펼친 그룹은 두 번째 미니앨범 [MELTING POINT]로 약 4개월 만에 초고속 컴백하며 대세 행보를 이었고, 2024년에는 일본 진출과 함께 미니 3집 [You had me at HELLO]을 발매하면서 전 세계의 주목을 받았다.',
-        category: '댄스, R&B/Soul, 국내드라마',
+        category: '댄스',
         album: [
             {
                 id: 556,
@@ -553,7 +553,7 @@ export default [
         type: '그룹',
         cpn: '원헌드레드 레이블',
         desc: "더보이즈 (THE BOYZ)는 원드레드 레이블에 소속된 10인조 보이 그룹이다. 상연, 제이콥, 영훈, 현재, 주연, 케빈, 뉴, 큐, 선우, 에릭으로 구성되어 있으며 “대중들의 마음을 사로잡을 특별한 소년들”이라는 뜻을 포함하고 있다. 2017년 12월 첫 번째 미니 앨범 [THE FIRST]를 시작으로, 'REVEAL', 'CHASE', 'THRILL RIDE'를 뒤이어 발매하며, 중독적인 멜로디와 파워풀한 퍼포먼스로 더보이즈만의 정체성을 구축했다. 또한 세 차례 월드투어를 성료하며 전 세계 팬들에게 매력을 확실하게 각인시키고 입지를 넓혔다.",
-        category: '댄스, 국내드라마, 발라드',
+        category: '댄스',
         album: [
             {
                 id: 561,
@@ -734,7 +734,7 @@ export default [
         type: '그룹',
         cpn: 'JYP엔터테인먼트',
         desc: "DAY6 (데이식스)는 대한민국의 4인조 남성 밴드이다. 2015년 9월 미니 앨범 [The Day]의 타이틀곡이자 팀의 자작곡인 'Congratulations'으로 데뷔했으며, 이어 두 번째 미니앨범 [DAYDREAM]과 Every DAY6 프로젝트로 매달 싱글을 발표해 DAY6 특유의 청량함과 강렬한 밴드 사운드까지 다양한 음악과 장르를 담아냈다. 그 해 여름에는 첫 정규 앨범 [SUNRISE]를 발매, 상실의 아픔, 사랑의 설렘, 청춘의 반짝임 등의 이야기를 노래했다.",
-        category: '록/메탈, 댄스, 발라드',
+        category: '록',
         album: [
             {
                 id: 304,
@@ -915,7 +915,7 @@ export default [
         type: '그룹',
         cpn: '쏘스뮤직',
         desc: "LE SSERAFIM (르세라핌)은 대한민국의 걸그룹이다. 세상의 시선에 흔들리지 않고 두려움 없이 앞으로 나아가겠다는 자기 확신과 강한 의지를 바탕으로 비상할 준비를 마친 그룹은 2022년 5월, 대망의 첫 미니 앨범 [FEARLESS]를 공개하며 가요계에 출사표를 던졌다. 방시혁 총괄 프로듀서의 진두지휘 아래 얼터너티브 팝, 디스코-펑크, R&B 등 다양한 장르의 음악이 그룹만의 스타일로 탄생했고 멤버 김채원과 허윤진은 수록곡 'Blue Flame'의 작사에 참여하는 등 앨범에 각별한 애정을 내비치며 새로운 여정의 설렘과 각오를 담았다.",
-        category: '댄스, 랩/힙합, R&B/Soul',
+        category: '댄스',
         album: [
             {
                 id: 566,
@@ -1096,7 +1096,7 @@ export default [
         type: '그룹',
         cpn: '어센드엔터테인먼트',
         desc: "프로미스나인(fromis_9)은 어센드엔터테인먼트 소속의 5인조 걸그룹으로, 멤버 송하영, 박지원, 이채영, 이나경, 백지헌으로 구성되었다. 2025년 6월 25일, 그들은 새로운 앨범 [From Our 20's]를 발매하며 성숙하고 깊이 있는 음악을 선보였다. 이 앨범은 20대의 진솔한 감정과 이야기를 담아, 그동안의 성장과 변화를 녹여냈다. 프로미스나인은 여전히 자신들의 음악을 통해 팬들과의 깊은 소통을 이어가며, 앞으로도 다양한 매력을 발산할 예정이다.",
-        category: '댄스, 발라드, 국내드라마',
+        category: '댄스',
         album: [
             {
                 id: 179,
@@ -1277,7 +1277,7 @@ export default [
         type: '그룹',
         cpn: 'SM엔터테인먼트',
         desc: "Red Velvet (레드벨벳)은 SM엔터테인먼트에 소속된 5인조 걸그룹으로 강렬하고 매혹적인 '레드'와 여성스럽고 부드러운 '벨벳'의 이미지에서 연상되듯, 색깔 있고 세련된 음악과 퍼포먼스로 전 세계를 매료시키겠다는 의미를 담고 있다. 2014년 첫 싱글 '행복(Happiness)'으로 데뷔한 그룹은 데뷔 2주 만에 음악방송 정상에 올랐고, S.E.S의 원작을 커버한 'Be Natural' 마저 정상권에 올리며 가요계를 이끌 특급 신인으로 주목받았다.",
-        category: '댄스, R&B/Soul, 발라드',
+        category: '댄스',
         album: [
             {
                 id: 574,
@@ -1458,7 +1458,7 @@ export default [
         type: '그룹',
         cpn: 'JYP엔터테인먼트',
         desc: "ITZY는 자신감 있는 이미지와 강렬한 퍼포먼스로 주목받는 5인조 걸그룹으로, 데뷔곡 '달라달라'가 큰 히트를 기록했다.",
-        category: '댄스, 팝',
+        category: '댄스',
         goods: [
             {
                 id: 160,
@@ -1654,7 +1654,7 @@ export default [
         type: '그룹',
         cpn: '페포니 뮤직',
         desc: 'Group Sound JANNABI\n힙한거, 쿨한 거 싫어요\n그래서 가장 뜨거울 우리들의 여름밤.',
-        category: '록/메탈, 인디음악, 국내드라마',
+        category: '록',
         album: [
             {
                 id: 600,
@@ -1753,24 +1753,8 @@ export default [
         type: '솔로',
         cpn: 'EDAM엔터테인먼트',
         desc: "IU는 뛰어난 보컬 실력과 작곡 능력을 갖춘 솔로 아티스트로, 데뷔 이후 다양한 음악적 시도를 통해 꾸준히 성장해왔다. '좋은 날', '팔레트', '블루밍' 등 다수의 히트곡으로 국내외 팬들에게 사랑받고 있으며, 감성적인 발라드부터 세련된 팝 사운드까지 폭넓은 장르를 소화하며 음악적 역량을 입증하고 있다.",
-        category: '발라드, 팝, R&B',
+        category: '발라드',
         album: [
-            {
-                id: 108,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/ballad/108.jpg',
-                track: 'iQRS0QdhnHI',
-                artist: '아이유',
-                artistimg: 'images/artist/iu.png',
-                album: '꽃갈피 셋',
-                title: 'Never Ending Story',
-                release: '2025-05',
-                category: '발라드',
-                cpn: 'EDAM 엔터테인먼트',
-                like: false,
-                modal: false,
-                chk: false,
-                bookmark: false,
-            },
             {
                 id: 109,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/ballad/109.jpg',
@@ -1863,7 +1847,7 @@ export default [
         type: '그룹',
         cpn: '스타쉽엔터테인먼트',
         desc: "IVE는 스타쉽엔터테인먼트 소속 6인조 걸그룹으로, 데뷔곡 'ELEVEN'과 'LOVE DIVE'로 글로벌 팬들에게 큰 사랑을 받았다. 신인 그룹임에도 불구하고 완벽한 퍼포먼스와 독보적인 음악 색깔을 보여주며, K-POP 신에서 빠르게 주목받고 있는 걸그룹이다.",
-        category: '팝, 댄스, 발라드',
+        category: '댄스',
         goods: [
             {
                 id: 181,
@@ -1963,38 +1947,6 @@ export default [
         ],
         album: [
             {
-                id: 6,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/top/TOP6.jpg',
-                track: '2vMsjZrVO_s', // IVE - 'XOXZ' (official MV / performance)
-                artist: 'IVE (아이브)',
-                artistimg: 'images/artist/ive.png',
-                album: 'IVE SECRET',
-                title: 'XOXZ',
-                release: '2025.08.25',
-                category: '댄스, 발라드',
-                cpn: '스타쉽엔터테인먼트',
-                like: false,
-                modal: false,
-                chk: false,
-                bookmark: false,
-            },
-            {
-                id: 29,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/top/TOP29.jpg',
-                track: 'g36q0ZLvygQ',
-                artist: 'IVE (아이브)',
-                artistimg: 'images/artist/ive.png',
-                album: 'IVE EMPATHY',
-                title: 'REBEL HEART',
-                release: '2025.02.03',
-                category: '댄스, R&B/Soul',
-                cpn: '스타쉽엔터테인먼트',
-                like: false,
-                modal: false,
-                chk: false,
-                bookmark: false,
-            },
-            {
                 id: 162,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/162.jpg',
                 track: 'B1ShLiq3EVc',
@@ -2081,13 +2033,13 @@ export default [
         id: 13,
         image: '/public/images/artistinfo/visual_akmu.jpg',
         imageS: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/akmu.png',
-        artist: 'AKMU (악뮤)',
+        artist: '악뮤 (AKMU)',
         members: '이찬혁, 이수현',
         debut: '2014.04.07',
         type: '듀오',
         cpn: 'YG엔터테인먼트',
         desc: "AKMU는 형제 듀오로, 감각적인 가사와 독창적인 음악으로 큰 사랑을 받고 있다. 데뷔곡 '200%'를 비롯해 '오랜 날 오랜 밤', '낙하' 등 다수의 히트곡을 선보였으며, 세련된 편곡과 독특한 음악적 색깔로 인디 음악 팬뿐만 아니라 대중에게도 많은 사랑을 받고 있다. 뛰어난 작사·작곡 능력으로 음악적 완성도를 높이는 듀오이다.",
-        category: '발라드, 팝, 인디',
+        category: '발라드',
 
         album: [
             {
@@ -2187,8 +2139,59 @@ export default [
         type: '솔로',
         cpn: '스톤뮤직 엔터테인먼트',
         desc: "오반은 감성적인 R&B와 힙합을 결합한 음악 스타일로 주목받는 솔로 아티스트이다. 섬세하고 부드러운 보컬로 사랑받으며, '시차', '소주 한잔' 등 다수의 히트곡을 통해 대중과 팬들에게 깊은 인상을 남겼다. 자신만의 독특한 음악 색깔로 꾸준히 활동하며 성장하고 있는 신예 아티스트이다.",
-        category: 'R&B, 힙합, 발라드',
+        category: '힙합',
         album: [
+            {
+                id: 51,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/hiphap/51.jpg',
+                track: 'qGh0jk-f6to',
+                artist: '오반(OVAN)',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                album: '행복',
+                title: '행복',
+                release: '2018-12',
+                category: '힙합',
+                cpn: '로맨틱팩토리',
+                like: false,
+                modal: false,
+                chk: false,
+                bookmark: false,
+            },
+            {
+                id: 52,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/hiphap/52.jpg',
+                track: '_spAFBheXeE',
+                artist: '오반(OVAN)',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                album: '위태로울걸',
+                title: '위태로울걸',
+                release: '2024-08',
+                category: '힙합',
+                cpn: '로맨틱팩토리',
+                like: false,
+                modal: false,
+                chk: false,
+                bookmark: false,
+            },
+            {
+                id: 53,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/hiphap/53.jpg',
+                track: 'iD19FVcVBY4',
+                artist: '오반(OVAN)',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                album: '불행 (Feat. 빈첸 (VINXEN))',
+                title: '불행 (Feat. 빈첸 (VINXEN))',
+                release: '2018-06',
+                category: '힙합',
+                cpn: '로맨틱팩토리',
+                like: false,
+                modal: false,
+                chk: false,
+                bookmark: false,
+            },
             {
                 id: 245,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/hiphap/45.jpg',
@@ -2217,7 +2220,7 @@ export default [
                 title: 'Flower',
                 release: '2025-03',
                 category: '발라드',
-                cpn: '주식회사 로맨틱팩토리',
+                cpn: '로맨틱팩토리',
                 like: false,
                 modal: false,
                 chk: false,
@@ -2235,8 +2238,59 @@ export default [
         type: '밴드/그룹',
         cpn: '독립 레이블',
         desc: '너드커넥션은 개성 있는 인디 밴드로, 재즈, R&B, 팝을 결합한 독창적인 음악을 선보인다. 감각적인 편곡과 세련된 사운드로 리스너에게 신선한 경험을 제공하며, 실력 있는 연주와 보컬로 인디 음악 팬들 사이에서 꾸준히 주목받고 있다.',
-        category: '인디, 재즈, R&B',
+        category: '인디',
         album: [
+            {
+                id: 51,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/rock/51.jpg',
+                track: 'VXEbLtAWhDM',
+                artist: '너드커넥션 (Nerd Connection)',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                album: 'New Century Masterpiece Cinema',
+                title: '우린 노래가 될까',
+                release: '2021.10',
+                category: '인디음악, 록/메탈',
+                cpn: '유어썸머',
+                like: false,
+                modal: false,
+                chk: false,
+                bookmark: false,
+            },
+            {
+                id: 52,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/rock/52.jpg',
+                track: 'Sin4PK3lL5o',
+                artist: '너드커넥션 (Nerd Connection)',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                album: '대나무숲',
+                title: '대나무숲',
+                release: '2019.04',
+                category: '인디음악, 록/메탈',
+                cpn: '유어썸머',
+                like: false,
+                modal: false,
+                chk: false,
+                bookmark: false,
+            },
+            {
+                id: 53,
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/rock/53.jpg',
+                track: '6m5qXT9703s',
+                artist: '너드커넥션 (Nerd Connection)',
+                artistimg:
+                    'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/000.png',
+                album: '그래도 우리는',
+                title: 'CASH',
+                release: '2024.08',
+                category: '인디음악, 록/메탈',
+                cpn: '유어썸머',
+                like: false,
+                modal: false,
+                chk: false,
+                bookmark: false,
+            },
             {
                 id: 125,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/ballad/125.jpg',

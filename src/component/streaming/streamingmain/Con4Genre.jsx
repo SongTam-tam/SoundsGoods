@@ -22,7 +22,10 @@ const Con4Genre = ({ allGenres, selectedGenre, onSelect }) => {
                                 navigate(`/streaming/genre/${item.genre}`), { state: item };
                             }}
                         >
-                            <img src={item.genreimg} alt={item.genre} />
+                            <img
+                                src={`/images/streaming/genre_${item.genre.toLowerCase()}_s.jpg`}
+                                alt={item.genre}
+                            />
                             <span>{item.genre}</span>
                         </div>
                         <p>{item.genre}</p>

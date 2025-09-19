@@ -1,29 +1,56 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ArtistCategoryItem from './ArtistCategoryItem';
 import './style.scss';
 import artist_info from '../../../../assets/api/artist_info';
 
 const ArtistCategory = () => {
     const [artist] = useState(artist_info);
+    const [sortType, setSortType] = useState('정렬');
+    const [sortedList, setSortedList] = useState([]);
+    const [sortOpen, setSortOpen] = useState(false);
+    const toggleSort = () => setSortOpen((prev) => !prev);
+
+    useEffect(() => {
+        let newList = [...artist];
+        if (sortType === '인기순') {
+            newList.sort((a, b) => a.id - b.id);
+        } else if (sortType === '이름순') {
+            newList.sort((a, b) => a.artist.localeCompare(b.artist));
+        }
+        setSortedList(newList);
+    }, [sortType, artist]);
 
     return (
         <section id="artist-category">
             <div className="artist-category-top">
                 <h2>아티스트별</h2>
                 <div className="artist-sort">
-                    <div className="sort-down">정렬</div>
-                    <div className="sorting">
-                        <ul>
-                            <li className="sorting-title">정렬</li>
-                            <li>가나다순</li>
-                            <li>알파벳순</li>
-                            <li>인기순</li>
-                        </ul>
-                    </div>
+                    {!sortOpen && (
+                        <div className="sort-down" onClick={toggleSort}>
+                            {sortType}
+                        </div>
+                    )}
+                    <ul className={`sorting-list ${sortOpen ? 'on' : ''}`}>
+                        <li className="sorting-title" onClick={toggleSort}>
+                            정렬
+                        </li>
+                        {['이름순', '인기순'].map((type) => (
+                            <li
+                                key={type}
+                                className={sortType === type ? 'on' : ''}
+                                onClick={() => {
+                                    setSortType(type);
+                                    setSortOpen(false);
+                                }}
+                            >
+                                {type}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
             <div className="artist-category-list">
-                {artist.slice(0, 15).map((item) => (
+                {sortedList.slice(0, 15).map((item) => (
                     <ArtistCategoryItem key={item.id} item={item} />
                 ))}
             </div>

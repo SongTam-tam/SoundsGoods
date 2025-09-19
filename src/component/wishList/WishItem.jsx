@@ -3,6 +3,7 @@ import { FaHeart } from 'react-icons/fa';
 import { IoIosClose } from 'react-icons/io';
 import { useGoodsStore } from '../../store';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 const WishItem = ({ item }) => {
     const {
         id,
@@ -22,10 +23,17 @@ const WishItem = ({ item }) => {
         bookmark,
         count,
     } = item;
-const {delWish} = useGoodsStore()
+const {delWish ,payPush} = useGoodsStore()
+const nav = useNavigate()
 const Del = (x) =>{
     delWish(x)
     toast('위시리스트 삭제')
+}
+const payWish = (x) => {
+    payPush(x)
+    setTimeout(()=>{
+        nav('/pay')
+    },50)
 }
     return (
         <li className="li">
@@ -62,7 +70,7 @@ const Del = (x) =>{
                 </div>
             </div>
             <div className="btn_close">
-                <p className="ppp">
+                <p className="ppp" onClick={()=>payWish(item)}>
                     <button>구매 하러가기</button>
                 </p>
                 <button className="close" onClick={()=>Del(id)}>
