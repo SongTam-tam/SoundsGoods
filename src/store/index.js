@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import main_Artist_data from '../assets/api/main_Artist_data';
 import goodsData from '../assets/api/goods';
 import top_1_50 from '../assets/api/musicComponents/top_1_50';
 import newData_51_100 from '../assets/api/musicComponents/newData_51_100';
@@ -19,12 +18,19 @@ export const usemainAlbumStore = create((set, get) => {
         genreData: genre,
         latestData: newData_51_100,
         artistData: artist_info,
-        mainAlAtData: main_Artist_data,
         musicOn: false,
         musicModal: null,
         players: {},
         ytReady: false,
         currentPlayerId: null,
+
+        // 시간 포맷 함수 추가
+        formatTime: (time) => {
+            if (!time || isNaN(time)) return '00:00';
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        },
 
         // YouTube API 초기화 함수
         onTrack: (id, type) => {
@@ -102,7 +108,7 @@ export const usemainAlbumStore = create((set, get) => {
         // 플레이어 생성 함수 (수정된 버전)
         createPlayer: (track) => {
             return new Promise((resolve, reject) => {
-                const { players, currentPlayerId } = get();
+                const { players, currentPlayerId, timeInterval } = get();
                 const YT = getYT(); // 안전하게 YT 객체 가져오기
 
                 if (!YT) {
@@ -126,7 +132,6 @@ export const usemainAlbumStore = create((set, get) => {
                 if (players[track.id]) {
                     console.log('Using existing player:', track.id);
                     try {
-                        // playVideo()는 Promise를 반환하지 않으므로 then() 사용 불가
                         players[track.id].playVideo();
                         set({ currentPlayerId: track.id });
                         resolve(players[track.id]);
@@ -163,6 +168,10 @@ export const usemainAlbumStore = create((set, get) => {
                             onReady: (event) => {
                                 console.log('Player is ready for:', track.id);
                                 try {
+                                    // 총 재생시간 저장
+                                    const duration = event.target.getDuration();
+                                    set({ duration });
+
                                     event.target.playVideo();
                                     set({ currentPlayerId: track.id });
                                     resolve(event.target);
@@ -173,10 +182,30 @@ export const usemainAlbumStore = create((set, get) => {
                             },
                             onStateChange: (event) => {
                                 console.log('Player state changed:', event.data, 'for:', track.id);
+
                                 if (event.data === YT.PlayerState.PLAYING) {
                                     set({ currentPlayerId: track.id });
+
+                                    // 이전 interval 정리
+                                    if (timeInterval) clearInterval(timeInterval);
+
+                                    // currentTime 주기적 업데이트
+                                    const interval = setInterval(() => {
+                                        const { players, currentPlayerId } = get();
+                                        if (currentPlayerId && players[currentPlayerId]) {
+                                            const player = players[currentPlayerId];
+                                            if (player && player.getCurrentTime) {
+                                                set({ currentTime: player.getCurrentTime() });
+                                            }
+                                        }
+                                    }, 1000);
+
+                                    set({ timeInterval: interval });
                                 } else if (event.data === YT.PlayerState.ENDED) {
-                                    set({ currentPlayerId: null });
+                                    set({ currentPlayerId: null, currentTime: 0 });
+                                    if (timeInterval) clearInterval(timeInterval);
+                                } else if (event.data === YT.PlayerState.PAUSED) {
+                                    if (timeInterval) clearInterval(timeInterval);
                                 }
                             },
                             onError: (event) => {
