@@ -37,40 +37,80 @@ export const usemainAlbumStore = create((set, get) => {
         // YouTube API 초기화 함수
         onTrack: (id, type) => {
             if (type === 'top') {
-                set((state) => ({
-                    topData: state.topData.map((item) =>
-                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
-                    ),
-                    musicModal: state.topData.find((item) => item.id === id),
-                }));
+                set((state) => {
+                    const selectedTrack = state.topData.find((item) => item.id === id);
+
+                    if (selectedTrack) get().createPlayer(selectedTrack);
+
+                    return {
+                        topData: state.topData.map((item) =>
+                            item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                        ),
+                        musicModal: selectedTrack,
+                    };
+                });
             } else if (type === 'latest') {
-                set((state) => ({
-                    latestData: state.latestData.map((item) =>
-                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
-                    ),
-                    musicModal: state.latestData.find((item) => item.id === id),
-                }));
+                set((state) => {
+                    const selectedTrack = state.latestData.find((item) => item.id === id);
+
+                    if (selectedTrack) get().createPlayer(selectedTrack);
+
+                    return {
+                        latestData: state.latestData.map((item) =>
+                            item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                        ),
+                        musicModal: selectedTrack,
+                    };
+                });
             } else if (type === 'genre') {
-                set((state) => ({
-                    genreData: state.genreData.map((item) =>
-                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
-                    ),
-                    musicModal: state.genreData.find((item) => item.id === id),
-                }));
+                set((state) => {
+                    const selectedTrack = state.genreData.find((item) => item.id === id);
+
+                    if (selectedTrack) get().createPlayer(selectedTrack);
+
+                    return {
+                        genreData: state.genreData.map((item) =>
+                            item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                        ),
+                        musicModal: selectedTrack,
+                    };
+                });
             } else if (type === 'artistInfo') {
-                set((state) => ({
-                    artistData: state.artistData.map((item) =>
-                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
-                    ),
-                    musicModal: state.artistData.find((item) => item.id === id),
-                }));
+                set((state) => {
+                    // 모든 아티스트의 앨범을 하나의 배열로 펼침
+                    const allAlbums = state.artistData.flatMap((artist) => artist.album);
+
+                    // id로 선택
+                    const selectedTrack = allAlbums.find((albumItem) => albumItem.id === id);
+
+                    // 선택된 트랙이 있으면 재생
+                    if (selectedTrack) get().createPlayer(selectedTrack);
+
+                    return {
+                        artistData: state.artistData.map((artist) => ({
+                            ...artist,
+                            album: artist.album.map((albumItem) =>
+                                albumItem.id === id
+                                    ? { ...albumItem, actv: true }
+                                    : { ...albumItem, actv: false }
+                            ),
+                        })),
+                        musicModal: selectedTrack || null,
+                    };
+                });
             } else if (type === 'main') {
-                set((state) => ({
-                    artistData: state.mainArtistData.map((item) =>
-                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
-                    ),
-                    musicModal: state.mainArtistData.find((item) => item.id === id),
-                }));
+                set((state) => {
+                    const selectedTrack = state.mainArtistData.find((item) => item.id === id);
+
+                    if (selectedTrack) get().createPlayer(selectedTrack);
+
+                    return {
+                        artistData: state.mainArtistData.map((item) =>
+                            item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                        ),
+                        musicModal: selectedTrack,
+                    };
+                });
             }
         },
 
@@ -251,6 +291,7 @@ export const usemainAlbumStore = create((set, get) => {
             else if (type === 'latest') track = state.latestData.find((item) => item.id === id);
             else if (type === 'genre') track = state.genreData.find((item) => item.id === id);
             else if (type === 'artistInfo') track = state.artistData.find((item) => item.id === id);
+            else if (type === 'main') track = state.mainArtistData.find((item) => item.id === id);
 
             if (!track) return;
 
