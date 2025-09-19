@@ -6,12 +6,17 @@
     li {
         width: vw(180);
         height: vw(184);
+
         @include display_al();
         flex-direction: column;
         gap: vw(8);
+
+        margin: auto;
+
         strong {
             display: block;
             margin-top: vw(12);
+            text-align: center;
             @include font-14px-500();
             font-weight: 600;
         }
@@ -24,6 +29,7 @@
             overflow: hidden;
             @include display_center();
             border-radius: 100%;
+
             img {
                 width: vw(120);
             }
