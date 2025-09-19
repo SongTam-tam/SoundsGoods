@@ -3,7 +3,16 @@ import { usemainAlbumStore } from '../../store';
 import './style.scss';
 
 const MusicModal = () => {
-    const { musicOn, musicModal, players, closeModal, setVolume } = usemainAlbumStore();
+    const {
+        musicOn,
+        musicModal,
+        players,
+        closeModal,
+        setVolume,
+        currentTime,
+        duration,
+        formatTime,
+    } = usemainAlbumStore();
 
     const [currentVolume, setCurrentVolume] = useState(40);
     const [isPlay, setIsPlay] = useState(true);
@@ -16,6 +25,37 @@ const MusicModal = () => {
             setVolume(musicModal.id, currentVolume);
         }
     }, [musicModal, players, currentVolume, setVolume]);
+
+    // 재생중인 타임라인 이동
+    const handleProgressDrag = (e) => {
+        if (!musicModal || !players[musicModal.id]) return;
+        const player = players[musicModal.id];
+        const progress = e.currentTarget || e.target.closest('.progress-container');
+        if (!progress) return;
+
+        const move = (moveEvent) => {
+            const rect = progress.getBoundingClientRect();
+            const clientX = moveEvent.clientX ?? moveEvent.touches[0].clientX;
+            let percent = (clientX - rect.left) / rect.width;
+            percent = Math.max(0, Math.min(1, percent));
+            const seekTime = percent * duration;
+            player.seekTo(seekTime, true);
+        };
+
+        const stop = () => {
+            window.removeEventListener('mousemove', move);
+            window.removeEventListener('mouseup', stop);
+            window.removeEventListener('touchmove', move);
+            window.removeEventListener('touchend', stop);
+        };
+
+        window.addEventListener('mousemove', move);
+        window.addEventListener('mouseup', stop);
+        window.addEventListener('touchmove', move);
+        window.addEventListener('touchend', stop);
+
+        move(e); // 초기 클릭 위치도 적용
+    };
 
     const handlePlayPause = useCallback(() => {
         if (!musicModal || !players[musicModal.id]) return;
@@ -54,8 +94,15 @@ const MusicModal = () => {
                             <button className="btn-prev">
                                 <img src="/images/icons/prev.png" alt="" />
                             </button>
-                            <button className="btn-play">
-                                <img src="/images/icons/play.png" alt="" />
+                            <button className="btn play" onClick={handlePlayPause}>
+                                <img
+                                    src={
+                                        isPlay
+                                            ? '/images/icons/pause.png'
+                                            : '/images/icons/play.png'
+                                    }
+                                    alt={isPlay ? 'Pause' : 'Play'}
+                                />
                             </button>
                             <button className="btn-next">
                                 <img src="/images/icons/next.png" alt="" />
@@ -65,13 +112,25 @@ const MusicModal = () => {
                             </button>
                         </div>
                         <div className="center-bar">
-                            <span className="current-time">00:46</span>
-                            <div className="progress-container">
+                            <span className="current-time">{formatTime(currentTime)}</span>
+                            <div
+                                className="progress-container"
+                                onMouseDown={handleProgressDrag}
+                                onTouchStart={(e) => handleProgressDrag(e.touches[0])}
+                            >
                                 <div className="progress-bar">
-                                    <div className="progress-handle"></div>
+                                    <div
+                                        className="progress-handle"
+                                        style={{
+                                            width:
+                                                duration > 0
+                                                    ? `${(currentTime / duration) * 100}%`
+                                                    : '0%',
+                                        }}
+                                    ></div>
                                 </div>
                             </div>
-                            <span className="whole-play-time">03:25</span>
+                            <span className="whole-play-time">{formatTime(duration)}</span>
                         </div>
                         <div className="right-controls">
                             <div className="volume-container">

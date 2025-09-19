@@ -5,6 +5,8 @@ import { usemainAlbumStore } from '../../../../store';
 
 const Top100MusicItem = ({ item, rank, isSelected }) => {
     const [minute, setMinute] = useState(0);
+    const [liked, setLiked] = useState(false);
+    const [favorited, setFavorited] = useState(false);
     const MStart = usemainAlbumStore((state) => state.MStart); // ✅ MStart 가져오기
 
     useEffect(() => {
@@ -32,11 +34,28 @@ const Top100MusicItem = ({ item, rank, isSelected }) => {
             >
                 <img src="/images/streaming/icon_play.png" alt="play" />
             </td>
-            <td className="col-like-td icon">
-                <img src="/images/streaming/icon_heart.png" alt="" />
+            {/* 하트 아이콘 */}
+            <td className="col-like-td icon" onClick={() => setLiked((prev) => !prev)}>
+                <img
+                    src={
+                        liked
+                            ? '/images/streaming/icon_heart_on.png'
+                            : '/images/streaming/icon_heart.png'
+                    }
+                    alt="like"
+                />
             </td>
-            <td className="col-fav-td icon">
-                <img src="/images/streaming/icon_star.png" alt="" />
+
+            {/* 별 아이콘 */}
+            <td className="col-fav-td icon" onClick={() => setFavorited((prev) => !prev)}>
+                <img
+                    src={
+                        favorited
+                            ? '/images/streaming/icon_star_on.png'
+                            : '/images/streaming/icon_star.png'
+                    }
+                    alt="favorite"
+                />
             </td>
         </tr>
     );

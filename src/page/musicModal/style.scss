@@ -2,9 +2,9 @@
 
 .bottom-music-player {
     width: vw(1920px);
-    height: vw(100px);
+    height: vw(85px);
     background: $m_bg;
-    padding: vw(20px) vw(60px);
+    padding: vw(0) vw(60px);
     box-sizing: border-box;
     @include display_al;
     @include display_between;
@@ -67,10 +67,14 @@
             .current-time {
                 @include font-16px-400;
                 color: $grey555;
+                text-align: left;
+                width: vw(41px);
             }
             .whole-play-time {
                 @include font-16px-400;
                 color: $grey555;
+                text-align: left;
+                width: vw(41px);
             }
             .progress-container {
                 padding: 0 vw(20px);
@@ -79,6 +83,7 @@
                     width: vw(840px);
                     height: vw(3px);
                     background: $fff;
+                    overflow: hidden;
                     .progress-handle {
                         position: absolute;
                         left: 0;
@@ -87,6 +92,8 @@
                         height: vw(3px);
                         background: $grey555;
                         z-index: 100;
+                        transition: 0.1s;
+                        cursor: pointer;
                     }
                 }
             }
