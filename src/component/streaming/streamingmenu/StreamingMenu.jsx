@@ -25,7 +25,7 @@ const StreamingMenu = () => {
                             end
                             className={({ isActive }) => (isActive ? 'active' : '')}
                         >
-                            홈
+                            스트리밍 홈
                         </NavLink>
                     </li>
                     <li>
