@@ -5,6 +5,13 @@
     width: 100vw;
     height: vw(608px);
     background-color: $m_color2;
+    .visual_wrap {
+        width: 100%;
+        height: vw(944);
+        .visual {
+            @include display_al();
+        }
+    }
 }
 @include tablet {
     #main-visual {
