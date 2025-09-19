@@ -80,30 +80,39 @@
         .artist-i-video-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-gap: vw(10, 393);
-            grid-auto-rows: auto;
+            grid-template-rows: auto auto;
+            gap: vw(10, 393);
             .artist-i-video-item {
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                .video-thumbnail {
-                    width: 100%;
-                    aspect-ratio: 16 / 9;
+                min-width: 0;
+                iframe {
                     border-radius: vw(10, 393);
-                    overflow: hidden;
-
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 16 / 9;
+                }
+                .video-thumbnail {
+                    position: relative;
+                    width: 100%;
                     & > img {
                         width: 100%;
-                        height: 100%;
+                        height: auto;
+                        aspect-ratio: 16 / 9;
                         object-fit: cover;
                         border-radius: vw(10, 393);
+                        display: block;
                     }
-                }
-
-                iframe {
-                    width: 100%;
-                    aspect-ratio: 16 / 9;
-                    border-radius: vw(10, 393);
+                    .play-icon {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        & > img {
+                            width: vw(30, 393);
+                            height: auto;
+                            pointer-events: none;
+                        }
+                    }
                 }
                 .video-item-text {
                     padding-top: vw(10, 393);
@@ -114,20 +123,40 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-                    h4 {
+                    h4,
+                    p {
                         @include m-font-12px-400;
                         color: $grey777;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-                    p {
-                        @include m-font-12px-400;
-                        color: $grey777;
-                    }
                 }
                 &:nth-child(1) {
-                    grid-column: 1 / span 2;
+                    grid-column: 1 / 3;
+                    grid-row: 1;
+                    .play-icon {
+                        & > img {
+                            width: vw(50, 393);
+                        }
+                    }
+                    .video-item-text {
+                        h3 {
+                            @include m-font-18px-600;
+                        }
+                        h4,
+                        p {
+                            @include m-font-14px-400;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    grid-column: 1;
+                    grid-row: 2;
+                }
+                &:nth-child(3) {
+                    grid-column: 2;
+                    grid-row: 2;
                 }
             }
         }
