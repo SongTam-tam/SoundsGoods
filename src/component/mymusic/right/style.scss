@@ -1,106 +1,106 @@
-@use '../../../styled/utils' as *;
+@use "../../../styled/utils" as *;
 .Mymusic_right {
-    position: relative;
-    width: vw(440);
-    height: vw(730);
-    background-color: rgba(255, 255, 255, 0.6);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: vw(20);
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-    .musicplayer {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: vw(385);
-        height: vw(130);
-        border-radius: vw(8);
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 0 vw(3) 0 rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(1.5783px);
-        z-index: 10;
-        .Mymusic_modal {
-            padding: vw(24) vw(35);
-            display: flex;
-            .modal_img {
-                width: vw(87);
-                height: vw(87);
+  position: relative;
+  width: vw(440);
+  height: vw(730);
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: vw(20);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  .musicplayer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: vw(385);
+    height: vw(130);
+    border-radius: vw(8);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 vw(3) 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1.5783px);
+    z-index: 10;
+    .Mymusic_modal {
+      padding: vw(24) vw(35);
+      display: flex;
+      .modal_img {
+        width: vw(87);
+        height: vw(87);
 
-                img {
-                    width: vw(87);
-                    height: vw(87);
-                }
-            }
-            .right_text {
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-                margin-left: vw(20px);
-                h2 {
-                    font-size: vw(16);
-                    font-weight: 600;
-                }
-                p {
-                    font-size: vw(14);
-                    font-weight: 600;
-                }
-                .modalbtn {
-                    width: vw(223);
-                    display: flex;
-                    justify-content: space-between;
-                    img {
-                        object-fit: contain;
-                    }
-                }
-            }
-        }
-    }
-    .Mymusic_title {
-        text-align: center;
-        h2 {
-            font-size: 24px;
-            font-weight: 400;
-            margin-top: 20px;
-            margin-bottom: vw(40);
-        }
-    }
-}
-.Mymusic_right_List {
-    width: vw(380);
-    height: vw(620);
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
-    margin-left: 40px;
-    margin-bottom: 25px;
-}
-.Mymusic_right_Item {
-    display: flex;
-    width: 20.833vw;
-    height: 5.729vw;
-    margin-bottom: vw(20);
-    .right_img {
-        width: vw(111);
-        height: vw(111);
         img {
-            width: vw(111);
-            height: vw(111);
+          width: vw(87);
+          height: vw(87);
         }
-    }
-    .right_text {
+      }
+      .right_text {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         text-align: left;
         margin-left: vw(20px);
         h2 {
-            @include font-18px-400();
+          font-size: vw(16);
+          font-weight: 600;
         }
         p {
-            @include font-16px-400();
+          font-size: vw(14);
+          font-weight: 600;
         }
+        .modalbtn {
+          width: vw(223);
+          display: flex;
+          justify-content: space-between;
+          img {
+            object-fit: contain;
+          }
+        }
+      }
     }
+  }
+  .Mymusic_title {
+    text-align: center;
+    h2 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-top: 20px;
+      margin-bottom: vw(40);
+    }
+  }
+}
+.Mymusic_right_List {
+  width: vw(380);
+  height: vw(620);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  margin-left: 40px;
+  margin-bottom: 25px;
+}
+.Mymusic_right_Item {
+  display: flex;
+  width: 20.833vw;
+  height: 5.729vw;
+  margin-bottom: vw(20);
+  .right_img {
+    width: vw(111);
+    height: vw(111);
+    img {
+      width: vw(111);
+      height: vw(111);
+    }
+  }
+  .right_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin-left: vw(20px);
+    h2 {
+      @include font-18px-400();
+    }
+    p {
+      @include font-16px-400();
+    }
+  }
 }

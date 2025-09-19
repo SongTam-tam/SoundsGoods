@@ -1,0 +1,31 @@
+@use "../../../../styled/utils" as *;
+
+.selected_playlist_songs {
+  position: relative;
+  width: vw(920);
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: vw(20);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  .playlist_header {
+    width: vw(900);
+    display: flex;
+    justify-content: right;
+    button {
+      border-radius: vw(10);
+      backdrop-filter: blur(25px);
+      border: none;
+      cursor: pointer;
+      font-size: vw(15);
+      transition: all 0.3s ease;
+    }
+  }
+  .nonebox {
+    display: flex;
+    justify-content: center;
+  }
+  .likemusic {
+  }
+}
