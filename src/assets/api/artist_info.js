@@ -13,7 +13,7 @@ export default [
         album: [
             {
                 id: 196,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/197.jpg',
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/196.jpg',
                 track: 'WMweEpGlu_U',
                 artist: '방탄소년단',
                 album: 'Butter',
@@ -28,7 +28,7 @@ export default [
             },
             {
                 id: 197,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/199.jpg',
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/197.jpg',
                 track: 'CuklIb9d3fI',
                 artist: '방탄소년단',
                 album: 'Butter / Permission to Dance',
@@ -43,7 +43,7 @@ export default [
             },
             {
                 id: 198,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/200.jpg',
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/198.jpg',
                 track: 'MBdVXkSdhwU',
                 artist: '방탄소년단',
                 album: "LOVE YOURSELF 承 'Her'",
@@ -58,7 +58,7 @@ export default [
             },
             {
                 id: 199,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/151.jpg',
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/199.jpg',
                 track: '4ujQOR2DMFM',
                 artist: '방탄소년단',
                 album: '화양연화 Young Forever',
@@ -73,7 +73,7 @@ export default [
             },
             {
                 id: 200,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/151.jpg',
+                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/200.jpg',
                 track: '7C2z4GqqS5E',
                 artist: '방탄소년단',
                 album: "LOVE YOURSELF 轉 'Tear'",
@@ -367,7 +367,8 @@ export default [
         image: '/public/images/artistinfo/visual_zerobaseone.jpg',
         imageS: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/artist/zerobaseone.png',
         artist: '제로베이스원 (ZEROBASEONE)',
-        members: '성한빈, 김지웅, 장하오, 석매튜, 김태래, 리키, 김규빈, 박건욱, 한유진',
+        members:
+            '성한빈, 김지웅, 장하오, 석매튜, 김태래, 리키, 김규빈, 박건욱, 한유진',
         debut: '2023.07.10',
         type: '그룹',
         cpn: 'CJ ENM',
@@ -1962,38 +1963,6 @@ export default [
             },
         ],
         album: [
-            {
-                id: 6,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/top/TOP6.jpg',
-                track: '2vMsjZrVO_s', // IVE - 'XOXZ' (official MV / performance)
-                artist: 'IVE (아이브)',
-                artistimg: 'images/artist/ive.png',
-                album: 'IVE SECRET',
-                title: 'XOXZ',
-                release: '2025.08.25',
-                category: '댄스, 발라드',
-                cpn: '스타쉽엔터테인먼트',
-                like: false,
-                modal: false,
-                chk: false,
-                bookmark: false,
-            },
-            {
-                id: 29,
-                image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/top/TOP29.jpg',
-                track: 'g36q0ZLvygQ',
-                artist: 'IVE (아이브)',
-                artistimg: 'images/artist/ive.png',
-                album: 'IVE EMPATHY',
-                title: 'REBEL HEART',
-                release: '2025.02.03',
-                category: '댄스, R&B/Soul',
-                cpn: '스타쉽엔터테인먼트',
-                like: false,
-                modal: false,
-                chk: false,
-                bookmark: false,
-            },
             {
                 id: 162,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/162.jpg',
