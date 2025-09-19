@@ -1,9 +1,11 @@
 // Top100MusicItem.jsx
 import { useEffect, useState } from 'react';
 import './style.scss';
+import { usemainAlbumStore } from '../../../../store';
 
 const Top100MusicItem = ({ item, rank, isSelected }) => {
     const [minute, setMinute] = useState(0);
+    const MStart = usemainAlbumStore((state) => state.MStart); // ✅ MStart 가져오기
 
     useEffect(() => {
         setMinute(Math.floor(Math.random() * 60));
@@ -24,8 +26,11 @@ const Top100MusicItem = ({ item, rank, isSelected }) => {
             </td>
             <td className="col-time-td">3:{minute < 10 ? `0${minute}` : minute}</td>
             <td className="col-release-td">{item.release}</td>
-            <td className="col-play-td icon">
-                <img src="/images/streaming/icon_play.png" alt="" />
+            <td
+                className="col-play-td icon"
+                onClick={() => MStart(item.id, 'top')} // ✅ 여기서 재생 실행
+            >
+                <img src="/images/streaming/icon_play.png" alt="play" />
             </td>
             <td className="col-like-td icon">
                 <img src="/images/streaming/icon_heart.png" alt="" />

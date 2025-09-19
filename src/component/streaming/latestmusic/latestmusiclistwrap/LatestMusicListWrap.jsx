@@ -2,12 +2,16 @@ import { useState, useEffect } from 'react';
 import LatestMusicList from './LatestMusicList';
 import './style.scss';
 import newData_51_100 from '../../../../assets/api/musicComponents/newData_51_100';
+import { usemainAlbumStore } from '../../../../store';
 
 const LatestMusicListWrap = () => {
     const [sortType, setSortType] = useState('정렬');
     const [sortedList, setSortedList] = useState([...(newData_51_100 || [])]);
     const [sortOpen, setSortOpen] = useState(false);
     const [selectedAll, setSelectedAll] = useState(false);
+
+    const latestData = usemainAlbumStore((state) => state.latestData); // Zustand에서 가져오기
+    const [isMobile, setIsMobile] = useState(false);
 
     const handleSelectAll = () => {
         setSelectedAll((prev) => !prev);

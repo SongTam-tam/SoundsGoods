@@ -1,6 +1,10 @@
 import { create } from 'zustand';
 import main_Artist_data from '../assets/api/main_Artist_data';
 import goodsData from '../assets/api/goods';
+import top_1_50 from '../assets/api/musicComponents/top_1_50';
+import newData_51_100 from '../assets/api/musicComponents/newData_51_100';
+import genre from '../assets/api/genre';
+import artist_info from '../assets/api/artist_info';
 // 작업 수정
 
 // YT 상수 정의를 함수 내부로 이동하거나 안전하게 처리
@@ -11,6 +15,10 @@ const getYT = () => {
 
 export const usemainAlbumStore = create((set, get) => {
     return {
+        topData: top_1_50,
+        genreData: genre,
+        latestData: newData_51_100,
+        artistData: artist_info,
         mainAlAtData: main_Artist_data,
         musicOn: false,
         musicModal: null,
@@ -19,12 +27,37 @@ export const usemainAlbumStore = create((set, get) => {
         currentPlayerId: null,
 
         // YouTube API 초기화 함수
-        onTrack: (id) =>
-            set((state) => ({
-                mainAlAtData: state.mainAlAtData.map((item) =>
-                    item.id === id ? { ...item, actv: true } : { ...item, actv: false }
-                ),
-            })),
+        onTrack: (id, type) => {
+            if (type === 'top') {
+                set((state) => ({
+                    topData: state.topData.map((item) =>
+                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                    ),
+                    musicModal: state.topData.find((item) => item.id === id),
+                }));
+            } else if (type === 'latest') {
+                set((state) => ({
+                    latestData: state.latestData.map((item) =>
+                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                    ),
+                    musicModal: state.latestData.find((item) => item.id === id),
+                }));
+            } else if (type === 'genre') {
+                set((state) => ({
+                    genreData: state.genreData.map((item) =>
+                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                    ),
+                    musicModal: state.genreData.find((item) => item.id === id),
+                }));
+            } else if (type === 'artistInfo') {
+                set((state) => ({
+                    artistData: state.artistData.map((item) =>
+                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                    ),
+                    musicModal: state.artistData.find((item) => item.id === id),
+                }));
+            }
+        },
 
         initYouTube: () => {
             return new Promise((resolve) => {
@@ -116,7 +149,7 @@ export const usemainAlbumStore = create((set, get) => {
 
                 try {
                     const player = new YT.Player(`youtube-player-${track.id}`, {
-                        videoId: track.yid,
+                        videoId: track.track,
                         width: '0',
                         height: '0',
                         playerVars: {
@@ -171,51 +204,48 @@ export const usemainAlbumStore = create((set, get) => {
             });
         },
 
-        // 음악 재생 시작 (수정된 버전)
-        MStart: async (id) => {
-            try {
-                const track = get().mainAlAtData.find((item) => item.id === id);
-                if (!track) {
-                    console.error('Track not found:', id);
-                    return;
-                }
+        // MStart도 type 추가
+        MStart: async (id, type) => {
+            const state = get();
+            let track = null;
 
-                set({ musicOn: true, musicModal: track });
+            if (type === 'top') track = state.topData.find((item) => item.id === id);
+            else if (type === 'latest') track = state.latestData.find((item) => item.id === id);
+            else if (type === 'genre') track = state.genreData.find((item) => item.id === id);
+            else if (type === 'artistInfo') track = state.artistData.find((item) => item.id === id);
 
-                // YouTube API 준비 확인
-                if (!get().ytReady) {
-                    const isReady = await get().initYouTube();
-                    if (!isReady) {
-                        console.error('YouTube API failed to load');
-                        return;
+            if (!track) return;
+
+            // album_img 필드 없으면 image로 매핑
+            if (!track.album_img && track.image) track.album_img = track.image;
+
+            set({ musicOn: true, musicModal: track });
+
+            // YouTube API 준비
+            if (!state.ytReady) {
+                const isReady = await state.initYouTube();
+                if (!isReady) return;
+            }
+
+            const { currentPlayerId, players } = get();
+            const YT = getYT();
+
+            if (currentPlayerId === id && players[id]) {
+                try {
+                    const playerState = players[id].getPlayerState();
+                    if (playerState === YT.PlayerState.PLAYING) {
+                        players[id].pauseVideo();
+                    } else {
+                        players[id].playVideo();
                     }
+                } catch (error) {
+                    console.error(error);
                 }
-
-                const { currentPlayerId, players } = get();
-                const YT = getYT();
-
-                if (currentPlayerId === id && players[id]) {
-                    // 같은 트랙이면 일시정지 토글
-                    try {
-                        const playerState = players[id].getPlayerState();
-                        if (playerState === YT.PlayerState.PLAYING) {
-                            players[id].pauseVideo();
-                        } else {
-                            players[id].playVideo();
-                        }
-                    } catch (error) {
-                        console.error('Error toggling play/pause:', error);
-                    }
-                } else {
-                    // 다른 트랙이면 새로 재생
-                    await get().createPlayer(track);
-                }
-            } catch (error) {
-                console.error('Error in MStart:', error);
+            } else {
+                await state.createPlayer(track);
             }
         },
 
-        // 음악 정지
         MStop: (id) => {
             const { players } = get();
             if (players[id]) {
@@ -223,7 +253,7 @@ export const usemainAlbumStore = create((set, get) => {
                     players[id].pauseVideo();
                     set({ currentPlayerId: null });
                 } catch (error) {
-                    console.error('Error stopping player:', error);
+                    console.error(error);
                 }
             }
         },
@@ -267,7 +297,9 @@ export const useGoodsStore = create((set, get) => {
             : goodsData,
         cart: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [],
         payment: localStorage.getItem('payment') ? JSON.parse(localStorage.getItem('payment')) : [],
-        complete: localStorage.getItem('complete') ? JSON.parse(localStorage.getItem('complete')) : [],
+        complete: localStorage.getItem('complete')
+            ? JSON.parse(localStorage.getItem('complete'))
+            : [],
         iveGoods: localStorage.getItem('iveGoods')
             ? JSON.parse(localStorage.getItem('iveGoods'))
             : [],
@@ -332,120 +364,133 @@ export const useGoodsStore = create((set, get) => {
             localStorage.setItem('complete', JSON.stringify(newComplete));
             set({ complete: newComplete });
             localStorage.setItem('cart', JSON.stringify([]));
-            set({ cart: [] , payment:[] });
+            set({ cart: [], payment: [] });
         },
         toggleCheck: (id) => {
             const { cart } = get();
-            const updatedCart = cart.map(item => 
-              item.id === id ? { ...item, chk: !item.chk } : item
+            const updatedCart = cart.map((item) =>
+                item.id === id ? { ...item, chk: !item.chk } : item
             );
             set({ cart: updatedCart });
-            get().updateTotals(); 
-          },
-          
-          toggleAllCheck: (checked) => {
+            get().updateTotals();
+        },
+
+        toggleAllCheck: (checked) => {
             const { cart } = get();
-            const updatedCart = cart.map(item => ({ ...item, chk: checked }));
+            const updatedCart = cart.map((item) => ({ ...item, chk: checked }));
             set({ cart: updatedCart });
-            get().updateTotals(); 
-          },
+            get().updateTotals();
+        },
         payPush2: (x) => {
             const { cart, payment } = get();
             const id = x.id;
-            const checkedItems = cart.filter(item => item.chk === true);
-            const existingIds = new Set(payment.map(item => item.id));
-            const newItems = checkedItems.filter(item => !existingIds.has(item.id));
+            const checkedItems = cart.filter((item) => item.chk === true);
+            const existingIds = new Set(payment.map((item) => item.id));
+            const newItems = checkedItems.filter((item) => !existingIds.has(item.id));
             const updatedItems = [...newItems];
             localStorage.setItem('payment', JSON.stringify(updatedItems));
             set({ payment: updatedItems });
-          },
-        payPush:(x) => {
-            const {goods , payment} = get();
-            const id = x.id
-            const item = goods.find(item=>item.id === id)
-            const updataItem  =[item]
+        },
+        payPush: (x) => {
+            const { goods, payment } = get();
+            const id = x.id;
+            const item = goods.find((item) => item.id === id);
+            const updataItem = [item];
             localStorage.setItem('payment', JSON.stringify(updataItem));
-            set({payment:updataItem})
+            set({ payment: updataItem });
         },
-        filterCD:(x)=>{
-            set((state)=>({
-                goods:[...goodsData].filter(item=>item.category === x)
-            }))
+        filterCD: (x) => {
+            set((state) => ({
+                goods: [...goodsData].filter((item) => item.category === x),
+            }));
             window.scrollTo({
-                top: 1500, 
+                top: 1500,
                 behavior: 'smooth',
-              });
+            });
         },
-        newSort:() => {set((state)=>({
-            goods: [...state.goods].sort((a,b) => a.title.localeCompare(b.title))
-            
-        }))
-        window.scrollTo({
-            top: 1500,
-            behavior: 'smooth',
-          });
-    },
-        topSort:() =>{ set((state)=>({
-            goods: [...state.goods].sort((a,b) => a.cpn.localeCompare(b.cpn))
-        }))
-        window.scrollTo({
-            top: 1500,
-            behavior: 'smooth',
-          });
-        },
-        defaultSort:() => {set((state)=>({
-            goods: [...state.goods].sort((a,b) => a.id - b.id)
-        }))
-        window.scrollTo({
-            top: 1500, 
-            behavior: 'smooth',
-          });
-    },
-        priceFilter1:()=>{set((state)=>({
-            goods: [...goodsData].filter(item=> item.price < 10000)
-        }))
-        window.scrollTo({
-            top: 1500, 
-            behavior: 'smooth',
-          });
-    },
-        priceFilter2:()=>{set((state)=>({
-            goods: [...goodsData].filter(item=> item.price > 10000 && item.price < 20000)
-        }))
-        window.scrollTo({
-            top: 1500, 
-            behavior: 'smooth',
-          });},
-        priceFilter3:()=>{set((state)=>({
-            goods: [...goodsData].filter(item=> item.price > 30000 && item.price < 40000)
-        }))
-        window.scrollTo({
-            top: 1500, 
-            behavior: 'smooth',
-          });},
-        priceFilter4:()=>{set((state)=>({
-            goods: [...goodsData].filter(item=> item.price > 50000 && item.price < 60000 )
-        }))
-        window.scrollTo({
-            top: 1500, 
-            behavior: 'smooth',
-          });},
-        priceFilter5:()=>{set((state)=>({
-            goods: [...goodsData].filter(item=> item.price > 100000)
-        }))
-        window.scrollTo({
-            top: 1500, 
-            behavior: 'smooth',
-          });},
-          artistSearch:(id)=>{
-            set((state)=>({
-                goods:[...goodsData].filter(item=>item.artist.toLowerCase().includes(id.toLowerCase()))
-            }))
+        newSort: () => {
+            set((state) => ({
+                goods: [...state.goods].sort((a, b) => a.title.localeCompare(b.title)),
+            }));
             window.scrollTo({
-                top: 1500, 
+                top: 1500,
                 behavior: 'smooth',
-              });
-          },
+            });
+        },
+        topSort: () => {
+            set((state) => ({
+                goods: [...state.goods].sort((a, b) => a.cpn.localeCompare(b.cpn)),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
+        defaultSort: () => {
+            set((state) => ({
+                goods: [...state.goods].sort((a, b) => a.id - b.id),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
+        priceFilter1: () => {
+            set((state) => ({
+                goods: [...goodsData].filter((item) => item.price < 10000),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
+        priceFilter2: () => {
+            set((state) => ({
+                goods: [...goodsData].filter((item) => item.price > 10000 && item.price < 20000),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
+        priceFilter3: () => {
+            set((state) => ({
+                goods: [...goodsData].filter((item) => item.price > 30000 && item.price < 40000),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
+        priceFilter4: () => {
+            set((state) => ({
+                goods: [...goodsData].filter((item) => item.price > 50000 && item.price < 60000),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
+        priceFilter5: () => {
+            set((state) => ({
+                goods: [...goodsData].filter((item) => item.price > 100000),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
+        artistSearch: (id) => {
+            set((state) => ({
+                goods: [...goodsData].filter((item) =>
+                    item.artist.toLowerCase().includes(id.toLowerCase())
+                ),
+            }));
+            window.scrollTo({
+                top: 1500,
+                behavior: 'smooth',
+            });
+        },
         wishPush: (x) => {
             const { goods, wish } = get();
             const id = x.id;

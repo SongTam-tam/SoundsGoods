@@ -143,12 +143,13 @@
     height: vw(400);
     position: fixed;
     right: vw(14);
-    bottom: vw(114);
+    bottom: vw(14);
     background-color: $m_bg;
     box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.15);
     border-radius: vw(20px);
     @include display_al();
     flex-direction: column;
+    z-index: 2000;
     .album_pic {
         margin-top: vw(10);
         width: vw(310);
@@ -196,18 +197,30 @@
             text-align: center;
             color: $fff;
             z-index: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         strong {
             display: block;
-            @include font-18px-700();
+            @include font-22px-600();
             margin-bottom: vw(10);
             line-height: 1;
             color: $fff;
+            width: vw(250);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         span {
-            @include font-14px-500();
+            @include font-16px-500();
             line-height: 1;
             color: $fff;
+            width: vw(250);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
         }
     }
     .player_controll {

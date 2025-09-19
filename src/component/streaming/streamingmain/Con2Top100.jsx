@@ -1,14 +1,16 @@
+// Con2Top100.jsx
 import { useState, useEffect } from 'react';
-import top_1_50 from '../../../assets/api/musicComponents/top_1_50';
 import Con2Top100Item from './Con2Top100Item';
 import { Link } from 'react-router-dom';
+import { usemainAlbumStore } from '../../../store';
+
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
 const Con2Top100 = () => {
-    const [data, setData] = useState(top_1_50);
+    const topData = usemainAlbumStore((state) => state.topData); // Zustand에서 가져오기
     const [isMobile, setIsMobile] = useState(false);
 
     // 화면 크기 감지
@@ -40,17 +42,17 @@ const Con2Top100 = () => {
                     slidesPerView={3.33} // 2개 완전히 보이고, 다음 슬라이드 일부 보임
                     className="top100-swiper"
                 >
-                    {data.slice(0, 7).map((item) => (
+                    {topData.slice(0, 7).map((item) => (
                         <SwiperSlide width={100} height={100} key={item.id}>
-                            <Con2Top100Item data={item} />
+                            <Con2Top100Item data={item} type="top" />
                         </SwiperSlide>
                     ))}
                 </Swiper>
             ) : (
                 // 데스크톱/태블릿: 일반 ul/li 사용
                 <ul className="top100-wrap">
-                    {data.slice(0, 7).map((item) => (
-                        <Con2Top100Item key={item.id} data={item} />
+                    {topData.slice(0, 7).map((item) => (
+                        <Con2Top100Item key={item.id} data={item} type="top" />
                     ))}
                 </ul>
             )}
