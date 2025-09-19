@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { usemainAlbumStore } from '../../../../../store';
 
 const ArtistITopMusicItem = ({ item }) => {
     const [minute, setMinute] = useState(0);
     const [like, setLike] = useState(false);
     const [fav, setFav] = useState(false);
+    const MStart = usemainAlbumStore((state) => state.MStart); // ✅ MStart 가져오기
 
     useEffect(() => {
         const randomMinute = Math.floor(Math.random() * 60);
@@ -19,7 +21,10 @@ const ArtistITopMusicItem = ({ item }) => {
                 <p>{item.album}</p>
             </td>
             <td className="artist-music-3">3:{minute < 10 ? `0${minute}` : minute}</td>
-            <td className="artist-music-4 icon">
+            <td
+                className="artist-music-4 icon"
+                onClick={() => MStart(item.id, 'artistInfo')} // ✅ 여기서 재생 실행
+            >
                 <img src="/images/streaming/icon_play.png" alt="재생" />
             </td>
             <td className="artist-music-5 icon">
