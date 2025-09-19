@@ -57,6 +57,37 @@ const MusicModal = () => {
         move(e); // 초기 클릭 위치도 적용
     };
 
+    const handleVolumeDrag = (e) => {
+        if (!musicModal || !players[musicModal.id]) return;
+        const player = players[musicModal.id];
+        const volumeContainer = e.currentTarget || e.target.closest('.volume-slider');
+        if (!volumeContainer) return;
+
+        const move = (moveEvent) => {
+            const rect = volumeContainer.getBoundingClientRect();
+            const clientX = moveEvent.clientX ?? moveEvent.touches[0].clientX;
+            let percent = (clientX - rect.left) / rect.width;
+            percent = Math.max(0, Math.min(1, percent)); // 0~1 범위 제한
+            const newVolume = Math.floor(percent * 100); // 0~100
+            player.setVolume?.(newVolume);
+            setCurrentVolume(newVolume);
+        };
+
+        const stop = () => {
+            window.removeEventListener('mousemove', move);
+            window.removeEventListener('mouseup', stop);
+            window.removeEventListener('touchmove', move);
+            window.removeEventListener('touchend', stop);
+        };
+
+        window.addEventListener('mousemove', move);
+        window.addEventListener('mouseup', stop);
+        window.addEventListener('touchmove', move);
+        window.addEventListener('touchend', stop);
+
+        move(e); // 초기 클릭 위치도 적용
+    };
+
     const handlePlayPause = useCallback(() => {
         if (!musicModal || !players[musicModal.id]) return;
 
@@ -135,9 +166,16 @@ const MusicModal = () => {
                         <div className="right-controls">
                             <div className="volume-container">
                                 <img src="/images/icons/icon-volume.png" alt="" />
-                                <div className="volume-slider">
+                                <div
+                                    className="volume-slider"
+                                    onMouseDown={handleVolumeDrag}
+                                    onTouchStart={(e) => handleVolumeDrag(e.touches[0])}
+                                >
                                     <div className="volume-bar">
-                                        <div className="volume-handle"></div>
+                                        <div
+                                            className="volume-handle"
+                                            style={{ width: `${currentVolume}%` }}
+                                        ></div>
                                     </div>
                                 </div>
                             </div>

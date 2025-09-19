@@ -12,7 +12,7 @@ export default [
         category: '댄스',
         album: [
             {
-                id: 196,
+                id: 1,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/196.jpg',
                 track: 'WMweEpGlu_U',
                 artist: '방탄소년단',
@@ -27,7 +27,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 197,
+                id: 2,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/197.jpg',
                 track: 'CuklIb9d3fI',
                 artist: '방탄소년단',
@@ -42,7 +42,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 198,
+                id: 3,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/198.jpg',
                 track: 'MBdVXkSdhwU',
                 artist: '방탄소년단',
@@ -57,7 +57,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 199,
+                id: 4,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/199.jpg',
                 track: '4ujQOR2DMFM',
                 artist: '방탄소년단',
@@ -72,7 +72,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 200,
+                id: 5,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/200.jpg',
                 track: '7C2z4GqqS5E',
                 artist: '방탄소년단',
@@ -194,7 +194,7 @@ export default [
         category: '댄스',
         album: [
             {
-                id: 551,
+                id: 1,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/551.jpg',
                 track: 'pS57UX6s-xw',
                 artist: '세븐틴',
@@ -209,7 +209,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 552,
+                id: 2,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/552.jpg',
                 track: '-GQg25oP0S4',
                 artist: '세븐틴',
@@ -224,7 +224,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 553,
+                id: 3,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/553.jpg',
                 track: 'J-wFp43XOrA',
                 artist: '세븐틴',
@@ -239,7 +239,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 554,
+                id: 4,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/554.jpg',
                 track: 'bw4AuPrLWeA',
                 artist: '세븐틴',
@@ -254,7 +254,7 @@ export default [
                 bookmark: false,
             },
             {
-                id: 555,
+                id: 5,
                 image: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/images/dance/555.jpg',
                 track: 'ThI0pBAbFnk',
                 artist: '세븐틴',
