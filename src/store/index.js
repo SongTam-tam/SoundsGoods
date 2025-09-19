@@ -4,6 +4,7 @@ import top_1_50 from '../assets/api/musicComponents/top_1_50';
 import newData_51_100 from '../assets/api/musicComponents/newData_51_100';
 import genre from '../assets/api/genre';
 import artist_info from '../assets/api/artist_info';
+import main_Artist_data from '../assets/api/main_Artist_data';
 // 작업 수정
 
 // YT 상수 정의를 함수 내부로 이동하거나 안전하게 처리
@@ -18,6 +19,7 @@ export const usemainAlbumStore = create((set, get) => {
         genreData: genre,
         latestData: newData_51_100,
         artistData: artist_info,
+        mainArtistData: main_Artist_data,
         musicOn: false,
         musicModal: null,
         players: {},
@@ -61,6 +63,13 @@ export const usemainAlbumStore = create((set, get) => {
                         item.id === id ? { ...item, actv: true } : { ...item, actv: false }
                     ),
                     musicModal: state.artistData.find((item) => item.id === id),
+                }));
+            } else if (type === 'main') {
+                set((state) => ({
+                    artistData: state.mainArtistData.map((item) =>
+                        item.id === id ? { ...item, actv: true } : { ...item, actv: false }
+                    ),
+                    musicModal: state.mainArtistData.find((item) => item.id === id),
                 }));
             }
         },
