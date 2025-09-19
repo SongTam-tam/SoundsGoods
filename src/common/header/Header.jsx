@@ -18,13 +18,15 @@ const Header = () => {
     const { isLoggedIn, userInfo, logout } = useUserStore();
     const [show, setShow] = useState(false);
     const [data, setData] = useState(headerData);
-
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isJoinOpen, setIsJoinOpen] = useState(false);
     const toggleLogin = () => setIsLoginOpen((prev) => !prev);
     const toggleJoin = () => setIsJoinOpen((prev) => !prev);
     const swiperRef = useRef();
     const nav = useNavigate();
+    const onHome = () => {
+        nav('/'); // 홈으로 이동
+    };
     return (
         <header id="header" className={show ? 'active' : ''} onMouseLeave={() => setShow(false)}>
             <div className="header_top_menu">
@@ -46,7 +48,7 @@ const Header = () => {
             </div>
 
             <div className="inner">
-                <h1 className="logo">
+                <h1 className="logo" onClick={onHome}>
                     <Link to="/">{/* <img src="" alt="" /> */}</Link>
                 </h1>
                 <HeaderForm />
