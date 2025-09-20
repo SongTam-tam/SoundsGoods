@@ -3,21 +3,21 @@ import { useState, useEffect } from 'react';
 const Con1Latest = () => {
     const videos = [
         {
-            id: 'video1',
+            id: 'con1-video1',
             src: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/videos/hoshinogen.mp4',
             title: '2 (feat. Lee Youngji)',
             artist: 'Gen Hoshino',
             date: '2025.9.15',
         },
         {
-            id: 'video2',
+            id: 'con1-video2',
             src: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/videos/ziont.mp4',
             title: 'Heroine',
             artist: '자이언티 (Zion.T)',
             date: '2025.9.5',
         },
         {
-            id: 'video3',
+            id: 'con1-video3',
             src: 'https://github.com/SongTam-tam/SoundsGoods_image/raw/main/videos/jaessbee.mp4',
             title: 'SHUT THAT',
             artist: '재쓰비 (JAESSBEE)',

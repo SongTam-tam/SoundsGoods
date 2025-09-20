@@ -3,22 +3,24 @@ const Footer = () => {
     return (
         <footer id="footer">
             <div className="inner">
-                <h2>sounds goods</h2>
+                <h2>
+                    <img src="/images/header/logo_type2.png" alt="" />
+                </h2>
                 <ul className="sns_icons">
                     <li>
-                        <img src="images/footer/Frame_536.png" alt="" />
+                        <img src="/images/footer/Frame_536.png" alt="" />
                     </li>
                     <li>
-                        <img src="images/footer/Frame_537.png" alt="" />
+                        <img src="/images/footer/Frame_537.png" alt="" />
                     </li>
                     <li>
-                        <img src="images/footer/Frame_538.png" alt="" />
+                        <img src="/images/footer/Frame_538.png" alt="" />
                     </li>
                     <li>
-                        <img src="images/footer/Frame_539.png" alt="" />
+                        <img src="/images/footer/Frame_539.png" alt="" />
                     </li>
                     <li>
-                        <img src="images/footer/Frame_540.png" alt="" />
+                        <img src="/images/footer/Frame_540.png" alt="" />
                     </li>
                 </ul>
                 <ul className="footer_con con1">

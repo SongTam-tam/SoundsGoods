@@ -1,20 +1,18 @@
 import { useEffect, useState } from 'react';
+import { usemainAlbumStore } from '../../../../store';
+
 import './style.scss';
 
 const GenreMusicItem = ({ item, isSelected }) => {
     const [minute, setMinute] = useState(0);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
     const [like, setLike] = useState(false);
     const [fav, setFav] = useState(false);
+    const MStart = usemainAlbumStore((state) => state.MStart); // ✅ MStart 가져오기
+    const isMobile = window.innerWidth <= 768;
 
     useEffect(() => {
         const randomMinute = Math.floor(Math.random() * 60);
         setMinute(randomMinute);
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 1024);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
@@ -31,7 +29,10 @@ const GenreMusicItem = ({ item, isSelected }) => {
             </td>
             <td className="col-time-td">3:{minute < 10 ? `0${minute}` : minute}</td>
             <td className="col-release-td">{item.release}</td>
-            <td className="col-play-td icon">
+            <td
+                className="col-play-td icon"
+                onClick={() => MStart(item.id, 'genre')} // ✅ 여기서 재생 실
+            >
                 <img src="/images/streaming/icon_play.png" alt="" />
             </td>
             <td className="col-like-td icon">
