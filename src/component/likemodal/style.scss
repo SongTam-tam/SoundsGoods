@@ -1,0 +1,10 @@
+@use "../../styled/utils" as *;
+.likemodal {
+  display: flex;
+  h2 {
+    @include font-16px-500();
+  }
+  .dropdown_toggle {
+    width: 150px;
+  }
+}
