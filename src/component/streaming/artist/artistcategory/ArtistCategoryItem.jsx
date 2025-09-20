@@ -3,15 +3,17 @@ import './style.scss';
 
 const ArtistCategoryItem = ({ item }) => {
     const navigate = useNavigate();
-
     const onClick = () => {
         navigate(`/streaming/artistinfo/${item.id}`);
     };
 
     return (
         <>
-            <div className="artist-category-item">
-                <img src={item.imageS || '/images/streaming/artist.png'} alt="" onClick={onClick} />
+            <div className="artist-category-item" onClick={onClick}>
+                <img
+                    src={item.imageS || '/images/streaming/artist.png'}
+                    alt=""
+                />
                 <h3>{item.artist}</h3>
             </div>
         </>

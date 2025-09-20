@@ -18,7 +18,10 @@ const ArtistGoodsItem = ({ item }) => {
         <div className="artist-goods-item">
             <div className="goods-img">
                 <img
-                    src={item?.imageM || '/images/streaming/goods_placeholder.png'}
+                    src={
+                        item?.imageM ||
+                        '/images/streaming/goods_placeholder.png'
+                    }
                     alt={item?.title || '상품 이미지 없음'}
                 />
                 <p>
@@ -35,6 +38,7 @@ const ArtistGoodsItem = ({ item }) => {
             </div>
             <div className="artist-goods-text" onClick={onClick}>
                 <h3>{item?.title || '상품 정보 없음'}</h3>
+                <p>{item.artist}</p>
                 <h4>₩ {formattedPrice || '가격 정보 없음'}</h4>
             </div>
         </div>
