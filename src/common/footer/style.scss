@@ -13,6 +13,9 @@
             @include font-14px-700();
             font-size: vw(32px);
             margin-top: vw(40px);
+            img {
+                height: vw(75px);
+            }
         }
         .sns_icons {
             @include display_ju();
