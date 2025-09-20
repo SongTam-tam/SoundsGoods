@@ -19,12 +19,14 @@
         @include p_center_left();
         top: vw(48);
         .logo {
-            background-color: $m_color1;
             width: 7.812vw;
             height: vw(40);
             position: absolute;
             top: 0;
             left: 0;
+            img {
+                height: vw(35);
+            }
         }
     }
     .header_top_menu {

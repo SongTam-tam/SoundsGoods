@@ -49,7 +49,9 @@ const Header = () => {
 
             <div className="inner">
                 <h1 className="logo" onClick={onHome}>
-                    <Link to="/">{/* <img src="" alt="" /> */}</Link>
+                    <Link to="/">
+                        <img src="/images/header/logo_type1.png" alt="" />
+                    </Link>
                 </h1>
                 <HeaderForm />
                 <Nav data={data} setShow={setShow} />

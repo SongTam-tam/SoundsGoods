@@ -1,36 +1,135 @@
+// style.scss
 @use '../../../styled/utils' as *;
 
 #main-visual {
-    // @include bg();
     width: 100vw;
-    height: vw(944);
-    background-color: $m_color2;
+    height: 100vh;
+    background-color: $fff;
+    overflow: hidden;
+    position: relative;
+    perspective: 1200px;
+
     .visual_wrap {
         width: 100%;
-        height: vw(944);
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
 
         .visual {
             @include display_center();
-            gap: vw(60);
+            // 이미지 간격 조절 - 값이 작을수록 더 겹침
+            gap: vw(2);
+            width: 100%;
+            position: absolute;
+            will-change: transform, opacity;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
             .pic {
-                width: vw(700);
-                height: vw(394);
+                width: vw(699);
+                height: vw(393);
                 overflow: hidden;
+                position: relative;
+                z-index: 2;
+                border-radius: 8px;
+                transform-style: preserve-3d;
+
                 img {
-                    width: vw(700);
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    will-change: transform;
+                    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+                    border-radius: 8px;
                 }
             }
+
             strong {
+                // 텍스트 크기 조절
                 @include font-200px-700();
+                position: relative;
+                z-index: 1;
+                will-change: transform, opacity;
+                transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+                color: $m_color1;
+                // 텍스트 그림자 조절
+                text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+
+                &.right-text {
+                    text-align: right;
+                    // 오른쪽 텍스트 위치 조정 - 값 변경으로 위치 조절
+                    margin-right: vw(60);
+                }
+
+                &.left-text {
+                    text-align: left;
+                    // 왼쪽 텍스트 위치 조정 - 값 변경으로 위치 조절
+                    margin-left: vw(60);
+                }
             }
         }
     }
+
+    // 페이지 인디케이터
+    .page-indicator {
+        position: absolute;
+        // 하단 위치 조정
+        bottom: vw(40);
+        // 우측 위치 조정
+        right: vw(60);
+        color: $m_color1;
+        // 폰트 크기 조정
+        font-size: vw(18);
+        font-weight: 500;
+        z-index: 20;
+
+        .current {
+            font-weight: 700;
+        }
+
+        .separator {
+            margin: 0 vw(5);
+        }
+    }
 }
+
 @include tablet {
     #main-visual {
-        // @include bg();
-        width: 100vw;
-        height: vw(383, 393);
-        background-color: $m_color2;
+        .visual_wrap .visual {
+            // 모바일에서 이미지 간격
+            gap: vw(2, 393);
+
+            .pic {
+                // 모바일에서 이미지 크기
+                width: vw(500, 393);
+                height: vw(280, 393);
+            }
+
+            strong {
+                // 모바일에서 텍스트 크기
+                font-size: vw(120, 393);
+
+                &.right-text {
+                    // 모바일에서 오른쪽 텍스트 위치
+                    margin-right: vw(15, 393);
+                }
+
+                &.left-text {
+                    // 모바일에서 왼쪽 텍스트 위치
+                    margin-left: vw(15, 393);
+                }
+            }
+        }
+
+        .page-indicator {
+            // 모바일에서 하단 위치
+            bottom: vw(30, 393);
+            // 모바일에서 우측 위치
+            right: vw(40, 393);
+            // 모바일에서 폰트 크기
+            font-size: vw(16, 393);
+        }
     }
 }
